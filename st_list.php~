@@ -1,0 +1,46 @@
+
+<?php
+
+// Inialize session
+
+// Include database connection settings
+
+include 'connect.php';
+
+
+$dept_name=$_GET['dept_name'];
+
+
+echo  $dept_name." department ";
+echo "<p>Total no of Available seat 50</p>";
+
+
+$sql="SELECT * from `".$dept_name."_honours` where `category`='ST' order by marite_point DESC";
+
+$result=mysqli_query($conn,$sql);
+
+$rowno = 1;
+echo"<table border='1'>
+<tr>
+	<th>Rank</th>
+	<th>Studen Name</th>
+        <th>Board<t/h>
+        <th>Aggregate</th>
+        <th>Merit Point</th> 
+</tr>";
+		
+		
+	while($row = @mysqli_fetch_array($result))
+{
+echo "<tr>";
+	echo"<td>".$rowno."</td>";	
+	echo"<td>".$row['student_name']."</td>";
+        echo"<td>".$row['board']."</td>";
+	echo"<td>".$row['aggregate']."</td>";
+	echo"<td>".$row['marite_point']."</td>";
+echo "</tr>";		
+$rowno=$rowno+1;
+}
+echo "</table>";		
+ // mysqli_close($conn); 
+?>

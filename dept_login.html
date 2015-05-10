@@ -1,0 +1,99 @@
+<html>
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+<div class="container">
+
+<form name="" action="dept_view.php" method ="GET">
+<div>
+ <table id="one-column-emphasis">  
+<tr>
+<th>
+Dept Name:</th>
+<td><select name="dept_name" required>
+	<option value="PHYSICS">Physics</option>
+	<option value="CHEMISTRY">Chemistry</option>
+	<option value="HISTORY">History</option>
+    <option value="MATHEMATICS">Mathematics</option>
+ <option value="BENGALI">Bengali</option>
+<option value="ENGLISH">English</option>
+<option value="Botany">Botany</option>
+<option value="Zoology">Zoology</option>
+<option value="Philosophy">Philosophy</option>
+<option value="GEOGRAPHY">Geography</option>
+<option value="Political Science">Political Science</option>
+<option value="Sanskrit">Sanskrit</option>
+<option value="Hindi">Hindi</option>
+<option value="Accountancy">Accountancy</option>
+<option value="Economics">Economics</option>
+</select>
+
+</td>
+</tr>
+<tr>
+<th>Password </th>
+  <td><input type="text" name="password"></td>
+</tr>
+<tr>
+<td ><input type="reset" name="submit" value="Reset"></td>
+<td><input type="submit" name="submit" value="Next"></td>
+</tr>
+</table>
+</form>
+</div>
+<script>
+function myFunction() {
+    var x = document.getElementById("exam").value;
+    if(x=="other")
+document.getElementById("other_exam").type = "text";
+   else
+document.getElementById("other_exam").type = "hidden";
+}
+function myFunction1() {
+    var x = document.getElementById("board").value;
+    if(x=="other")
+document.getElementById("other_board").type = "text";
+else
+document.getElementById("other_board").type = "hidden";
+}
+
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

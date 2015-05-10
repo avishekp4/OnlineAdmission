@@ -1,0 +1,96 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<h4> Honours Selection</h4>  
+<form id="hons_form"action="hons_sel.php" method="GET">
+<table class="tg" style="undefined;table-layout: fixed; width: 657px"  id="customFields" >
+<colgroup>
+<col style="width: 222px">
+<col style="width: 216px">
+<col style="width: 219px">
+<col style="width: 219px">
+<col style="width: 219px">
+<col style="width: 219px">
+<col style="width: 219px">
+<col style="width: 219px">
+</colgroup>
+  <tr>
+    <th class="tg-hgcj" rowspan="2"><br>Honours</th>
+    <th class="tg-hgcj" colspan="2">General</th>
+    <th class="tg-hgcj" colspan="2">Bank Transaction Details</th>
+    <th class="tg-hgcj"rowspan="2" >Add More</th>
+  </tr>
+  <tr>
+    <td class="tg-093g">Sub1</td>
+    <td class="tg-093g">Sub2</td>
+    <td class="tg-093g">Bank Transaction id</td>
+    <td class="tg-093g">Bank Transaction date</td>
+  </tr>
+  <tr>
+    <td class="tg-30rh"><select name="hons[]" id="ddl" onchange="configureDropDownLists(this,document.getElementById('ddl2'));disable_select();">
+<option value=""></option>
+<option value="PHYSICS">Physics</option>
+<option value="CHEMISTRY">Cemistry</option>
+<option value="MATH">Mathematics</option>
+<option value="BIOLOGY">Biology</option>
+<option value="EDUCATION">Education</option>
+<option value="SOCIOLOGY">Sociology</option>
+<option value="PSYCHOLOGY">Psychology</option>
+<option value="BENGALI">Bengali</option>
+<option value="ENGLISH">English</option>
+<option value="GEOGRAPHY">Geography</option>
+<option value="HISTORY">History</option>
+<option value="POLSCIENCE">POLITICAL SCIENCE</option>
+</select>
+
+<select id="ddl2" name="session[]">
+</select>
+</td>
+    <td class="tg-30rh"><input type="text" name="sub1[]"placeholder="Subject1"class="text-uppercase"></td>
+    <td class="tg-30rh"><input type="text" name="sub2[]"placeholder="Subject2"class="text-uppercase"></td>
+    <td class ="tg-30rh"><input type="text" name="tran_id[]"></td>
+    <td class ="tg-30rh"><input type="text" name="tran_date[]"></td>
+    <td><a href="javascript:void(0);" class="addCF">Add</a></td>
+  </tr>
+</table>
+<input type="button" id="submitButton"value="Save"  />
+</form>
+
+<input type='button' value='SSubmit form' onClick="submitDetailsForm();" />
+
+<script language="javascript" type="text/javascript">
+    function submitDetailsForm() {
+       $("#hons_form").submit();
+       window.open('hs_detail.html','_self',false);
+    }
+
+$('input#submitButton').click( function() {
+    $.ajax({
+        url: 'hons_sel.php',
+        type: 'post',
+        dataType: 'text',
+        data: $('form#hons_form').serialize(),
+        success: function(data) {
+                   //if(data ==='OK')
+                   alert(data);
+                 }
+    });
+});
+
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
+
+
+

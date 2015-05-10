@@ -1,0 +1,83 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<div>
+    <h4>Details of 10+2 </h4>
+</div>
+<form id ="hs_detail.php"action="hs_detail.php" method="get">
+Enter Stream:
+<select id='stream' name='stream'>
+<option value="SCIENCE">Science</option>
+<option value="ARTS">Arts</option>
+<option value="COMMERSE">Commerse</option>
+</select>
+<table id="one-column-emphasis">
+  <tr>
+    <th rowspan="2">Subject Name</th>
+    <th rowspan="2"><input type="text" name="lang1_name" placeholder="Language1" size="7"class="text-uppercase"></th>
+    <th rowspan="2"><input type="text" name="lang2_name" placeholder="Language1"size="7"class="text-uppercase"></th>
+    <th colspan="2"><input type="text" name="sub1_name" id="sub1_name"   placeholder="Subject1"size="7"class="text-uppercase"></th>
+    <th colspan="2"><input type="text" name="sub2_name" id="sub2_name"   placeholder="Subject2"size="7"class="text-uppercase"></th>
+    <th colspan="2"><input type="text" name="sub3_name" id="sub3_name"    placeholder="Subject3"size="7"class="text-uppercase"></th>
+    <th colspan="2"><input type="text" name="sub4_name" id="sub4_name"    placeholder="Subject4"size="7"class="text-uppercase"></th>
+  </tr>
+  <tr>
+    <td>Th</td>
+    <td>Pr</td>
+    <td>Th</td>
+    <td>Pr</td>
+    <td>Th</td>
+    <td>Pr</td>
+    <td>Th</td>
+    <td>Pr</td>
+  </tr>
+  <tr>
+    <td>Full<br>Marks</td>
+    <td><input type = "text"name="lang1_fm" id="lang1_fm"       size="2"></td>
+    <td><input type = "text"name="lang2_fm" id="lang2_fm"       size="2"></td>
+    <td><input type="text" name="sub1_th_fm"  id="sub1_th_fm"   size="2"></td>
+    <td><input type="text" name="sub1_pr_fm"  id="sub1_pr_fm"   size="2"></td>
+    <td><input type="text" name="sub2_th_fm"  id="sub2_th_fm"   size="2"></td>
+    <td><input type="text" name="sub2_pr_fm"    size="2"></td>
+    <td><input type="text" name="sub3_th_fm"size="2"></td>
+    <td><input type="text" name="sub3_pr_fm"size="2"></td>
+    <td><input type="text" name="sub4_th_fm"size="2"></td>
+    <td><input type="text" name="sub4_pr_fm"size="2"></td>
+  </tr>
+  <tr>
+    <td>Marks <br>Om</td>
+    <td><input type = "text" name="lang1_om" id="lang1_om"size="2"></td>
+    <td><input type = "text" name="lang2_om" id="lang2_om"size="2"></td>
+    <td><input type="text" name="sub1_th_om"  id="sub1_th_om"  size="2"></td>
+    <td><input type="text" name="sub1_pr_om"  id="sub1_pr_om"   size="2"></td>
+    <td><input type="text" name="sub2_th_om"  id="sub2_th_om"          size="2"></td>
+    <td><input type="text" name="sub2_pr_om"    id="sub2_pr_om"     size="2"></td>
+    <td><input type="text" name="sub3_th_om"   id="sub3_th_om"            size="2"></td>
+    <td><input type="text" name="sub3_pr_om"   id="sub3_pr_om"        size="2"></td>
+    <td><input type="text" name="sub4_th_om"  id="sub4_th_om"       size="2"></td>
+    <td><input type="text" name="sub4_pr_om"    id = "sub4_pr_om"           size="2"></td>
+  </tr>
+</table>
+</form>
+<input type="button" value="submitButton" onClick="window.open('honours_selection.html','_self',false)" />
+<script>
+$('input#submitButton').click( function() {
+    $.ajax({
+        url: 'hs_detail.php',
+        type: 'post',
+        dataType: 'text',
+        data: $('form#hs_detail').serialize(),
+        success: function(data) {
+                   //if(data ==='OK')
+                   alert(data);
+                 }
+    });
+});
+</script>
+</body>
+</html>
+
+
+

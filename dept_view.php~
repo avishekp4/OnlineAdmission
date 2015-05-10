@@ -1,0 +1,9 @@
+
+<?php
+$dept_name=$_GET['dept_name'];
+echo "<a href=\"gen_list.php?dept_name=$dept_name\">Click To See General List</a><br/>";
+echo "<a href=\"sc_list.php?dept_name=$dept_name\">Click To See SC List</a><br/>";
+echo "<a href=\"st_list.php?dept_name=$dept_name\">Click To See ST List</a><br/>";
+echo "<a href=\"obc_a_list.php?dept_name=$dept_name\">Click To See OBC-A List</a><br/>";
+echo "<a href=\"obc_b_list.php?dept_name=$dept_name\">Click To See OBC-B List</a><br/>"; 
+?>

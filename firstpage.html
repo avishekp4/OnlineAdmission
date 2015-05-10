@@ -1,0 +1,121 @@
+<html>
+<head>
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+<body>
+<div class="container">
+
+<form name="" action="auth.php" method ="GET">
+<div>
+ <table id="one-column-emphasis">  
+<tr>
+<th>
+Student Name:</th>
+<td><input type="text" name="student_name" required>
+</td>
+</tr>
+<tr>
+<th>Mobile No </th>
+<td><input type="text" name="mobile" required>
+</td>
+</tr>
+
+<tr>
+<th>Board:</th>
+<td><select name="board" onchange="myFunction1()"id="board"required>
+                          <option value="wbchse">West Bengal Council of Higher Secondary Education</option>
+                          <option value="cbsi">Council of Boards of Secondary Education in India (CBSI)</option>
+                          <option value="hyd">Board of Intermediate Education, Hyderabad</option>
+                          <option value="assam">Assam Higher Secondary Education Council, Guwahati</option>
+                          <option value="patna">Bihar Intermediate Education Council, Patna</option>
+                          <option value="cbse">Central Board of Secondary Education (CBSE)</option>
+                          <option value="icse">Council for the India School Certificate Examination (ICSE)</option>
+                          <option value="goa">Goa Board of Secondary and Higher Secondary Education</option>
+                          <option value="gujrat">Gujrat Secondary Education Board</option>
+                          <option value="haryana">Board of School Education, Haryana</option>
+                          <option value="hp">Himachal Pradesh Board of School Education</option>
+                          <option value="jk">The Jammu and Kashmir State Board of School Education</option>
+                          <option value="bglr">Board of Pre-University Education, Bangalore</option>
+                          <option value="maha">Maharastra State Board of Secondary and Higher Secondary Education</option>
+                          <option value="bhopal">Madhyamik Shiksha Mondal, Bhopal</option>
+                          <option value="imphal">Board of Secondary Education, Imphal</option>
+                          <option value="orissa">Council of Higher Secondary Education, Orissa</option>
+                          <option value="raj">Rajasthan Madhyamik Shiksha Board</option>
+                          <option value="punjab">Punjab School Education Board</option>
+                          <option value="tn">Board of Higher Secondary Education Tamilnadu</option>
+                          <option value="tripura">Tripura Board of Secondary Education</option>
+                          <option value="up">Board of High School and Intermediate Education, Allahabad</option>
+                          <option value="nos">National Open School, Delhi</option>
+            </select>
+    </tr>
+<tr>
+<th>Examination:</th>
+<td><select name="exam"id="exam"onchange="myFunction()" required>
+                          <option value="hs"selected>Higher Secondary</option>
+                          <option value="cbse">CBSE</option>
+                          <option value="icse">ICSE</option>
+            </select>
+        </td>
+        <td><input type="hidden" name="other_exam" id="other_exam"></td>
+    </tr>
+<tr>
+<th>Roll No</th>
+<td><input type="text" name="roll"required>
+</td>
+</tr>
+<tr>
+<th>Year of Passing</th>
+                        <td><select name="yop"required>
+                             <option value="2013"selected>2013</option>
+                             <option value="2014">2014</option>
+                             <option value="2015">2015</option>
+                             </select>
+                         </td>
+</tr>
+<tr>
+	<td >
+<input type="reset" name="submit" value="Reset">
+    </td>
+    <td>
+      
+<input type="submit" name="submit" value="Next">
+    </td>
+</tr>
+</table>
+</form>
+</div>
+<script>
+function myFunction() {
+    var x = document.getElementById("exam").value;
+    if(x=="other")
+document.getElementById("other_exam").type = "text";
+   else
+document.getElementById("other_exam").type = "hidden";
+}
+function myFunction1() {
+    var x = document.getElementById("board").value;
+    if(x=="other")
+document.getElementById("other_board").type = "text";
+else
+document.getElementById("other_board").type = "hidden";
+}
+
+</script>
+
+
+
+</body>
+</html>

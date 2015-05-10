@@ -1,0 +1,195 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>	
+<script src="jquery.chained.min.js"></script>
+</head>
+<body>
+<h4>General Selection</h4>
+
+<table class="tg" id="custom-fields1">
+  <colgroup>
+    <col class="col-wide" />
+    <col class="col-narrow" />
+    <col class="col-normal" />
+    <col class="col-normal" />
+    <col class="col-normal" />
+  </colgroup>
+  <tr>
+    <th class="tg-hgcj" rowspan="2">
+      <br />General Stream With Session
+    </th>
+    <th class="tg-hgcj" rowspan="2">Subject Combination</th>
+    <th class="tg-hgcj" colspan="2">Bank Transaction Details</th>
+    <th class="tg-hgcj" rowspan="2">Add More</th>
+  </tr>
+  <tr>
+    
+    <td class="tg-093g">Bank Transaction id</td>
+    <td class="tg-093g">Bank Transaction date</td>
+  </tr>
+  <tr>
+    <td class="tg-30rh">
+      <select id ="general_stream-0" name="general-stream[]"  onclick="">
+		  <option >B.A. General(Day Shift)</option>
+		  <option >B.A. General(Day Shift)With Geography</option>
+		  <option value="B.A. General(Morning Shift)"> B.A. General(Morning Shift)</option>
+		  <option value="B.Sc. General [Pure. Science]">B.Sc. General [Pure. Science]</option>
+	      <option>B.Sc. General[Bio. Science]</option>
+	      <option> B.Com. General</option>
+	  </select>
+    </td>
+    <td class="tg-30rh">
+      
+		  <select name="GeneraSub[]"id="gen_select-0" >
+<option value="Bengali,English,Pol.Sc. " class="B.A. General(Morning Shift)"> Bengali,English,     Pol.Sc. </option>
+<option value="Bengali,English,Physical Education "class="B.A. General(Morning Shift)"> Bengali,English,     Physical Education </option>
+<option value="Bengali,English,Philosophy     "class="B.A. General(Morning Shift)"> Bengali,English,     Philosophy     </option>        
+<option value="Bengali,English,History             "class="B.A. General(Morning Shift)"> Bengali,English,     History              
+<option value="Bengali,English,     Physical Education  "class="B.A. General(Morning Shift)"> Bengali,English,     Physical Education     </option>        
+<option value="Bengali,English,     Economics           "class="B.A. General(Morning Shift)"> Bengali,English,     Economics            </option>   
+<option value="Bengali,English,     Physical Education  "class="B.A. General(Morning Shift)"> Bengali,English,     Physical Education    </option>       
+<option value="Bengali,Pol.Sc.,     Philosophy         "class="B.A. General(Morning Shift)"> Bengali,Pol.Sc.,     Philosophy         </option>   
+<option value="Bengali,Pol.Sc.,     History            "class="B.A. General(Morning Shift)"> Bengali,Pol.Sc.,     History            </option>     
+<option value="Bengali,Pol.Sc.,     Physical Education"class="B.A. General(Morning Shift)"> Bengali,Pol.Sc.,     Physical Education</option>         
+<option value="Bengali Pol.Sc.,     Economics        "class="B.A. General(Morning Shift)"> Bengali Pol.Sc.,     Economics        </option>     
+<option value="Bengali Pol.Sc.,     Physical Education  "class="B.A. General(Morning Shift)"> Bengali Pol.Sc.,     Physical Education  </option>           
+<option value="Bengali,Philosophy,  Economics        "class="B.A. General(Morning Shift)"> Bengali,Philosophy,  Economics        </option>  
+<option value="English,Philosophy,  Economics        "class="B.A. General(Morning Shift)"> English,Philosophy,  Economics         </option>     
+<option value="English,Pol.Sc.,     History           "class="B.A. General(Morning Shift)"> English,Pol.Sc.,     History           </option>             
+<option value="English,Pol.Sc.,     Physical Education "class="B.A. General(Morning Shift)"> English,Pol.Sc.,     Physical Education </option>        
+<option value="English,Pol.Sc.,     Economics         "class="B.A. General(Morning Shift)"> English,Pol.Sc.,     Economics         </option>   
+<option value="English,Pol.Sc.,     Physical Education"class="B.A. General(Morning Shift)"> English,Pol.Sc.,     Physical Education </option>           
+<option value="Bengali,Philosophy,  History           "class="B.A. General(Morning Shift)"> Bengali,Philosophy,  History           </option>     
+<option value="English,Philosophy,  History           "class="B.A. General(Morning Shift)"> English,Philosophy,  History           </option>   
+<option value="English,Pol.Sc.,     Philosophy        "class="B.A. General(Morning Shift)"> English,Pol.Sc.,     Philosophy        </option>  
+<option value="Pol.Sc.,Philosophy,  Economics"class="B.A. General(Morning Shift)"> Pol.Sc.,Philosophy,  Economics          </option>  
+<option value="Pol.Sc.,Philosophy,  History"class="B.A. General(Morning Shift)"> Pol.Sc.,Philosophy,  History</option>  
+
+
+
+ <option class="B.Sc. General [Pure. Science]"value="Mathematics, Physics, Chemistry"			>Mathematics,Physics, Chemistry</option>
+ <option class="B.Sc. General [Pure. Science]"value="Mathematics , Physics, Computer Science	">	Mathematics , Physics, Computer Science</option>
+ <option class="B.Sc. General [Pure. Science]"value="Mathematics, Economics, Computer Science">			Mathematics, Economics, Computer Science</option>
+ <option class="B.Sc. General [Pure. Science]"value="Mathematics, Economics, Geography	"	>		Mathematics, Economics, Geography</option>
+ <option class="B.Sc. General [Pure. Science]"value="Mathematics, Economics,English		"	>	Mathematics, Economics,English</option>
+ <option class="B.Sc. General [Pure. Science]"value="Mathematics, Geography, History	"		>	Mathematics, Geography, History</option>
+ <option class="B.Sc. General [Pure. Science]"value="Mathematics, Geography,Sociology "		>Mathematics, Geography,Sociology </option>																			
+ <option class="B.Sc. General [Pure. Science]"value="Mathematics, Geography, Economics">	Mathematics, Geography, Economics</option>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</select>
+		  
+     
+    </td>
+    <td class="tg-30rh">
+      <input type="text" name="gtran_id[]" id="gtranid-0" onfocus="checkDuplicatesGen(0)"/>
+    </td>
+    <td class="tg-30rh">
+      <input type="text" name="gtran_date[]" />
+    </td>
+    <td><a href="javascript:void(0);" class="addCF1">Add</a>
+    </td>
+  </tr>
+</table>
+
+<script>
+	
+	var m = 1;
+
+$(document).ready(function() {
+  $(".addCF1").click(function() {
+    $("#custom-fields1").append([
+       '<tr>',
+    '<td class="tg-30rh">',
+    
+    
+    ' <select id ="general_stream-'+m+'" name="general-stream[]"  onclick="">',
+		 ' <option value="" >B.A. General(Day Shift)</option>',
+		 ' <option value="" >B.A. General(Day Shift)With Geography</option>',
+		  '<option value="B.A. General(Morning Shift)"> B.A. General(Morning Shift)</option>',
+		  '<option value="B.Sc. General [Pure. Science]">B.Sc. General [Pure. Science]</option>',
+	      '<option value="">B.Sc. General[Bio. Science]</option>',
+	      '<option value=""> B.Com. General</option>',
+	  '</select>', 
+      '</td>',
+	  '<td class="tg-30rh">',
+	   '<select name="GeneraSub[]" id= "gen_select-'+m+'" >',
+		'<option value="Bengali,English,     Pol.Sc. "class="B.A. General(Morning Shift)"> Bengali,English,     Pol.Sc. </option>',
+		'<option value="Bengali,English,     Physical Education "class="B.A. General(Morning Shift)"> Bengali,English,     Physical Education </option>',
+		'<option value="Bengali,English,     Philosophy  "class="B.A. General(Morning Shift)"> Bengali,English,     Philosophy     </option>       ' ,
+		'<option value="Bengali,English,     History             "class="B.A. General(Morning Shift)"> Bengali,English,     History    </option>      ' ,   
+		'<option value="Bengali,English,     Physical Education  "class="B.A. General(Morning Shift)"> Bengali,English,     Physical Education     </option> ',       
+		'<option value="Bengali,English,     Economics           "class="B.A. General(Morning Shift)"> Bengali,English,     Economics            </option>',   
+		'<option value="Bengali,English,     Physical Education  "class="B.A. General(Morning Shift)"> Bengali,English,     Physical Education    </option> ',      
+		'<option value="Bengali,Pol.Sc.,     Philosophy         "class="B.A. General(Morning Shift)"> Bengali,Pol.Sc.,     Philosophy         </option>  ', 
+		'<option value="Bengali,Pol.Sc.,     History            "class="B.A. General(Morning Shift)"> Bengali,Pol.Sc.,     History            </option> ',    
+		'<option value="Bengali,Pol.Sc.,     Physical Education"class="B.A. General(Morning Shift)"> Bengali,Pol.Sc.,     Physical Education</option>    ',     
+		'<option value="Bengali Pol.Sc.,     Economics        "class="B.A. General(Morning Shift)"> Bengali Pol.Sc.,     Economics        </option>     ',
+		'<option value="Bengali Pol.Sc.,     Physical Education  "class="B.A. General(Morning Shift)"> Bengali Pol.Sc.,     Physical Education  </option>   ',        
+		'<option value="Bengali,Philosophy,  Economics        "class="B.A. General(Morning Shift)"> Bengali,Philosophy,  Economics        </option>  ',
+		'<option value="English,Philosophy,  Economics        "class="B.A. General(Morning Shift)"> English,Philosophy,  Economics         </option>  ',   
+		'<option value="English,Pol.Sc.,     History           "class="B.A. General(Morning Shift)"> English,Pol.Sc.,     History           </option>   ',          
+		'<option value="English,Pol.Sc.,     Physical Education "class="B.A. General(Morning Shift)"> English,Pol.Sc.,     Physical Education </option>   ',     
+		'<option value="English,Pol.Sc.,     Economics         "class="B.A. General(Morning Shift)"> English,Pol.Sc.,     Economics         </option>',   
+		'<option value="English,Pol.Sc.,     Physical Education"class="B.A. General(Morning Shift)"> English,Pol.Sc.,     Physical Education </option>   ',        
+		'<option value="Bengali,Philosophy,  History           "class="B.A. General(Morning Shift)"> Bengali,Philosophy,  History           </option>  ',   
+		'<option value="English,Philosophy,  History           "class="B.A. General(Morning Shift)"> English,Philosophy,  History           </option> ',  
+		'<option value="English,Pol.Sc.,     Philosophy        "class="B.A. General(Morning Shift)"> English,Pol.Sc.,     Philosophy        </option> ', 
+		'<option value="Pol.Sc.,Philosophy,  Economics          "class="B.A. General(Morning Shift)"> Pol.Sc.,Philosophy,  Economics          </option> ', 
+		'<option value="Pol.Sc.,Philosophy,  History  "class="B.A. General(Morning Shift)"> Pol.Sc.,Philosophy,  History</option>  ',
+
+'<option class="B.Sc. General [Pure. Science]"value="Mathematics, Physics, Chemistry"	>Mathematics,Physics, Chemistry</option>',
+ '<option class="B.Sc. General [Pure. Science]"value="Mathematics , Physics, Computer Science"	>	Mathematics , Physics, Computer Science</option>',
+ '<option class="B.Sc. General [Pure. Science]"value="Mathematics, Economics, Computer Science">			Mathematics, Economics, Computer Science</option>',
+ '<option class="B.Sc. General [Pure. Science]"value="Mathematics, Economics, Geography	"	>		Mathematics, Economics, Geography</option>',
+ '<option class="B.Sc. General [Pure. Science]"value="Mathematics, Economics,English	"		>	Mathematics, Economics,English</option>',
+ '<option class="B.Sc. General [Pure. Science]"value="Mathematics, Geography, History	"		>	Mathematics, Geography, History</option>',
+' <option class="B.Sc. General [Pure. Science]"value="Mathematics, Geography,Sociology 	"	>			Mathematics, Geography,Sociology 	</option>	',																		
+ '<option class="B.Sc. General [Pure. Science]"value="Mathematics, Geography, Economics	"	>	Mathematics, Geography, Economics</option>',
+		'</select>',
+      '</td>',
+      '<td class="tg-30rh">',
+      ' <input type="text" name="tran_id[]" id="gtranid-'+m+'" onfocus="checkDuplicatesHons('+m+')"/>',
+      '</td>',
+      '<td class="tg-30rh">',
+      ' <input type="text" name="tran_date[]" />',
+      '</td>',
+      '<td><a href="javascript:void(0);" class="remCF1">Remove</a>',
+      '</td>',
+      '</tr>',
+    ].join(''));
+        
+        $('#gen_select-'+m).chained('#general_stream-'+m); 
+
+    m++;
+  });
+  $("#custom-fields1").on('click', '.remCF1', function() {
+    $(this).parent().parent().remove();
+  });
+        $('#gen_select-0').chained('#general_stream-0'); 
+});
+
+	
+</script>	
+	
+	
+	
+</body>
+</html>	
