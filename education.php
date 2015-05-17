@@ -1227,7 +1227,7 @@ $(function() {
 			blood_gr:{
 			required:true,
 			minlength:2,
-			maxlength:3,
+			maxlength:3
                      },
 			dob:"required",
 			category:"required",
