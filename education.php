@@ -1068,7 +1068,7 @@ $(document).ready(function() {
 		'<option value="English,Pol.Sc.,     Philosophy " class="B.A. General(Morning Shift)"> English,Pol.Sc.,     Philosophy        </option> ', 
 		'<option value="Pol.Sc.,Philosophy,  Economics  " class="B.A. General(Morning Shift)"> Pol.Sc.,Philosophy,  Economics          </option> ', 
 		'<option value="Pol.Sc.,Philosophy,  History " class="B.A. General(Morning Shift)"> Pol.Sc.,Philosophy,  History</option>  ',
- '<option value="Bengali,History               "class="B.A. General(Day Shift)With Geography">                     Bengali,History            </option>',                               
+ '<option value="Bengali,History " class="B.A. General(Day Shift)With Geography">                     Bengali,History            </option>',
 '<option value="Bengali,Sociology             "class="B.A. General(Day Shift)With Geography">                     Bengali,Sociology          </option>',                               
 '<option value="Bengali,Economics             "class="B.A. General(Day Shift)With Geography">                     Bengali,Economics          </option>',                             
 '<option value="Bengali,Sanskrit              "class="B.A. General(Day Shift)With Geography">                     Bengali,Sanskrit           </option>',                             
