@@ -187,7 +187,7 @@ $arts=array("geography","history","polscience","education","nutrition","sociolog
 $sql="select * from auth where student_id <=>'$student_id'";
 $result = mysqli_query($conn,$sql);
 if (!$result) {
-	die("No result 1" . mysqli_error());
+	die("No result 1" . mysqli_error($conn));
 }
 $row = @mysqli_fetch_array($result);
 $name_of_student=$row['name_of_student'];
@@ -421,48 +421,10 @@ $gdate_i = date_format(date_create_from_format('Y-m-d', $gdate_i), 'd-m-Y');
 
 //echo "Submitted";
 $imagename="image_place_holder.png";//Path of pdf place holder
-/*
-$main_html='<html>
 
-<head>
-
-
-<!-- Latest compiled and minified CSS -->
-<link rel=\"stylesheet\" href=\bootstrap.min.css\">
-
-<!-- jQuery library -->
-<script src=\"jquery.min.js\"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src=\"bootstrap.min.js\"></script>
-
-
-
-
-
-
-
-
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;margin:0px auto;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:9px 9px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:9px 9px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
-.tg .tg-30rh{font-style:italic;text-align:center}
-.tg .tg-093g{font-weight:bold;font-style:italic;text-align:center}
-.tg .tg-hgcj{font-weight:bold;text-align:center}
-</style>
-
-
-
-
-</head>	
-<body>
-';*/
 
 
 $dob = date_format(date_create_from_format('Y-m-d', $dob), 'd-m-Y');
-
-
 $aggr=aggr($sub1_total_om,$sub2_total_om,$sub3_total_om,$sub4_total_om,$lang1_om,$lang2_om);
 
 
@@ -538,36 +500,36 @@ FORM</strong></td>
 	</tbody>
 </table>
 
-<p>1. Name in Full :'.$name_of_student.'</p>
+<p>1. Name in Full :'.stripslashes($name_of_student).'</p>
 
 <p>2. Date of Birth :'.$dob.' 3.Sex :'.$gender.'4. Blood Group :'.$blood_gr.'</p>
 
-<p>5.a) Father&#39;s Name : '.$f_name.'</p>
+<p>5.a) Father&#39;s Name : '.stripslashes($f_name).'</p>
 
-<p>&nbsp; &nbsp;b) Father&#39;s Education: &nbsp;'.$f_edu.'&nbsp; c)Father&#39;s Occupation:&nbsp;'.$f_occu.'&nbsp; d)Monthly&nbsp;Income:&nbsp; Rs.'.$f_income.'</p>
+<p>&nbsp; &nbsp;b) Father&#39;s Education: &nbsp;'.stripslashes($f_edu).'&nbsp; c)Father&#39;s Occupation:&nbsp;'.stripcslashes($f_occu).'&nbsp; d)Monthly&nbsp;Income:&nbsp; Rs.'.stripcslashes($f_income).'</p>
 
-<p>6.a) Mothers&#39;s Name :&nbsp;'.$m_name.'</p>
+<p>6.a) Mothers&#39;s Name :&nbsp;'.stripcslashes($m_name).'</p>
 
-<p>&nbsp; &nbsp;b) Mothers&#39;s&nbsp;Education: &nbsp;'.$m_edu.'&nbsp; c)Mothers&#39;s&nbsp;Occupation:&nbsp; '.$m_occu.' &nbsp; d )Monthly&nbsp;Income:&nbsp; Rs.'.$m_income.'</p>
+<p>&nbsp; &nbsp;b) Mothers&#39;s&nbsp;Education: &nbsp;'.stripslashes($m_edu).'&nbsp; c)Mothers&#39;s&nbsp;Occupation:&nbsp; '.stripslashes($m_occu).' &nbsp; d )Monthly&nbsp;Income:&nbsp; Rs.'.stripslashes($m_income).'</p>
 
-<p>7. a)Address for Communication:&nbsp;'.$address.'</p>
+<p>7. a)Address for Communication:&nbsp;'.stripslashes($address).'</p>
 
-<p> &nbsp; &nbsp;PIN:- &nbsp; &nbsp; '.$pin.' &nbsp;.b)Telephone/Mobile No.'.$mob.'</p>
+<p> &nbsp; &nbsp;PIN:- &nbsp; &nbsp; '.stripslashes($pin).' &nbsp;.b)Telephone/Mobile No.'.stripslashes($mob).'</p>
 
-<p>8. a) Nationality:'.$nationality.' b) Religion: '.$religion.'</p>
+<p>8. a) Nationality:'.stripslashes($nationality).' b) Religion: '.stripslashes($religion).'</p>
 
 <p>9. Caste :<span style="font-size:9px;">( Certificate issued by the competent authority should be enclosed for SC/ST/OBC)</span>.'.$category.'</p>
 
 <p>
 10. Whether admission sought in Physically Challenged / Sport&#39;sQuota <span style="font-size:9px;">(Relevant Certificates to be attached)</span>:.'.$ph.'</p>
 
-<p>11. Name of the School last attended :'.$name_of_last_school.'</p>
+<p>11. Name of the School last attended :'.stripslashes($name_of_last_school).'</p>
 
 <p>12. Details of Marks Obtained in Last Examination :</p>
 
-<p>&nbsp; &nbsp; &nbsp; a) Name of Exam: .&nbsp; &nbsp; '.$examination.' &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;b)Name Of the Board/Council/Univ :&nbsp; &nbsp; '.$board.'</p>
+<p>&nbsp; &nbsp; &nbsp; a) Name of Exam: .&nbsp; &nbsp; '.stripslashes($examination).' &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;b)Name Of the Board/Council/Univ :&nbsp; &nbsp; '.stripslashes($board).'</p>
 
-<p>&nbsp; &nbsp; &nbsp; c) Roll &nbsp;No.:&nbsp; &nbsp; '.$roll_no.'Year Of Passing :&nbsp; &nbsp; '.$year_of_passing.'</p>
+<p>&nbsp; &nbsp; &nbsp; c) Roll &nbsp;No.:&nbsp; &nbsp; '.stripslashes($roll_no).'Year Of Passing :&nbsp; &nbsp; '.stripslashes($year_of_passing).'</p>
 
 <p>&nbsp; &nbsp; &nbsp; d) Marks Obtained:&nbsp;</p>
 
@@ -657,15 +619,15 @@ FORM</strong></td>
 
 <p>15. Whether belongs to BPL Family:&nbsp;&nbsp;'.$bpl.'<span style="font-size:9px;">(Attested copy of BPL card should be enclosed)</span></p>
 
-<p>16. Extra Curricular Activities : &nbsp;&nbsp;'.$extra_caricular.'</p>
+<p>16. Extra Curricular Activities : &nbsp;&nbsp;'.stripslashes($extra_caricular).'</p>
 
-<p>17.Game &amp; Sports with Level :&nbsp;&nbsp;'.$sport_quota.'</p>
+<p>17.Game &amp; Sports with Level :&nbsp;&nbsp;'.stripslashes($sport_quota).'</p>
 
-<p>18.Name of Local Guardian :&nbsp;&nbsp;'.$lg.'</p>
+<p>18.Name of Local Guardian :&nbsp;&nbsp;'.stripslashes($lg).'</p>
 
-<p>19.Address of Local Guardian :&nbsp;&nbsp;'.$addr_lg.'</p>
+<p>19.Address of Local Guardian :&nbsp;&nbsp;'.stripslashes($addr_lg).'</p>
 
-<p>20. Whether receive any Scholarship /Financial Assistance (if yes,give details):&nbsp;&nbsp;'.$scholar.'</p>
+<p>20. Whether receive any Scholarship /Financial Assistance (if yes,give details):&nbsp;&nbsp;'.stripslashes($scholar_detail).'</p>
 
 <p>21. If you previously admitted in this College, state :</p>
 
@@ -673,7 +635,7 @@ FORM</strong></td>
 
 <p style="text-align: center;"><span style="color:#FFFFFF;"><strong><span style="background-color:#000000;">GUARDIAN&#39;S DECLARATION</span></strong></span></p>
 
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;I hereby undertake to defray all educational expenses of my Son /Daughter/ Ward &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Sri/Smt./Kumari '.$name_of_student.'and promice that he /she shall abide by college regulations and discipline in force or that may be in force time to time .</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;I hereby undertake to defray all educational expenses of my Son /Daughter/ Ward &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Sri/Smt./Kumari '.stripslashes($name_of_student).'and promice that he /she shall abide by college regulations and discipline in force or that may be in force time to time .</p>
 
 <p style="text-align: justify;">&nbsp;</p>
 
@@ -685,7 +647,7 @@ FORM</strong></td>
 
 <p>Date . &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Full Signature of the Candidate &nbsp;</p>
 
-<p><br/></p>
+<p><br/><br/><br/><br/><br/><br/><br/></p>
 <table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
 	<tbody>
 		<tr>
@@ -786,36 +748,36 @@ FORM</strong></td>
 	</tbody>
 </table>
 
-<p>1. Name in Full (<span style="font-size:8px;">in Block Capitl Letters</span>):'.$name_of_student.'</p>
+<p>1. Name in Full :'.stripslashes($name_of_student).'</p>
 
 <p>2. Date of Birth :'.$dob.' 3.Sex :'.$gender.'4. Blood Group :'.$blood_gr.'</p>
 
-<p>5.a) Father&#39;s Name :&nbsp;'.$f_name.'</p>
+<p>5.a) Father&#39;s Name : '.stripslashes($f_name).'</p>
 
-<p>&nbsp; &nbsp;b) Father&#39;s Education: '.$f_edu.' c)Father&#39;s Occupation: '.$f_occu.' d)Monthly&nbsp;Income:'.$f_income.'</p>
+<p>&nbsp; &nbsp;b) Father&#39;s Education: &nbsp;'.stripslashes($f_edu).'&nbsp; c)Father&#39;s Occupation:&nbsp;'.stripcslashes($f_occu).'&nbsp; d)Monthly&nbsp;Income:&nbsp; Rs.'.stripcslashes($f_income).'</p>
 
-<p>6.a) Mothers&#39;s Name :&nbsp;'.$m_name.'</p>
+<p>6.a) Mothers&#39;s Name :&nbsp;'.stripcslashes($m_name).'</p>
 
-<p>&nbsp; &nbsp;b) Mothers&#39;s&nbsp;Education: '.$m_edu.' c)Mothers&#39;s&nbsp;Occupation: '.$m_occu.'  d )Monthly&nbsp;Income:'.$m_income.'</p>
+<p>&nbsp; &nbsp;b) Mothers&#39;s&nbsp;Education: &nbsp;'.stripslashes($m_edu).'&nbsp; c)Mothers&#39;s&nbsp;Occupation:&nbsp; '.stripslashes($m_occu).' &nbsp; d )Monthly&nbsp;Income:&nbsp; Rs.'.stripslashes($m_income).'</p>
 
-<p>7. a)Address for Communication:&nbsp;&nbsp;'.$address.'</p>
+<p>7. a)Address for Communication:&nbsp;'.stripslashes($address).'</p>
 
-<p> &nbsp; &nbsp;PIN:- &nbsp; &nbsp; '.$pin.' &nbsp;.b)Telephone/Mobile No.'.$mob.'</p>
+<p> &nbsp; &nbsp;PIN:- &nbsp; &nbsp; '.stripslashes($pin).' &nbsp;.b)Telephone/Mobile No.'.stripslashes($mob).'</p>
 
-<p>8. a) Nationality:&nbsp;'.$nationality.' b) Religion:&nbsp; '.$religion.'</p>
+<p>8. a) Nationality:'.stripslashes($nationality).' b) Religion: '.stripslashes($religion).'</p>
 
 <p>9. Caste :<span style="font-size:9px;">( Certificate issued by the competent authority should be enclosed for SC/ST/OBC)</span>.'.$category.'</p>
 
 <p>
 10. Whether admission sought in Physically Challenged / Sport&#39;sQuota <span style="font-size:9px;">(Relevant Certificates to be attached)</span>:.'.$ph.'</p>
 
-<p>11. Name of the School last attended :&nbsp;'.$name_of_last_school.'</p>
+<p>11. Name of the School last attended :'.stripslashes($name_of_last_school).'</p>
 
 <p>12. Details of Marks Obtained in Last Examination :</p>
 
-<p>&nbsp; &nbsp; &nbsp; a) Name of Exam: &nbsp;'.$examination.' &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;b)Name Of the Board/Council/Univ :'.$board.'</p>
+<p>&nbsp; &nbsp; &nbsp; a) Name of Exam: .&nbsp; &nbsp; '.stripslashes($examination).' &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;b)Name Of the Board/Council/Univ :&nbsp; &nbsp; '.stripslashes($board).'</p>
 
-<p>&nbsp; &nbsp; &nbsp; c) Roll &nbsp;No.&nbsp;'.$roll_no.'&nbsp;Year Of Passing :&nbsp;'.$year_of_passing.'</p>
+<p>&nbsp; &nbsp; &nbsp; c) Roll &nbsp;No.:&nbsp; &nbsp; '.stripslashes($roll_no).'Year Of Passing :&nbsp; &nbsp; '.stripslashes($year_of_passing).'</p>
 
 <p>&nbsp; &nbsp; &nbsp; d) Marks Obtained:&nbsp;</p>
 
@@ -829,9 +791,8 @@ FORM</strong></td>
 			<td colspan="2" rowspan="1" style="text-align: center;">'.$sub2_name.'</td>
 			<td colspan="2" rowspan="1" style="text-align: center;">'.$sub3_name.'</td>
 			<td colspan="2" rowspan="1" style="text-align: center;">'.$sub4_name.'</td>
-		    <td rowspan="2" style="text-align: center;">Aggregate</td>
+		    			<td rowspan="2" style="text-align: center;">Aggregate</td>
 
-		
 		</tr>
 		<tr>
 			<td style="text-align: center;">'.$lang1_name.'</td>
@@ -852,11 +813,11 @@ FORM</strong></td>
 			<td style="text-align: center;">'.$sub1_pr_fm.'</td>
 			<td style="text-align: center;">'.$sub2_th_fm.'</td>
 			<td style="text-align: center;">'.$sub2_pr_fm.'</td>
-			<td style="text-align: center;">'.$sub3_th_fm.';</td>
+			<td style="text-align: center;">'.$sub3_th_fm.'</td>
 			<td style="text-align: center;">'.$sub3_pr_fm.'</td>
 			<td style="text-align: center;">'.$sub4_th_fm.'</td>
-			<td style="text-align: center;">'.$sub4_th_fm.'</td>
-		    <td colspan="1" rowspan="2" style="text-align: center;">'.$aggr.'</td>
+			<td style="text-align: center;">'.$sub4_pr_fm.'</td>
+			<td colspan="1" rowspan="2" style="text-align: center;">'.$aggr.'</td>
 
 		</tr>
 		<tr>
@@ -866,9 +827,9 @@ FORM</strong></td>
 			<td style="text-align: center;">'.$sub1_th_om.'</td>
 			<td style="text-align: center;">'.$sub1_pr_om.'</td>
 			<td style="text-align: center;">'.$sub2_th_om.'</td>
-			<td style="text-align: center;">'.$sub2_pr_om.'&nbsp;</td>
+			<td style="text-align: center;">'.$sub2_pr_om.'</td>
 			<td style="text-align: center;">'.$sub3_th_om.'</td>
-			<td style="text-align: center;">'.$sub3_pr_om.'&nbsp;</td>
+			<td style="text-align: center;">'.$sub3_pr_om.'</td>
 			<td style="text-align: center;">'.$sub4_th_om.'</td>
 			<td style="text-align: center;">'.$sub4_pr_om.'</td>
 		</tr>
@@ -906,15 +867,15 @@ FORM</strong></td>
 
 <p>15. Whether belongs to BPL Family:&nbsp;'.$bpl.'<span style="font-size:9px;">(Attested copy of BPL card should be enclosed)</span></p>
 
-<p>16. Extra Curricular Activities :&nbsp;&nbsp; '.$extra_caricular.'</p>
+<p>16. Extra Curricular Activities :&nbsp;&nbsp; '.stripslashes($extra_caricular).'</p>
 
-<p>17.Game &amp; Sports with Level :'.$sport_quota.'</p>
+<p>17.Game &amp; Sports with Level :'.stripslashes($sport_quota).'</p>
 
-<p>18.Name of Local Guardian :&nbsp;&nbsp;'.$lg.'</p>
+<p>18.Name of Local Guardian :&nbsp;&nbsp;'.stripslashes($lg).'</p>
 
-<p>19.Address of Local Guardian :&nbsp;&nbsp;'.$addr_lg.'</p>
+<p>19.Address of Local Guardian :&nbsp;&nbsp;'.stripslashes($addr_lg).'</p>
 
-<p>20. Whether receive any Scholarship /Financial Assistance (if yes,give details):&nbsp;'.$scholar.'</p>
+<p>20. Whether receive any Scholarship /Financial Assistance (if yes,give details):&nbsp;'.stripslashes($scholar_detail).'</p>
 
 <p>21. If you previously admitted in this College, state :</p>
 
@@ -922,7 +883,7 @@ FORM</strong></td>
 
 <p style="text-align: center;"><span style="color:#FFFFFF;"><strong><span style="background-color:#000000;">GUARDIAN&#39;S DECLARATION</span></strong></span></p>
 
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;I hereby undertake to defray all educational expenses of my Son /Daughter/ Ward &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Sri/Smt./Kumari '.$name_of_student.'and promice that he /she shall abide by college regulations and discipline in force or that may be in force time to time .</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;I hereby undertake to defray all educational expenses of my Son /Daughter/ Ward &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Sri/Smt./Kumari '.stripslashes($name_of_student).'&nbsp; and promise that he /she shall abide by college regulations and discipline in force or that may be in force time to time .</p>
 
 <p style="text-align: justify;">&nbsp;</p>
 
@@ -930,11 +891,11 @@ FORM</strong></td>
 
 <p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#FFFFFF;"><strong><span style="background-color:#000000;">DECLARATION BY CANDIDATE</span></strong></span></p>
 
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; I hereby declear that I shall abide by all the Rules &amp; Regulations of the College &nbsp;and Vidyasagar University. I also declare that &nbsp;I shall have no objection if I am debarred from filling up the form for University Examination, for failing to secure at least 75% class attendance as per V.U. Circular No. VU/IC/CIR/108/97-98 dated 17 July 1997.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; I hereby declare that I shall abide by all the Rules &amp; Regulations of the College &nbsp;and Vidyasagar University. I also declare that &nbsp;I shall have no objection if I am debarred from filling up the form for University Examination, for failing to secure at least 75% class attendance as per V.U. Circular No. VU/IC/CIR/108/97-98 dated 17 July 1997.</p>
 
 <p>Date . &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Full Signature of the Candidate &nbsp;</p>
 
-
+<p><br/><br/><br/><br/><br/><br/><br/></p>
 <table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
 	<tbody>
 		<tr>
@@ -980,7 +941,7 @@ $main_html=$main_html.$end_string;
 
 
 
-$save=mysql_real_escape_string($main_html);
+$save=mysqli_real_escape_string($conn,$main_html);
 $pdf_sql="replace into `pdf` (`student_id`,`pdf_string`)values('$student_id','$save')";
 $result13 = mysqli_query($conn,$pdf_sql);
 
