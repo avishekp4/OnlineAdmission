@@ -2,10 +2,11 @@
  //Inialize session
 if(!isset($_SESSION)){
    session_start();
-} /*
+} 
 // Check, if username session is NOT set then this page will jump to login page
+/*
 if (!isset($_SESSION['name'])) {
-header('Location: firstpage.html');
+header('Location: index.html');
 }
 $now = time(); // Checking the time now when home page starts.
 
@@ -15,7 +16,8 @@ $now = time(); // Checking the time now when home page starts.
             echo "Your session has expired! <a href='firstpage.html'>Start here</a>";
 			exit();
         }
-				*/
+*/
+		
 	function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
@@ -26,78 +28,6 @@ $now = time(); // Checking the time now when home page starts.
     return $randomString;
 }	
 	
-/*		
-function aggr($num1,$num2,$num3,$num4,$lan1,$lan2)
-{
-   $min=min($num1,$num2,$num3,$num4);
- 
-   $best_of_3=$num1+$num2+$num3+$num4-$min;
-   //$div=$best_of_3/4;
-   $aggr=$lan2+$lan1+$best_of_3;
-  return $aggr;
- 
-}	
-     
-function aggr_other($num1,$num2,$num3,$num4,$lan1,$lan2)
-{
-   $min=min($num1,$num2,$num3,$num4);
- 
-   $best_of_3=$num1+$num2+$num3+$num4-$min;
-   $div=$best_of_3/4;
-             $aggr=$lan2+$lan1+$div;
-  return $aggr;
- 
-}	
-
-
-function exat_aggr_scince_commerceToarts($lan1,$lan2,$num1_th_fm,$num1_pr_fm,$num1_obm_th,$num1_obm_pr,$num2_th_fm,$num2_pr_fm,$num2_obm_th,$num2_obm_pr,$num3_th_fm,$num3_pr_fm,$num3_obm_th,$num3_obm_pr,$num4_th_fm,$num4_pr_fm,$num4_obm_th,$num4_obm_pr)
-{   
-	if($num1_th_fm<100)
-	 {
-		$num1 = ($num1_obm_th*100)/$num1_th_fm;
-     }
-     else
-    {
-		$num1 = $num1_obm_th+$num1_obm_pr;     
-	}
-	
-	if($num2_th_fm<100)
-	 {
-		$num2 = ($num2_obm_th*100)/$num2_th_fm;
-     }
-     else
-    {
-		$num2 = $num2_obm_th+$num2_obm_pr;     
-	}
-	
-	if($num3_th_fm<100)
-	 {
-		$num3 = ($num3_obm_th*100)/$num3_th_fm;
-     }
-     else
-    {
-		$num3 = $num3_obm_th+$num3_obm_pr;     
-	}
-	
-	if($num4_th_fm<100)
-	 {
-		$num4 = ($num4_obm_th*100)/$num4_th_fm;
-     }
-     else
-    {
-		$num4 = $num4_obm_th+$num4_obm_pr;     
-	}
-	
-	
-	$min=min($num1,$num2,$num3,$num4);//echo $min;
-	$best_of_3=$num1+$num2+$num3+$num4-$min;//echo $best_of_3;
-    $div=$best_of_3/4;
-    $aggr=$lan2+$lan1+$div;
-    return $aggr;
-	
-}
-*/
-
 include'connect.php';
 include 'function.php';
 $n=0;
@@ -129,19 +59,22 @@ $extra_caricular = mysqli_real_escape_string($conn, $extra_caricular);
 
 $game_sport=$_GET['game_sport'];
 $game_sport = mysqli_real_escape_string($conn, $game_sport);
-
+$pin=$_GET['pin'];
 $lg=$_GET['lg'];
 $addr_lg=$_GET['addr_lg'];
 $rail_bus=$_GET['rail_bus'];
 $scholar=$_GET['scholar'];
+$scholar_detail=$_GET['scholar_detail'];
 //$hons=$_GET['hons'];//$hons=strtoupper($hons);
 $sub1=$_GET['sub1'];
 $sub2=$_GET['sub2'];
 //$sub3=$_GET['sub2'];
 $previous_add=$_GET['previous_add'];
 $lang1_name=$_GET['lang1_name'];
-$lang1_fm=$_GET['lang1_fm'];
-$lang1_om=$_GET['lang1_om'];
+$lang1_th_fm=$_GET['lang1_th_fm'];
+$lang1_pr_fm=$_GET['lang1_pr_fm'];
+$lang1_th_om=$_GET['lang1_th_om'];
+$lang1_pr_om=$_GET['lang1_pr_om'];
 $sub1_name=$_GET['sub1_name'];//echo $sub1_name;
 $sub1_th_fm=$_GET['sub1_th_fm'];
 $sub1_th_om=$_GET['sub1_th_om'];
@@ -173,10 +106,23 @@ $sub2_total_om=$sub2_th_om+$sub2_pr_om;
 $sub3_total_om=$sub3_th_om+$sub3_pr_om;
 $sub4_total_om=$sub4_th_om+$sub4_pr_om;
 $lang2_name=$_GET['lang2_name'];
-$lang2_fm=$_GET['lang2_fm'];
-$lang2_om=$_GET['lang2_om'];
+$lang2_th_fm=$_GET['lang2_th_fm'];
+$lang2_pr_fm=$_GET['lang2_pr_fm'];
+$lang2_th_om=$_GET['lang2_th_om'];
+$lang2_pr_om=$_GET['lang2_pr_om'];
 $address=$_GET['address'];
 $gender= $_GET['gender'];
+$lang1_om=$lang1_th_om+$lang1_pr_om;
+$lang2_om=$lang2_th_om+$lang2_pr_om;
+$lang1_fm=$lang1_th_fm+$lang1_pr_fm;
+$lang2_fm=$lang2_th_fm+$lang2_pr_fm;
+$pin=$_GET['pin'];
+$pv_y  =$_GET['pv_y'];
+$pv_class =$_GET['pv_class'];
+$pv_roll =$_GET['pv_roll'];
+$pv_regn =$_GET['pv_regn'];
+
+
 $stream=strtolower($_GET['stream']);
 //echo $stream;           $sub1_th_fm,$sub1_pr_fm,$sub1_th_om,$sub1_pr_om;
 
@@ -278,7 +224,7 @@ $style2=file_get_contents('marks_table.css');
 
 
 //Insert in Main
-$sql2="REPLACE INTO `main`(`f_name`, `f_occu`, `f_edu`, `f_income`, `m_name`, `m_occu`, `m_edu`, `m_income`, `category`, `ph`, `minority`, `nationality`, `religion`, `dob`, `blood_gr`, `sport_quota`, `name_of_last_school`, `bpl`, `extra_caricular`, `game_sport`, `lg`, `addr_lg`, `rail_bus`, `scholar`,`previous_add`, `lang1_name`, `lang1_fm`, `lang1_om`, `sub1_name`, `sub1_th_fm`, `sub1_th_om`, `sub1_pr_fm`, `sub1_pr_om`, `sub2_name`, `sub2_th_fm`, `sub2_th_om`, `sub2_pr_fm`, `sub2_pr_om`, `sub2_fm`, `sub3_fm`, `sub4_fm`, `sub3_th_om`, `sub4_th_om`, `sub3_th_fm`, `sub4_th_fm`, `sub3_pr_fm`, `sub4_pr_fm`, `sub3_pr_om`, `sub4_pr_om`, `sub3_name`, `sub4_name`, `sub1_fm`, `sub1_total_om`, `sub2_total_om`, `sub3_total_om`, `sub4_total_om`, `lang2_name`, `lang2_fm`, `lang2_om`, `student_id`, `address`,`gender`) VALUES ('$f_name','$f_occu','$f_edu','$f_income','$m_name','$m_occu','$m_edu','$m_income','$category','$ph','$minority','$nationality','$religion','$dob','$blood_gr','$sport_quota','$name_of_last_school','$bpl','$extra_caricular','$game_sport','$lg','$addr_lg','$rail_bus','$scholar','$previous_add','$lang1_name','$lang1_fm','$lang1_om','$sub1_name','$sub1_th_fm','$sub1_th_om','$sub1_pr_fm','$sub1_pr_om','$sub2_name','$sub2_th_fm','$sub2_th_om','$sub2_pr_fm','$sub2_pr_om','$sub2_fm','$sub3_fm','$sub4_fm','$sub3_th_om','$sub4_th_om','$sub3_th_fm','$sub4_th_fm','$sub3_pr_fm','$sub4_pr_fm','$sub3_pr_om','$sub4_pr_om','$sub3_name','$sub4_name','$sub1_fm','$sub1_total_om','$sub2_total_om','$sub3_total_om','$sub4_total_om','$lang2_name','$lang2_fm','$lang2_om','$student_id','$address','$gender')";
+$sql2="REPLACE INTO `main`(`f_name`, `f_occu`, `f_edu`, `f_income`, `m_name`, `m_occu`, `m_edu`, `m_income`, `category`, `ph`, `minority`, `nationality`, `religion`, `dob`, `blood_gr`, `sport_quota`, `name_of_last_school`, `bpl`, `extra_caricular`, `game_sport`, `lg`, `addr_lg`, `rail_bus`, `scholar`,`previous_add`, `lang1_name`, `lang1_fm`, `lang1_om`, `sub1_name`, `sub1_th_fm`, `sub1_th_om`, `sub1_pr_fm`, `sub1_pr_om`, `sub2_name`, `sub2_th_fm`, `sub2_th_om`, `sub2_pr_fm`, `sub2_pr_om`, `sub2_fm`, `sub3_fm`, `sub4_fm`, `sub3_th_om`, `sub4_th_om`, `sub3_th_fm`, `sub4_th_fm`, `sub3_pr_fm`, `sub4_pr_fm`, `sub3_pr_om`, `sub4_pr_om`, `sub3_name`, `sub4_name`, `sub1_fm`, `sub1_total_om`, `sub2_total_om`, `sub3_total_om`, `sub4_total_om`, `lang2_name`, `lang2_fm`, `lang2_om`, `student_id`, `address`,`gender`,`pin`,`pv_y`,`pv_class`,`pv_roll`,`pv_regn`,`scholar_detail`) VALUES ('$f_name','$f_occu','$f_edu','$f_income','$m_name','$m_occu','$m_edu','$m_income','$category','$ph','$minority','$nationality','$religion','$dob','$blood_gr','$sport_quota','$name_of_last_school','$bpl','$extra_caricular','$game_sport','$lg','$addr_lg','$rail_bus','$scholar','$previous_add','$lang1_name','$lang1_fm','$lang1_om','$sub1_name','$sub1_th_fm','$sub1_th_om','$sub1_pr_fm','$sub1_pr_om','$sub2_name','$sub2_th_fm','$sub2_th_om','$sub2_pr_fm','$sub2_pr_om','$sub2_fm','$sub3_fm','$sub4_fm','$sub3_th_om','$sub4_th_om','$sub3_th_fm','$sub4_th_fm','$sub3_pr_fm','$sub4_pr_fm','$sub3_pr_om','$sub4_pr_om','$sub3_name','$sub4_name','$sub1_fm','$sub1_total_om','$sub2_total_om','$sub3_total_om','$sub4_total_om','$lang2_name','$lang2_fm','$lang2_om','$student_id','$address','$gender','$pin','$pv_y','$pv_class','$pv_roll','$pv_regn','$scholar_detail')";
 //echo $sql2;
 
 $result2 = mysqli_query($conn,$sql2);
@@ -300,13 +246,21 @@ $no_of_related=count($hons);
 #echo "before for";
 //store meritepoint
 $merit=array();
-
+$gmerit=array();
+$hmerit=array();
 //echo "after insert before aggr &mp 03 <br>";
 
 //$aggr=aggr($sub1_total_om,$sub2_total_om,$sub3_total_om,$sub4_total_om,$lang1_om,$lang2_om);
 //$aggr_arts=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_pr_fm,$sub1_th_om,$sub1_pr_om,$sub2_th_fm,$sub2_pr_fm,$sub2_th_om,$sub2_pr_om,$sub3_th_fm,$sub3_pr_fm,$sub3_th_om,$sub3_pr_om,$sub4_th_fm,$sub4_pr_fm,$sub4_th_om,$sub4_pr_om);
 $maxnum_sub=highmarks($sub_list,$only_sub_list);
-echo $maxnum_sub;
+//echo $maxnum_sub;
+
+/* Uncomment for serial no  In pdf */
+$sql = "SELECT serial_no FROM `student_tran` WHERE serial_no in(Select max(serial_no) from student_tran)";
+$result = mysqli_query($conn,$sql);
+$row = @mysqli_fetch_array($result);
+$last_serial=$row['serial_no'];
+
 
 if($apply_hons=='yes'){
 
@@ -317,7 +271,7 @@ for($i=0;$i < $no_of_related; $i++)  //Merite point calculation for hons stars h
  $aggr=aggr($sub1_total_om,$sub2_total_om,$sub3_total_om,$sub4_total_om,$lang1_om,$lang2_om);
  //echo "<br>Return from science aggr".$aggr."<br>";
  //echo "$aggr_arts=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om)";
-  $aggr_arts=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om);
+  //$aggr_arts=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om);
 
  //echo "<br>return from artsaggr".$aggr_arts."<br>";
 	
@@ -333,7 +287,7 @@ $related=array();
 
 if(in_array($hons[$i],$arts_hons))
 {  
-   $mp=merit_arts($hons[$i],$arts_hons,$aggr_arts,$only_sub_list,$lang1_om,$lang2_om,$merit,$stream,$sub_list,$arts);
+   $mp=merit_arts($hons[$i],$arts_hons,$aggr,$only_sub_list,$lang1_om,$lang2_om,$merit,$stream,$sub_list,$arts,$history_relatedSubject, $philosophy_relatedSubject ,$political_science_relatedSubject);
 }
 //FOR HONS IN SCIENCE SUBJECT
 if(in_array($hons[$i],$science_hons))
@@ -342,11 +296,13 @@ $mp=merit_science($hons[$i],$science_hons,$sub_list,$aggr,$merit);
  }
  
 //FOR HONS IN COMMERCE  
+//echo "before com hons";
 if(in_array($hons[$i],$com_hons))
-{ 
-//echo "merit_commerce($hons,$com_hons,$aggr,$sub_list,$maxnum_sub,$merit);"
+{//echo "inside com honshear";
 
-	$mp=merit_commerce($hons[$i],$com_hons,$aggr,$sub_list,$maxnum_sub,$merit);
+//echo "merit_commerce($hons[$i],$com_hons,$aggr,$sub_list,$maxnum_sub,$merit)";
+
+	$mp=merit_commerce($hons[$i],$com_hons,$aggr,$sub_list,$maxnum_sub,$merit,$stream);
 //echo "marit ".$mp	;
 }
 
@@ -361,18 +317,20 @@ $minor=hons2minor($hons_minor);
 $k=generateRandomString();
 $hons_name=strtolower($hons[$i]);
 $date_i=date("Y-m-d",strtotime($tran_date[$i]));
+array_push($hmerit,$mp);
 if($hons_name=="geography(science)"||$hons_name=="geography(arts)")
 {$hons_name="geography";
 	}
 if($hons_name=="economics(science)"||$hons_name=="economics(arts)")
 {$hons_name="economics";
 	}
+	/*
 if(in_array($hons[$i],$arts_hons))
 {
  $aggr=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om);
 
-}
-$sqlh1="INSERT INTO `kgpcollege`.`".$hons_name."_honours` (`student_id`, `aggregate`, `merit_point`,`student_name`,`board`,`category`,`ph`) VALUES ('$student_id','$aggr','$mp','$name_of_student','$board','$category','$ph')";
+}*/
+$sqlh1="INSERT INTO `kgpcollege`.`".$hons_name."_honours` (`student_id`, `aggregate`, `merit_point`,`student_name`,`board`,`category`,`ph`,`stubject_id`) VALUES ('$student_id','$aggr','$mp','$name_of_student','$board','$category','$ph','$k')";
 $sqlh2="insert into student_tran(`student_id`,`subject_id`,`stran_id`,`stran_date`)values('$student_id','$k','$tran_id[$i]','$date_i')";
 $sqlh3="insert into `hons_subject`(`student_id`,`subject_id`,`hons_name`,`sub1`,`sub2`) values('$student_id','$k','$hons[$i]','$minor[$n]','$minor[$m]')";	
 
@@ -395,6 +353,8 @@ if (!$resulth3) {
 	die("No result h3" . mysqli_error($conn));
 }
 
+
+
 }
 }
 
@@ -409,16 +369,17 @@ if($apply_gen=='yes')
 
 for($i=0;$i<$count_general;$i++)
 {$aggr=aggr($sub1_total_om,$sub2_total_om,$sub3_total_om,$sub4_total_om,$lang1_om,$lang2_om);
- $aggr_arts=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om);
-
+ //$aggr_arts=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om);
 $k=generateRandomString();
 $general_stream_name=strtolower($general_stream[$i]);
 //$general_stream_name=strtolower($general_stream[$i]);
 //echo $general_stream_name;
 
-if($general_stream_name == "b.a. general(day shift)"||$general_stream_name=="b.a. general(morning shift)")
-{$aggr=$aggr_arts;
-	}
+//if($general_stream_name == "b.a. general(day shift)"||$general_stream_name=="b.a. general(morning shift)")
+//{$aggr=$aggr_arts;
+	//}
+		
+array_push($gmerit,$aggr);
 $sql4="insert into `general_subject`(`student_id`,`subject_id`,`stream`,`subject_name`) values('$student_id','$k','$general_stream[$i]','$general_subject[$i]')";	
 $sql5="insert into `$general_stream_name`(`student_id`,`subject_id`,`name`,`board`,`category`,`aggr`)values('$student_id','$k','$name_of_student','$board','$category','$aggr')";	
 //echo $sql5;
@@ -443,6 +404,9 @@ if (!$result6) {
 
 }	
 	
+$gdate_i = date_format(date_create_from_format('Y-m-d', $gdate_i), 'd-m-Y');
+	
+	
 }
 
 }
@@ -457,7 +421,7 @@ if (!$result6) {
 
 //echo "Submitted";
 $imagename="image_place_holder.png";//Path of pdf place holder
-
+/*
 $main_html='<html>
 
 <head>
@@ -493,250 +457,265 @@ $main_html='<html>
 
 </head>	
 <body>
+';*/
+
+
+$dob = date_format(date_create_from_format('Y-m-d', $dob), 'd-m-Y');
+
+
+$aggr=aggr($sub1_total_om,$sub2_total_om,$sub3_total_om,$sub4_total_om,$lang1_om,$lang2_om);
+
+
+$main_html='<!doctype html>
+<html>
+<head>
+	<title>HTML Editor - Full Version</title>
+</head>
+<body>
 ';
+
+
 if($apply_hons=='yes'){
 for($i=0;$i<$no_of_related;$i++){
-	
+//	$tran_date[$i] = date_format(date_create_from_format('Y-m-d', $tran_date[$i]), 'd-m-Y'));
+
 $hons_minor=array($hons_side_sub1[$i],$hons_side_sub2[$i],$hons_side_sub3[$i],$hons_side_sub4[$i]);
 $minor=hons2minor($hons_minor);
+$html='
+<table style="text-align: left; width: 100%;" border="0" cellpadding="0"
+cellspacing="0">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 211px;">
+<h2><span style="font-size: 10px;">Form
+No.&nbsp;'.($last_serial+1+$i).'</span></h2>
+</td>
+<td style="vertical-align: top; width: 686px; text-align: center;">
+<h2>Kharagpur College</h2>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2"
+style="vertical-align: top; width: 211px;">
+<h2><img style="width: 84px; height: 83px;" alt="" src="Logo.jpg"
+align="left"></h2>
+</td>
+<td style="vertical-align: top; width: 686px; text-align: center;"><strong>ADMISSION
+FORM</strong></td>
+</tr>
+<tr align="center">
+<td style="vertical-align: top; width: 686px; text-align: center;"><strong>2015-2016</strong></td>
+</tr>
+</tbody>
+</table>  
 
-$html='<div style="text-align:center;">
-	<h3>Kharagpur College Admission  Form</h3>
-    <h4>Session 2015-2016</h4> <img style="float:right" src="image_place_holder.png" height="155" width="125"/>
-    
+<p><strong>1 <sup>ST </sup>Year&nbsp;B.A./B.Sc./B.Com.</strong></p>
+
+<p>HONOURS/GENERAL&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;DAY/MORNING/EVENING -SHIFT</p>
 </div>
-<div><h4>Student Information</h4>
-<table id="one-column-emphasis">  
 
-	<tr>
-             <td>Name</td>
-             <td>'.$name_of_student.'</td>
-     
-             <td>Mobile</td>
-             <td>'.$mob.'</td>
-             <td> Examination</td>
-             <td>'.$examination.'</td>
-        </tr>
-        <tr>     
-             <td>Board</td>
-             <td>'.$board.'</td>
-             <td>Roll-No</td>
-             <td>'.$roll_no.'</td>
-             <td>Year of Passing</td>
-              <td>'.$year_of_passing.'</td>
-             
-     </tr>
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 700px;">
+	<thead>
+		<tr>
+			<th colspan="5" scope="col">(For Office Use Only)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="text-align: center;">Subject</td>
+			<td style="text-align: center;">Docket No</td>
+			<td style="text-align: center;">Merit Point</td>
+			<td style="text-align: center;">Date of Admission</td>
+			<td style="text-align: center;">College Roll No</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>'.$hmerit[$i].'</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
 </table>
 
-</div>
+<p>1. Name in Full :'.$name_of_student.'</p>
 
+<p>2. Date of Birth :'.$dob.' 3.Sex :'.$gender.'4. Blood Group :'.$blood_gr.'</p>
 
+<p>5.a) Father&#39;s Name : '.$f_name.'</p>
 
+<p>&nbsp; &nbsp;b) Father&#39;s Education: &nbsp;'.$f_edu.'&nbsp; c)Father&#39;s Occupation:&nbsp;'.$f_occu.'&nbsp; d)Monthly&nbsp;Income:&nbsp; Rs.'.$f_income.'</p>
 
+<p>6.a) Mothers&#39;s Name :&nbsp;'.$m_name.'</p>
 
-<div><h>Personal Information</h>
-    <table id="one-column-emphasis">
+<p>&nbsp; &nbsp;b) Mothers&#39;s&nbsp;Education: &nbsp;'.$m_edu.'&nbsp; c)Mothers&#39;s&nbsp;Occupation:&nbsp; '.$m_occu.' &nbsp; d )Monthly&nbsp;Income:&nbsp; Rs.'.$m_income.'</p>
 
-	<tr>
-             <td>Father\'s Name</td>
-             <td>'.$f_name.'</td>
-     
-             <td> Occupation</td>
-             <td>'.$f_occu.'</td>
-             <td> Education</td>
-             <td>'.$f_edu.'</td>
-             <td>Monthely Income</td>
-             <td>'.$f_income.'</td>
-     </tr>
-     <tr>
-             <td>Mother\'s  Name</td>
-             <td>'.$m_name.'</td>
-     
-             <td> Occupation</td>
-             <td>'.$m_occu.'
-             </td>
-     
-             <td> Education</td>
-             <td>'.$m_edu.'
-             </td>
+<p>7. a)Address for Communication:&nbsp;'.$address.'</p>
 
-    
-             <td>Monthely Income</td>             
-             <td>'.$m_income.'
-			 </td>
-     </tr>
+<p> &nbsp; &nbsp;PIN:- &nbsp; &nbsp; '.$pin.' &nbsp;.b)Telephone/Mobile No.'.$mob.'</p>
 
+<p>8. a) Nationality:'.$nationality.' b) Religion: '.$religion.'</p>
 
+<p>9. Caste :<span style="font-size:9px;">( Certificate issued by the competent authority should be enclosed for SC/ST/OBC)</span>.'.$category.'</p>
 
+<p>
+10. Whether admission sought in Physically Challenged / Sport&#39;sQuota <span style="font-size:9px;">(Relevant Certificates to be attached)</span>:.'.$ph.'</p>
 
-    <tr>
-             <td>Gender</td>
-             <td>'.$gender.'</td>
-    
-             <td>Blood Group</td>
-             <td>'.$blood_gr.'</td>
-     
-             <td>Date Of Birth</td>
-             <td>'.$dob.'</td>
-     
-             <td>Category</td>
-             <td>'.$category.'
-             </td>
-     </tr>
+<p>11. Name of the School last attended :'.$name_of_last_school.'</p>
 
-     <tr>
-             <td>Physical Disability</td>
-             <td>'.$ph.'
-              <td>Religion</td>
-     	     <td>'.$religion.'
-             <td>Minority</td>
-             <td>'.$minority.' 
-             </td>
-             <td>Nationality</td>
-             <td>'.$nationality.'</td>
-     </tr>
-     <tr>
-             <td>Sports Quota</td>
-             <td>'.$sport_quota.'</td>
-    
-             <td>Extra Caricular</td>
-             <td>'.$extra_caricular.'</td>
-     
-             <td>Name of School Lastattend</td>
-             <td>'.$name_of_last_school.'</td>
-     
-             <td>BPL</td>
-             <td>'.$bpl.'</td>
-     </tr>
-     <tr>
-             <td>Games And Sports with Level</td>
-             <td>'.$game_sport.'</td>
-     
-         <td>Address</td>
-         <td>'.$address.'</td>    
-     
-             <td>Local Gurdian</td>
-             <td>'.$lg.'</td>
-     
-         <td>Address Of local Gurdian</td>
-         <td>'.$addr_lg.'</td>    
-     </tr> 
-     <tr>
-             <td>Nearest Railway Station/Bus stop</td>
-             <td>'.$rail_bus.'</td>
-     
-             <td>Scholarship</td>
-             <td>'.$scholar.'</td>
-            
+<p>12. Details of Marks Obtained in Last Examination :</p>
 
-     
-             <td>Previous Admission</td>
-             <td>'.$previous_add.'</td>
-     </tr>
+<p>&nbsp; &nbsp; &nbsp; a) Name of Exam: .&nbsp; &nbsp; '.$examination.' &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;b)Name Of the Board/Council/Univ :&nbsp; &nbsp; '.$board.'</p>
 
+<p>&nbsp; &nbsp; &nbsp; c) Roll &nbsp;No.:&nbsp; &nbsp; '.$roll_no.'Year Of Passing :&nbsp; &nbsp; '.$year_of_passing.'</p>
 
+<p>&nbsp; &nbsp; &nbsp; d) Marks Obtained:&nbsp;</p>
 
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 700px;">
+	<tbody>
+		<tr>
+			<td rowspan="2" style="text-align: center;">Subject</td>
+			<td style="text-align: center;">Vernacular</td>
+			<td rowspan="2" style="text-align: center;">English</td>
+			<td colspan="2" rowspan="1" style="text-align: center;">'.$sub1_name.'</td>
+			<td colspan="2" rowspan="1" style="text-align: center;">'.$sub2_name.'</td>
+			<td colspan="2" rowspan="1" style="text-align: center;">'.$sub3_name.'</td>
+			<td colspan="2" rowspan="1" style="text-align: center;">'.$sub4_name.'</td>
+		    			<td rowspan="2" style="text-align: center;">Aggregate</td>
+
+		</tr>
+		<tr>
+			<td style="text-align: center;">'.$lang1_name.'</td>
+			<td style="text-align: center;">Th.</td>
+			<td style="text-align: center;">Pr.</td>
+			<td style="text-align: center;">Th.</td>
+			<td style="text-align: center;">Pr.</td>
+			<td style="text-align: center;">Th.</td>
+			<td style="text-align: center;">Pr.</td>
+			<td style="text-align: center;">Th.</td>
+			<td style="text-align: center;">Pr.</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">Full Marks</td>
+			<td style="text-align: center;">'.$lang1_fm.'</td>
+			<td style="text-align: center;">'.$lang2_fm.'</td>
+			<td style="text-align: center;">'.$sub1_th_fm.'</td>
+			<td style="text-align: center;">'.$sub1_pr_fm.'</td>
+			<td style="text-align: center;">'.$sub2_th_fm.'</td>
+			<td style="text-align: center;">'.$sub2_pr_fm.'</td>
+			<td style="text-align: center;">'.$sub3_th_fm.'</td>
+			<td style="text-align: center;">'.$sub3_pr_fm.'</td>
+			<td style="text-align: center;">'.$sub4_th_fm.'</td>
+			<td style="text-align: center;">'.$sub4_pr_fm.'</td>
+			<td colspan="1" rowspan="2" style="text-align: center;">'.$aggr.'</td>
+
+		</tr>
+		<tr>
+			<td style="text-align: center;">Marks Obtained</td>
+			<td style="text-align: center;">'.$lang1_om.'</td>
+			<td style="text-align: center;">'.$lang2_om.'</td>
+			<td style="text-align: center;">'.$sub1_th_om.'</td>
+			<td style="text-align: center;">'.$sub1_pr_om.'</td>
+			<td style="text-align: center;">'.$sub2_th_om.'</td>
+			<td style="text-align: center;">'.$sub2_pr_om.'</td>
+			<td style="text-align: center;">'.$sub3_th_om.'</td>
+			<td style="text-align: center;">'.$sub3_pr_om.'</td>
+			<td style="text-align: center;">'.$sub4_th_om.'</td>
+			<td style="text-align: center;">'.$sub4_pr_om.'</td>
+		</tr>
+	</tbody>
 </table>
-</div>	
 
-<div>
-	<h4>Details of 10+2 </h4>
-</div>
+<p>13. Subjects Applied For:</p>
 
 
-<table id="one-column-emphasis">
-  <tr>
-    <th rowspan="2">Subject</th>
-    <th rowspan="2">'.$lang1_name.'</th>
-    <th rowspan="2">'.$lang2_name.'</th>
-    <th colspan="2">'.$sub1_name.'</th>
-    <th colspan="2">'.$sub2_name.'</th>
-    <th colspan="2">'.$sub3_name.'</th>
-    <th colspan="2">'.$sub4_name.'</th>
-  </tr>
-  <tr>
-    <td>Th</td>
-    <td>Pr</td>
-    <td>Th</td>
-    <td>Pr</td>
-    <td>Th</td>
-    <td>Pr</td>
-    <td>Th</td>
-    <td>Pr</td>
-  </tr>
-  <tr>
-    <td>Full<br>Marks</td>
-    <td>'.$lang1_fm.'</td>
-    <td>'.$lang2_fm.'</td>
-    <td>'.$sub1_th_fm.'</td>
-    <td>'.$sub1_pr_fm.'</td>
-    <td>'.$sub2_th_fm.'</td>
-    <td>'.$sub2_pr_fm.'</td>
-    <td>'.$sub3_th_fm.'</td>
-    <td>'.$sub3_pr_fm.'</td>
-    <td>'.$sub4_th_fm.'</td>
-    <td>'.$sub4_pr_fm.'</td>
-  </tr>
-  <tr>
-    <td>Marks <br>om</td>
-    <td>'.$lang1_om.'</td>
-    <td>'.$lang2_om.'</td>
-    <td>'.$sub1_th_om.'</td>
-    <td>'.$sub1_pr_om.'</td>
-    <td>'.$sub2_th_om.'</td>
-    <td>'.$sub2_pr_om.'</td>
-    <td>'.$sub3_th_om.'</td>
-    <td>'.$sub3_pr_om.'</td>
-    <td>'.$sub4_th_om.'</td>
-    <td>'.$sub4_pr_om.'</td>
-  </tr>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+	<tbody>
+		<tr>
+			<td>&nbsp;Honours</td>
+			<td>Subjects Taken</td>
+			<td colspan="3" rowspan="1">Compulsory</td>
+		</tr>
+		<tr>
+			<td>'.$hons[$i].'</td>
+			<td>'.$minor[$n].','.$minor[$m].'</td>
+			<td>ENGC</td>
+			<td>BNGMor HINM</td>
+			<td>ENVS</td>
+		</tr>
+	</tbody>
 </table>
 
 
 
+<p>14 . Bank Transaction No/Journal No/Id-&nbsp;&nbsp;'.$tran_id[$i].'&nbsp;&nbsp;b)Transaction Date-&nbsp;&nbsp;'.$tran_date[$i].'</p>
 
-<h4> Honours Selection</h4>  
-<table class="tg" style="undefined;table-layout: fixed; width: 657px"  id="customFields" >
-<colgroup>
-<col style="width: 222px">
-<col style="width: 216px">
-<col style="width: 219px">
-<col style="width: 219px">
-<col style="width: 219px">
-<col style="width: 219px">
+<p style="text-align: right;">Full Signature of the Candidate with date</p>
 
-</colgroup>
-  <tr>
-    <th class="tg-hgcj" rowspan="2"><br>Honours</th>
-    <th class="tg-hgcj" colspan="2">General</th>
-    <th class="tg-hgcj" colspan="2">Bank Transaction Details</th>
-  </tr>
-  <tr>
-    <td class="tg-093g">Sub1</td>
-    <td class="tg-093g">Sub2</td>
-    <td class="tg-093g">Bank Transaction id</td>
-    <td class="tg-093g">Bank Transaction date</td>
-  </tr>
-  <tr>
-    <td class="tg-30rh">'.$hons[$i].'</td>
-    <td class="tg-30rh">'.$minor[$n].'</td>
-    <td class="tg-30rh">'.$minor[$m].'</td>
-    <td class ="tg-30rh">'.$tran_id[$i].'</td>
-    <td class ="tg-30rh">'.$tran_date[$i].'</td>
-  </tr>
+<div style="page-break-after: always"><span style="display: none;">&nbsp;</span></div>
 
+<p>15. Whether belongs to BPL Family:&nbsp;&nbsp;'.$bpl.'<span style="font-size:9px;">(Attested copy of BPL card should be enclosed)</span></p>
+
+<p>16. Extra Curricular Activities : &nbsp;&nbsp;'.$extra_caricular.'</p>
+
+<p>17.Game &amp; Sports with Level :&nbsp;&nbsp;'.$sport_quota.'</p>
+
+<p>18.Name of Local Guardian :&nbsp;&nbsp;'.$lg.'</p>
+
+<p>19.Address of Local Guardian :&nbsp;&nbsp;'.$addr_lg.'</p>
+
+<p>20. Whether receive any Scholarship /Financial Assistance (if yes,give details):&nbsp;&nbsp;'.$scholar.'</p>
+
+<p>21. If you previously admitted in this College, state :</p>
+
+<p>&nbsp;Year .&nbsp;&nbsp;:'.$pv_y.'&nbsp;Class:&nbsp;&nbsp; '.$pv_class.'&nbsp;Roll: '.$pv_roll.'&nbsp; University Regn. No. with year:'.$pv_regn.'</p>
+
+<p style="text-align: center;"><span style="color:#FFFFFF;"><strong><span style="background-color:#000000;">GUARDIAN&#39;S DECLARATION</span></strong></span></p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;I hereby undertake to defray all educational expenses of my Son /Daughter/ Ward &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Sri/Smt./Kumari '.$name_of_student.'and promice that he /she shall abide by college regulations and discipline in force or that may be in force time to time .</p>
+
+<p style="text-align: justify;">&nbsp;</p>
+
+<p>Date:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Full Signature of the&nbsp;Guardian</p>
+
+<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#FFFFFF;"><strong><span style="background-color:#000000;">DECLARATION BY CANDIDATE</span></strong></span></p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; I hereby declare that I shall abide by all the Rules &amp; Regulations of the College &nbsp;and Vidyasagar University. I also declare that &nbsp;I shall have no objection if I am debarred from filling up the form for University Examination, for failing to secure at least 75% class attendance as per V.U. Circular No. VU/IC/CIR/108/97-98 dated 17 July 1997.</p>
+
+<p>Date . &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Full Signature of the Candidate &nbsp;</p>
+
+<p><br/></p>
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+	<tbody>
+		<tr>
+			<td>
+			<p>Remarks&nbsp;</p>
+			</td>
+			<td colspan="2">
+			<p>May be admitted</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>&nbsp;</p>
+			</td>
+			<td>
+			<p>Dealing Staff Admission Counter&nbsp;</p>
+
+			<p>Kharagpur College</p>
+			</td>
+			<td>
+			<p>Principal /Teacher in Charge</p>
+
+			<p>Kharagpur College</p>
+			</td>
+		</tr>
+	</tbody>
 </table>
+<pagebreak>
+';
 
-<div>
-<p> I, hereby, declare that, the entries made by me in the Application Form are complete and true to the
-best of my knowledge and based on records. </p>
-                                                            
-
-<p>Student Signature &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gurdian Signature</p>
-
-
-</div>
-<pagebreak>';
 $main_html=$main_html.$html;
 }
 
@@ -746,244 +725,248 @@ if($apply_gen=='yes')
 {
 	
 	for($i=0;$i<$count_general;$i++){
-	//echo $general_subject[$i];
+	//	$gtran_date[$i] = date_format(date_create_from_format('Y-m-d', $gtran_date[$i]), 'd-m-Y'));
 
-$html='<div style="text-align:center;">
-	<h3>Kharagpur College Admission  Form</h3>
-    <h4>Session 2015-2016</h4> <img style="float:right" src="image_place_holder.png" height="155" width="125"/>
-    
-</div>
-<div><h4>Student Information</h4>
-<table id="one-column-emphasis">  
-
-	<tr>
-             <td>Name</td>
-             <td>'.$name_of_student.'</td>
-     
-             <td>Mobile</td>
-             <td>'.$mob.'</td>
-             <td> Examination</td>
-             <td>'.$examination.'</td>
-        </tr>
-        <tr>     
-             <td>Board</td>
-             <td>'.$board.'</td>
-             <td>Roll-No</td>
-             <td>'.$roll_no.'</td>
-             <td>Year of Passing</td>
-              <td>'.$year_of_passing.'</td>
-             
-     </tr>
-</table>
-
-</div>
-
-
-
-
-
-<div><h>Personal Information</h>
-    <table id="one-column-emphasis">
-
-	<tr>
-             <td>Father\'s Name</td>
-             <td>'.$f_name.'</td>
-     
-             <td> Occupation</td>
-             <td>'.$f_occu.'</td>
-             <td> Education</td>
-             <td>'.$f_edu.'</td>
-             <td>Monthely Income</td>
-             <td>'.$f_income.'</td>
-     </tr>
-     <tr>
-             <td>Mother\'s  Name</td>
-             <td>'.$m_name.'</td>
-     
-             <td> Occupation</td>
-             <td>'.$m_occu.'
-             </td>
-     
-             <td> Education</td>
-             <td>'.$m_edu.'
-             </td>
-
-    
-             <td>Monthely Income</td>             
-             <td>'.$m_income.'
-			 </td>
-     </tr>
-
-
-
-
-    <tr>
-             <td>Gender</td>
-             <td>'.$gender.'</td>
-    
-             <td>Blood Group</td>
-             <td>'.$blood_gr.'</td>
-     
-             <td>Date Of Birth</td>
-             <td>'.$dob.'</td>
-     
-             <td>Category</td>
-             <td>'.$category.'
-             </td>
-     </tr>
-
-     <tr>
-             <td>Physical Disability</td>
-             <td>'.$ph.'
-              <td>Religion</td>
-     	     <td>'.$religion.'
-             <td>Minority</td>
-             <td>'.$minority.' 
-             </td>
-             <td>Nationality</td>
-             <td>'.$nationality.'</td>
-     </tr>
-     <tr>
-             <td>Sports Quota</td>
-             <td>'.$sport_quota.'</td>
-    
-             <td>Extra Caricular</td>
-             <td>'.$extra_caricular.'</td>
-     
-             <td>Name of School Lastattend</td>
-             <td>'.$name_of_last_school.'</td>
-     
-             <td>BPL</td>
-             <td>'.$bpl.'</td>
-     </tr>
-     <tr>
-             <td>Games And Sports with Level</td>
-             <td>'.$game_sport.'</td>
-     
-         <td>Address</td>
-         <td>'.$address.'</td>    
-     
-             <td>Local Gurdian</td>
-             <td>'.$lg.'</td>
-     
-         <td>Address Of local Gurdian</td>
-         <td>'.$addr_lg.'</td>    
-     </tr> 
-     <tr>
-             <td>Nearest Railway Station/Bus stop</td>
-             <td>'.$rail_bus.'</td>
-     
-             <td>Scholarship</td>
-             <td>'.$scholar.'</td>
-            
-
-     
-             <td>Previous Admission</td>
-             <td>'.$previous_add.'</td>
-     </tr>
-
-
-
-</table>
-</div>	
-
+$html='
 <div>
-	<h4>Details of 10+2 </h4>
+<table style="text-align: left; width: 100%;" border="0" cellpadding="0"
+cellspacing="0">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 211px;">
+<h2><span style="font-size: 10px;">Form
+No.&nbsp;'.($last_serial+1+$i).'</span></h2>
+</td>
+<td style="vertical-align: top; width: 686px; text-align: center;">
+<h2>Kharagpur College</h2>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2"
+style="vertical-align: top; width: 211px;">
+<h2><img style="width: 84px; height: 83px;" alt="" src="Logo.jpg"
+align="left"></h2>
+</td>
+<td style="vertical-align: top; width: 686px; text-align: center;"><strong>ADMISSION
+FORM</strong></td>
+</tr>
+<tr align="center">
+<td style="vertical-align: top; width: 686px; text-align: center;"><strong>2015-2016</strong></td>
+</tr>
+</tbody>
+</table> 
+
+
+<p><strong>1 <sup>ST </sup>Year&nbsp;B.A./B.Sc./B.Com.</strong></p>
+
+<p>HONOURS/GENERAL&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;DAY/MORNING/EVENING -SHIFT</p>
 </div>
 
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 700px;">
+	<thead>
+		<tr>
+			<th colspan="5" scope="col">(For Office Use Only)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="text-align: center;">Subject</td>
+			<td style="text-align: center;">Docket No</td>
+			<td style="text-align: center;">Merit Point</td>
+			<td style="text-align: center;">Date of Admission</td>
+			<td style="text-align: center;">College Roll No</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>'.$gmerit[$i].'</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
 
-<table id="one-column-emphasis">
-  <tr>
-    <th rowspan="2">Subject</th>
-    <th rowspan="2">'.$lang1_name.'</th>
-    <th rowspan="2">'.$lang2_name.'</th>
-    <th colspan="2">'.$sub1_name.'</th>
-    <th colspan="2">'.$sub2_name.'</th>
-    <th colspan="2">'.$sub3_name.'</th>
-    <th colspan="2">'.$sub4_name.'</th>
-  </tr>
-  <tr>
-    <td>Th</td>
-    <td>Pr</td>
-    <td>Th</td>
-    <td>Pr</td>
-    <td>Th</td>
-    <td>Pr</td>
-    <td>Th</td>
-    <td>Pr</td>
-  </tr>
-  <tr>
-    <td>Full<br>Marks</td>
-    <td>'.$lang1_fm.'</td>
-    <td>'.$lang2_fm.'</td>
-    <td>'.$sub1_th_fm.'</td>
-    <td>'.$sub1_pr_fm.'</td>
-    <td>'.$sub2_th_fm.'</td>
-    <td>'.$sub2_pr_fm.'</td>
-    <td>'.$sub3_th_fm.'</td>
-    <td>'.$sub3_pr_fm.'</td>
-    <td>'.$sub4_th_fm.'</td>
-    <td>'.$sub4_pr_fm.'</td>
-  </tr>
-  <tr>
-    <td>Marks <br>om</td>
-    <td>'.$lang1_om.'</td>
-    <td>'.$lang2_om.'</td>
-    <td>'.$sub1_th_om.'</td>
-    <td>'.$sub1_pr_om.'</td>
-    <td>'.$sub2_th_om.'</td>
-    <td>'.$sub2_pr_om.'</td>
-    <td>'.$sub3_th_om.'</td>
-    <td>'.$sub3_pr_om.'</td>
-    <td>'.$sub4_th_om.'</td>
-    <td>'.$sub4_pr_om.'</td>
-  </tr>
+<p>1. Name in Full (<span style="font-size:8px;">in Block Capitl Letters</span>):'.$name_of_student.'</p>
+
+<p>2. Date of Birth :'.$dob.' 3.Sex :'.$gender.'4. Blood Group :'.$blood_gr.'</p>
+
+<p>5.a) Father&#39;s Name :&nbsp;'.$f_name.'</p>
+
+<p>&nbsp; &nbsp;b) Father&#39;s Education: '.$f_edu.' c)Father&#39;s Occupation: '.$f_occu.' d)Monthly&nbsp;Income:'.$f_income.'</p>
+
+<p>6.a) Mothers&#39;s Name :&nbsp;'.$m_name.'</p>
+
+<p>&nbsp; &nbsp;b) Mothers&#39;s&nbsp;Education: '.$m_edu.' c)Mothers&#39;s&nbsp;Occupation: '.$m_occu.'  d )Monthly&nbsp;Income:'.$m_income.'</p>
+
+<p>7. a)Address for Communication:&nbsp;&nbsp;'.$address.'</p>
+
+<p> &nbsp; &nbsp;PIN:- &nbsp; &nbsp; '.$pin.' &nbsp;.b)Telephone/Mobile No.'.$mob.'</p>
+
+<p>8. a) Nationality:&nbsp;'.$nationality.' b) Religion:&nbsp; '.$religion.'</p>
+
+<p>9. Caste :<span style="font-size:9px;">( Certificate issued by the competent authority should be enclosed for SC/ST/OBC)</span>.'.$category.'</p>
+
+<p>
+10. Whether admission sought in Physically Challenged / Sport&#39;sQuota <span style="font-size:9px;">(Relevant Certificates to be attached)</span>:.'.$ph.'</p>
+
+<p>11. Name of the School last attended :&nbsp;'.$name_of_last_school.'</p>
+
+<p>12. Details of Marks Obtained in Last Examination :</p>
+
+<p>&nbsp; &nbsp; &nbsp; a) Name of Exam: &nbsp;'.$examination.' &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;b)Name Of the Board/Council/Univ :'.$board.'</p>
+
+<p>&nbsp; &nbsp; &nbsp; c) Roll &nbsp;No.&nbsp;'.$roll_no.'&nbsp;Year Of Passing :&nbsp;'.$year_of_passing.'</p>
+
+<p>&nbsp; &nbsp; &nbsp; d) Marks Obtained:&nbsp;</p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 700px;">
+	<tbody>
+		<tr>
+			<td rowspan="2" style="text-align: center;">Subject</td>
+			<td style="text-align: center;">Vernacular</td>
+			<td rowspan="2" style="text-align: center;">English</td>
+			<td colspan="2" rowspan="1" style="text-align: center;">'.$sub1_name.'</td>
+			<td colspan="2" rowspan="1" style="text-align: center;">'.$sub2_name.'</td>
+			<td colspan="2" rowspan="1" style="text-align: center;">'.$sub3_name.'</td>
+			<td colspan="2" rowspan="1" style="text-align: center;">'.$sub4_name.'</td>
+		    <td rowspan="2" style="text-align: center;">Aggregate</td>
+
+		
+		</tr>
+		<tr>
+			<td style="text-align: center;">'.$lang1_name.'</td>
+			<td style="text-align: center;">Th.</td>
+			<td style="text-align: center;">Pr.</td>
+			<td style="text-align: center;">Th.</td>
+			<td style="text-align: center;">Pr.</td>
+			<td style="text-align: center;">Th.</td>
+			<td style="text-align: center;">Pr.</td>
+			<td style="text-align: center;">Th.</td>
+			<td style="text-align: center;">Pr.</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">Full Marks</td>
+			<td style="text-align: center;">'.$lang1_fm.'</td>
+			<td style="text-align: center;">'.$lang2_fm.'</td>
+			<td style="text-align: center;">'.$sub1_th_fm.'</td>
+			<td style="text-align: center;">'.$sub1_pr_fm.'</td>
+			<td style="text-align: center;">'.$sub2_th_fm.'</td>
+			<td style="text-align: center;">'.$sub2_pr_fm.'</td>
+			<td style="text-align: center;">'.$sub3_th_fm.';</td>
+			<td style="text-align: center;">'.$sub3_pr_fm.'</td>
+			<td style="text-align: center;">'.$sub4_th_fm.'</td>
+			<td style="text-align: center;">'.$sub4_th_fm.'</td>
+		    <td colspan="1" rowspan="2" style="text-align: center;">'.$aggr.'</td>
+
+		</tr>
+		<tr>
+			<td style="text-align: center;">Marks Obtained</td>
+			<td style="text-align: center;">'.$lang1_om.'</td>
+			<td style="text-align: center;">'.$lang2_om.'</td>
+			<td style="text-align: center;">'.$sub1_th_om.'</td>
+			<td style="text-align: center;">'.$sub1_pr_om.'</td>
+			<td style="text-align: center;">'.$sub2_th_om.'</td>
+			<td style="text-align: center;">'.$sub2_pr_om.'&nbsp;</td>
+			<td style="text-align: center;">'.$sub3_th_om.'</td>
+			<td style="text-align: center;">'.$sub3_pr_om.'&nbsp;</td>
+			<td style="text-align: center;">'.$sub4_th_om.'</td>
+			<td style="text-align: center;">'.$sub4_pr_om.'</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>13. Subjects Applied For:</p>
+
+
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+	<tbody>
+		<tr>
+			<td>&nbsp;General</td>
+			<td>Subjects Taken</td>
+			<td colspan="3" rowspan="1">Compulsory</td>
+		</tr>
+		<tr>
+			<td>'.$general_stream[$i].'</td>
+			<td>'.$general_subject[$i].'</td>
+			<td>ENGC</td>
+			<td>BNGMor HINM</td>
+			<td>ENVS</td>
+		</tr>
+	</tbody>
 </table>
 
 
 
+<p>14 . Bank Transaction No/Journal No/Id-&nbsp;&nbsp;'.$gtran_id[$i].'&nbsp;&nbsp;b)Transaction Date-&nbsp;&nbsp;'.$gtran_date[$i].'</p>
 
-<h4> General Selection</h4>  
-<table class="tg" style="undefined;table-layout: fixed; width: 657px"  id="customFields" >
-<colgroup>
-<col style="width: 222px">
-<col style="width: 216px">
-<col style="width: 219px">
-<col style="width: 219px">
-<col style="width: 219px">
+<p style="text-align: right;">Full Signature of the Candidate with date</p>
 
+<div style="page-break-after: always"><span style="display: none;">&nbsp;</span></div>
 
-</colgroup>
-  <tr>
-    <th class="tg-hgcj" rowspan="2"><br>General Stream With Session</th>
-    <th class="tg-hgcj" rowspan="2">Subject Combination</th>
-    <th class="tg-hgcj" colspan="2">Bank Transaction Details</th>
-  </tr>
-  <tr>
- 
-    <td class="tg-093g">Bank Transaction id</td>
-    <td class="tg-093g">Bank Transaction date</td>
-  </tr>
-  <tr>
-    <td class="tg-30rh">'.$general_stream[$i].'</td>
-    <td class="tg-30rh">'.$general_subject[$i].'</td>
-    
-    <td class ="tg-30rh">'.$gtran_id[$i].'</td>
-    <td class ="tg-30rh">'.$gtran_date[$i].'</td>
-  </tr>
+<p>15. Whether belongs to BPL Family:&nbsp;'.$bpl.'<span style="font-size:9px;">(Attested copy of BPL card should be enclosed)</span></p>
 
-</table>
+<p>16. Extra Curricular Activities :&nbsp;&nbsp; '.$extra_caricular.'</p>
 
-<div>
-<p> I, hereby, declare that, the entries made by me in the Application Form are complete and true to the
-best of my knowledge and based on records. </p>
-                                                            
+<p>17.Game &amp; Sports with Level :'.$sport_quota.'</p>
 
-<p>Student Signature &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gurdian Signature</p>
+<p>18.Name of Local Guardian :&nbsp;&nbsp;'.$lg.'</p>
+
+<p>19.Address of Local Guardian :&nbsp;&nbsp;'.$addr_lg.'</p>
+
+<p>20. Whether receive any Scholarship /Financial Assistance (if yes,give details):&nbsp;'.$scholar.'</p>
+
+<p>21. If you previously admitted in this College, state :</p>
+
+<p>&nbsp;Year .&nbsp;&nbsp;'.$pv_y.'&nbsp;&nbsp;Class:&nbsp; '.$pv_class.'&nbsp;Roll:'.$pv_roll.'&nbsp;&nbsp; University Regn. No. with year:'.$pv_regn.'</p>
+
+<p style="text-align: center;"><span style="color:#FFFFFF;"><strong><span style="background-color:#000000;">GUARDIAN&#39;S DECLARATION</span></strong></span></p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;I hereby undertake to defray all educational expenses of my Son /Daughter/ Ward &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Sri/Smt./Kumari '.$name_of_student.'and promice that he /she shall abide by college regulations and discipline in force or that may be in force time to time .</p>
+
+<p style="text-align: justify;">&nbsp;</p>
+
+<p>Date:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Full Signature of the&nbsp;Guardian</p>
+
+<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#FFFFFF;"><strong><span style="background-color:#000000;">DECLARATION BY CANDIDATE</span></strong></span></p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; I hereby declear that I shall abide by all the Rules &amp; Regulations of the College &nbsp;and Vidyasagar University. I also declare that &nbsp;I shall have no objection if I am debarred from filling up the form for University Examination, for failing to secure at least 75% class attendance as per V.U. Circular No. VU/IC/CIR/108/97-98 dated 17 July 1997.</p>
+
+<p>Date . &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Full Signature of the Candidate &nbsp;</p>
 
 
-</div>
-<pagebreak>';
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+	<tbody>
+		<tr>
+			<td>
+			<p>Remarks&nbsp;</p>
+			</td>
+			<td colspan="2">
+			<p>May be admitted</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>&nbsp;</p>
+			</td>
+			<td>
+			<p>Dealing Staff Admission Counter&nbsp;</p>
+
+			<p>Kharagpur College</p>
+			</td>
+			<td>
+			<p>Principal /Teacher in Charge</p>
+
+			<p>Kharagpur College</p>
+			</td>
+		</tr>
+	</tbody>
+
+</table><pagebreak>
+';
+
+
+
 $main_html=$main_html.$html;
 }
 		
@@ -995,6 +978,24 @@ $main_html=$main_html.$html;
 $end_string='</body></html>';
 $main_html=$main_html.$end_string;
 
+
+
+$save=mysql_real_escape_string($main_html);
+$pdf_sql="replace into `pdf` (`student_id`,`pdf_string`)values('$student_id','$save')";
+$result13 = mysqli_query($conn,$pdf_sql);
+
+if (!$result13) {
+	die("No result 13" . mysqli_error($conn));
+}
+
+$updateflag="update auth set `flag`='yes' where `student_id`='$student_id'";
+//echo $updateflag;
+	$result14 = mysqli_query($conn,$updateflag);
+
+if (!$result14) {
+	die("No result 14" . mysqli_error($conn));
+
+	}
 //echo $main_html;
 
 //echo $html;
@@ -1004,6 +1005,7 @@ $main_html=$main_html.$end_string;
 include('mpdf/mpdf.php');
 $mpdf= new mPDF();
 //$mpdf=new mPDF('win-1252','A4','','',20,15,48,25,10,10); 
+$mpdf = new mPDF('', 'Legal', 0, '', 12.7, 12.7, 14, 12.7, 8, 8);
 //$mpdf->useOnlyCoreFonts = true;    // false is default
 //$mpdf->SetProtection(array('print'));
 $mpdf->SetTitle("Application");
@@ -1022,7 +1024,7 @@ $mpdf->SetDisplayMode('fullpage');
 //$mpdf->SetHeader('Referenceno-{DATE jmYmmsshh}{PAGENO}');
 //$mpdf->SetFooter('|{PAGENO}|');
 
-$mpdf->WriteHTML($style,1);
+//$mpdf->WriteHTML($style,1);
 //$mpdf->WriteHTML($style2,1);
 $mpdf->WriteHTML($main_html);
 //$mpdf->WriteHTML('hi');
@@ -1031,7 +1033,8 @@ $mpdf->WriteHTML($main_html);
 //$mpdf->Output($filename,'F');//for saving in current directory fource fully  for letter use 
 //$mpdf->Output($filename,'D');//downlode in browser
 //echo $html;
-$mpdf->Output();//For direct out put in browser
+$mpdf->Output();
+//For direct out put in browser
 //echo "jjjjjj";
 /*echo $html;
 $link="<script type=\"text/javascript\">
@@ -1042,7 +1045,8 @@ echo $link;
 */
 //header("Location:after_submit.php?merit[]=$merit&hons[]=$hons&session=$session");
 //exit();
-///session_unset();
-//session_destroy();
+session_unset();
+session_destroy();
+//echo "Success Fully downloaded";
 ?>
 

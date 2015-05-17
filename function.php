@@ -3,6 +3,14 @@
 
 
 
+   $history_relatedSubject=array("education","economics","sanskrit","psychology","political science","philosophy","sociology");
+  
+   $philosophy_relatedSubject=array("education","economics","sanskrit","psychology","political science","history","sociology");
+
+   $political_science_relatedSubject=array("economics","history","philosophy","sociology");
+
+
+
 function hons2minor($hons_minor)  //check foe empty subject
 {$side_sub=array();
 foreach($hons_minor as $value)
@@ -157,7 +165,7 @@ return $mp;
 }
 
 
-function merit_arts($hons,$arts_hons,$aggr_arts,$only_sub_list,$lang1_om,$lang2_om,$merit,$stream,$sub_list,$arts)
+function merit_arts($hons,$arts_hons,$aggr_arts,$only_sub_list,$lang1_om,$lang2_om,$merit,$stream,$sub_list,$arts,$history_relatedSubject, $philosophy_relatedSubject ,$political_science_relatedSubject)
 {
 $related=array();
   //Case 1 arts subject and subject is present in hs subject list 
@@ -176,7 +184,7 @@ $related=array();
 			   //$aggr=$aggr_arts;
 		     }
 			  
-        else if($hons=="history"||$hons=="political science"||$hons=="philosophy")
+        else if($hons=="history")
            { //echo "History hons<br>";
 	   
 					 if($stream === "science" || $stream ==="commerce") //if stream is science or arts
@@ -195,7 +203,7 @@ $related=array();
 					   // echo "Inside else for if stream is arts if history hons</br>";
 					 foreach($only_sub_list as $n)
 						 {
-							if( in_array($n,$arts) )
+							if( in_array($n,$history_relatedSubject) )
 						  { 
 						   array_push($related, $n);
 						  } 
@@ -223,6 +231,105 @@ $related=array();
 					 }  
 	   
              }
+			 
+		else if($hons=="philosophy")
+           { //echo "History hons<br>";
+	   
+					 if($stream === "science" || $stream ==="commerce") //if stream is science or arts
+					{ //echo "Inside science/commerCe stream cheking ";
+
+					   $hmarks=max($lang1_om,$lang2_om);
+						//echo "In SCIENCE /COMMERCE $hmarks".$hmarks;
+					   $mp=($aggr_arts*.1)+$hmarks;
+					   array_push($merit,$mp); 
+					  // $aggr=$aggr_arts;   
+				       return $mp;
+				       	  
+					 }
+					else 
+					{
+					   // echo "Inside else for if stream is arts if history hons</br>";
+					 foreach($only_sub_list as $n)
+						 {
+							if( in_array($n,$philosophy_relatedSubject) )
+						  { 
+						   array_push($related, $n);
+						  } 
+						 
+						 }
+						 //$no_of_related=count($related);
+						   #  print_r($related);
+						 $max=0;
+						 foreach ($related  as $value) 
+						 {
+							 #echo $sub_list[$value];
+							 # code...
+							   if($sub_list[$value] > $max)
+								  { 
+									$max= $sub_list[$value];
+									//$high=$value;
+								  }  
+						 }
+						#echo $max;
+						 //  $aggr=aggr($sub1_total_om,$sub2_total_om,$sub3_total_om,$sub4_total_om,$lang1_om,$lang2_om);     
+						 $mp=($aggr_arts*.1)+$max;
+						// $aggr=$aggr_arts;
+						 array_push($merit,$mp);
+						 return $mp;
+					 }  
+	   
+             }
+			 
+		else if($hons=="political science")
+           { //echo "History hons<br>";
+	   
+					 if($stream === "science" || $stream ==="commerce") //if stream is science or arts
+					{ //echo "Inside science/commerCe stream cheking ";
+
+					   $hmarks=max($lang1_om,$lang2_om);
+						//echo "In SCIENCE /COMMERCE $hmarks".$hmarks;
+					   $mp=($aggr_arts*.1)+$hmarks;
+					   array_push($merit,$mp); 
+					  // $aggr=$aggr_arts;   
+				       return $mp;
+				       	  
+					 }
+					else 
+					{
+					   // echo "Inside else for if stream is arts if history hons</br>";
+					 foreach($only_sub_list as $n)
+						 {
+							if( in_array($n,$political_science_relatedSubject) )
+						  { 
+						   array_push($related, $n);
+						  } 
+						 
+						 }
+						 //$no_of_related=count($related);
+						   #  print_r($related);
+						 $max=0;
+						 foreach ($related  as $value) 
+						 {
+							 #echo $sub_list[$value];
+							 # code...
+							   if($sub_list[$value] > $max)
+								  { 
+									$max= $sub_list[$value];
+									//$high=$value;
+								  }  
+						 }
+						#echo $max;
+						 //  $aggr=aggr($sub1_total_om,$sub2_total_om,$sub3_total_om,$sub4_total_om,$lang1_om,$lang2_om);     
+						 $mp=($aggr_arts*.1)+$max;
+						// $aggr=$aggr_arts;
+						 array_push($merit,$mp);
+						 return $mp;
+					 }  
+	   
+             }
+			 
+			
+			 
    
         else
         { 
@@ -290,7 +397,7 @@ $related=array();
 
 
 
-function merit_commerce($hons,$com_hons,$aggr,$sub_list,$max_marks,$merit)
+function merit_commerce($hons,$com_hons,$aggr,$sub_list,$max_marks,$merit,$stream)
 
 {	
          if (array_key_exists($hons,$sub_list))
@@ -308,11 +415,11 @@ function merit_commerce($hons,$com_hons,$aggr,$sub_list,$max_marks,$merit)
 
 
 
-    if($hons=="economics"||$hons=="economics(science)"||$hons=="economics(arts)")
-	  {
+         if($hons=="economics"||$hons=="economics(science)"||$hons=="economics(arts)")
+	       {
 	  
 	  
-	   if (array_key_exists("economics",$sub_list))
+	       if (array_key_exists("economics",$sub_list))
 			  {  //echo "hear"; 
 				 $hmarks=$sub_list["economics"];//get Marks of hs subject
 				 //echo "< br >".$hmarks;
@@ -327,7 +434,7 @@ function merit_commerce($hons,$com_hons,$aggr,$sub_list,$max_marks,$merit)
 	  
 	  
 	  
-	   else  if (array_key_exists("mathematics",$sub_list))
+	        else  if (array_key_exists("mathematics",$sub_list))
 			  {  //echo "hear"; 
 				 $hmarks=$sub_list["mathematics"];//get Marks of hs subject
 				 //echo "< br >".$hmarks;
@@ -339,7 +446,7 @@ function merit_commerce($hons,$com_hons,$aggr,$sub_list,$max_marks,$merit)
 			  
 			   return $mp;
 		     }
-		else {
+		    else {
 		    
 		     $mp=$max_marks+(.1*$aggr);
 		     array_push($merit,$mp);
@@ -347,19 +454,22 @@ function merit_commerce($hons,$com_hons,$aggr,$sub_list,$max_marks,$merit)
 		     }	 
 	
 	  }
+	  
    if($hons=='accountancy')
-     {
-        if($stream == "science" )
-		 {
+     { 
+        if($stream ==="science" )
+		  {//echo "hear"; 
 			 $hmarks=$sub_list["mathematics"];
-			 $mp=($aggr*.1)+ $hsmarks;
-			 array_push($merit,$mp);
+			 $mp=($aggr*.1)+ $hmarks;
+			/// array_push($merit,$mp);
+			 return $mp;
 		  }
 		 else 
 		 {
 			  $hmarks=$sub_list["accountancy"];
-			  $mp=($aggr*.1)+ $hsmarks;
+			  $mp=($aggr*.1)+ $hmarks;
 			  array_push($merit,$mp);
+			  return $mp;
 			  
 	     }   
      }

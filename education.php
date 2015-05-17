@@ -3,22 +3,22 @@
 if(!isset($_SESSION)){
    session_start();
 }
-
-if (!isset($_SESSION['name'])) {
-header('Location: firstpage.html');
-}
 /*
+if (!isset($_SESSION['name'])) {
+header('Location: index.html');
+}
+
 $now = time(); // Checking the time now when home page starts.
 
       if ($now > $_SESSION['expire']) {
        session_unset(); 
        session_destroy();
-         echo "Your session has expired! <a href='firstpage.html'>Start here</a>";
+         echo "Your session has expired! <a href='index.html'>Start here</a>";
 		 exit();
         }
         
-
-
+*/
+/*
 //Inialize session
 //if(!isset($_SESSION)){
   //  session_start();
@@ -26,7 +26,7 @@ $now = time(); // Checking the time now when home page starts.
 
 // Check, if username session is NOT set then this page will jump to login page
 //if (!isset($_SESSION['name'])) {
-//header('Location: firstpage.html');
+//header('Location: index.html');
 ///}
 //setcookie("test_cookie", "test", time() + 10, '/');
 ///echo "fllgflgfkgflgkfg";
@@ -61,6 +61,13 @@ echo $student_name;echo "10";
 
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="jquery.chained.min.js"></script>  
+<script>
+$(document).ready(function(){
+$("#dob").datepicker({changeMonth:true,
+changeYear:true,
+showButtonPanal:true,
+yearRange:'1970:2010'});});
+</script>
 
     <!--script>
 function validate()
@@ -180,8 +187,11 @@ function validate()
 
     <tr>
              <td>Gender</td>
-             <td><input type="radio" name="gender" id="gender" value="male">Male <input type="radio" name="gender"id="gender" value="female">Female</td>
-    
+             <td><select name="gender">
+                <option value="Male">Male</option>
+                 <option value="Female">Female</option>
+                 <option value="Transgender">Transgender</option>
+			</select>    
              <td>Blood Group</td>
              <td><input type="text" name="blood_gr"   id="blood_gr" size="4"class="text-uppercase"></td>
      
@@ -217,9 +227,9 @@ function validate()
              <td><input type ="text" name="nationality" id="nationality" size="5"class="text-uppercase"></td>
      </tr>
      <tr>
-             <td>Sports Quota</td>
+             <!--<td>Sports Quota</td>
              <td><input type ="radio" name="sport_quota" id="sport_quota" value="yes">Yes<input type ="radio" name="sport_quota" id="sports_quota" value="no">No</td>
-    
+    -->
              <td>Extracurricular</td>
              <td><textarea name="extra_caricular" id="extra_cari"class="text-uppercase"></textarea></td>
      
@@ -228,6 +238,10 @@ function validate()
      
              <td>Below Proverty Line</td>
              <td><input type ="radio" name="bpl" id="bpl" value="yes">Yes<input type ="radio" name="bpl" id="bpl" value="no">No</td>
+    
+			<td>Local Gurdian's Name</td>
+             <td><input type="text" name="lg" id="local_gurdain" class="text-uppercase"></td>
+    
      </tr>
      <tr>
              <td>Games And Sports with Level</td>
@@ -236,28 +250,49 @@ function validate()
          <td>Address</td>
          <td><textarea name ="address"id="address"class="text-uppercase"></textarea></td>    
      
-             <td>Local Gurdian</td>
-             <td><input type="text" name="lg" id="local_gurdain"></td>
+             <td>PIN</td>
+             <td><input type="text" name="pin"></td>
      
          <td>Address Of local Gurdian</td>
-         <td><textarea name ="addr_lg"id="address_lg"></textarea></td>    
+         <td><textarea name ="addr_lg"id="address_lg" class="text-uppercase"></textarea></td>    
      </tr> 
      <tr>
              <td>Nearest Railway Station/Bus stop</td>
-             <td><input type="text" name="rail_bus" id="rail"></td>
+             <td><input type="text" name="rail_bus" id="rail" class="text-uppercase"></td>
+			  
+			  
      
              <td>Scholarship</td>
-             <td><select name="scholar" id="scholar"onchange="myFunction()">
+             <td><select name="scholar" id="scholar" class="text-uppercase" onchange="myFunction()">
 
              <option value="yes">Yes</option>
              <option value="no"selected>No</option>
 
-             </select></td>
-             <td><input type="hidden" name="scholar_detail" id="scholar_detail"placeholder="Give details of scholarship" ></td>
+             </select>
+             <input type="hidden" name="scholar_detail" id="scholar_detail" class="text-uppercase" placeholder="Give details of scholarship" ></td>
 
-     
-             <td>Previous Admission</td>
-             <td><input type="text" name="previous_add" id="previous_add"></td>
+     <td></td><td></td><td></td><td></td>
+             
+			 
+	 </tr>
+     <tr>	 
+	 
+	         
+			 <td>Previous Admission</td>
+			 
+			 <td><select name="previous_add" id="previous_add" class="text-uppercase" onchange="show_hide1()">
+
+             <option value="yes">Yes</option>
+             <option value="no"selected>No</option>
+
+             </select>
+			 
+			 
+             <td> <input type="hidden" name="pv_y" id="pv_y" class="text-uppercase"placeholder="Year:"></td>
+			 <td> <input type="hidden" name ="pv_class" id="pv_class" class="text-uppercase"placeholder="Class"></td>
+			 <td> <input type="hidden" name ="pv_roll" id="pv_roll" class="text-uppercase"placeholder="Roll"></td>
+			 <td><input type="hidden" name="pv_regn" id="pv_regn"placeholder="University Regn. No. with year."></td>
+     <td></td><td></td>
      </tr>
 
 </table>
@@ -277,9 +312,28 @@ Enter Stream:
 <table id="one-column-emphasis">
   <tr>
     <th rowspan="2">Subject Name</th>
-    <th rowspan="2"><input type="text" name="lang1_name" size="7"class="text-uppercase" placeholder="Language"></th>
-    <th rowspan="2"><input type="text" name="lang2_name" size="7"class="text-uppercase"value="ENGLISH" readonly></th>
-    
+    <th colspan="2"><select name="lang1_name">
+			<option value="Bengali" Selected>Bengali</option>
+			<option value="Hindi">Hindi</option>
+			<option value="Nepali">Nepali</option>
+			<option value="Urdu">Urdu</option>
+			<option value="Santhali">Santhali</option>
+			<option value="Odia">Odia</option>
+			<option value="Telegu">Telegu</option>
+			<option value="Gujrati">Gujrati</option>
+			<option value="Punjabi">Punjabi</option>
+			<option value="English">English</option>
+    </select> </th>
+    <th colspan="2"><select name="lang2_name">
+			<option value="Bengali">Bengali</option>
+			<option value="Hindi">Hindi</option>
+			<option value="Nepali">Nepali</option>
+			<option value="Alt_Eng">Alt. English</option>
+			<option value="English" Selected>English</option>
+    </select> </th>
+    <!--<th colspan="2"><input type="text" name="lang1_name" size="7"class="text-uppercase" placeholder="Language"></th>
+    <th colspan="2"><input type="text" name="lang2_name" size="7"class="text-uppercase"value="ENGLISH" readonly></th>
+    -->
     <th colspan="2">  <select id="hs_sub_2" name="sub1_name" >
 					</select>
 	</th>
@@ -297,6 +351,10 @@ Enter Stream:
     <td>Th</td>
     <td>Pr</td>
     <td>Th</td>
+    <td>Pr</td>  
+    <td>Th</td>
+    <td>Pr</td>
+    <td>Th</td>
     <td>Pr</td>
     <td>Th</td>
     <td>Pr</td>
@@ -305,8 +363,11 @@ Enter Stream:
   </tr>
   <tr>
     <td>Full<br>Marks</td>
-    <td><input type = "text"name="lang1_fm" id="lang1_fm"       size="2" onfocus="checkDuplicates()"></td>
-    <td><input type = "text"name="lang2_fm" id="lang2_fm"       size="2"></td>
+    <td><input type = "text"name="lang1_th_fm" id="lang1_th_fm"       size="2" ></td>
+	 <td><input type = "text"name="lang1_pr_fm" id="lang1_pr_fm"       size="2" ></td>
+	  <td><input type = "text"name="lang2_th_fm" id="lang2_th_fm"       size="2"onfocus="checkDuplicates()" ></td>
+	   <td><input type = "text"name="lang2_pr_fm" id="lang2_pr_fm"       size="2" ></td>
+    
     <td><input type="text" name="sub1_th_fm"  id="sub1_th_fm"   size="2"></td>
     <td><input type="text" name="sub1_pr_fm"  id="sub1_pr_fm"   size="2"></td>
     <td><input type="text" name="sub2_th_fm"  id="sub2_th_fm"   size="2"></td>
@@ -318,8 +379,13 @@ Enter Stream:
   </tr>
   <tr>
     <td>Marks <br>Obtained</td>
-    <td><input type = "text" name="lang1_om" id="lang1_om"size="2"></td>
-    <td><input type = "text" name="lang2_om" id="lang2_om"size="2"></td>
+   <td><input type = "text"name="lang1_th_om" id="lang1_th_om"       size="2" ></td>
+	 <td><input type = "text"name="lang1_pr_om" id="lang1_pr_om"       size="2" ></td>
+	  <td><input type = "text"name="lang2_th_om" id="lang2_th_om"       size="2"onfocus="checkDuplicates()" ></td>
+	   <td><input type = "text"name="lang2_pr_om" id="lang2_pr_om"       size="2" ></td>   
+
+
+   
     <td><input type="text" name="sub1_th_om"  id="sub1_th_om"  size="2"></td>
     <td><input type="text" name="sub1_pr_om"  id="sub1_pr_om"   size="2"></td>
     <td><input type="text" name="sub2_th_om"  id="sub2_th_om"          size="2"></td>
@@ -331,10 +397,10 @@ Enter Stream:
   </tr>
 </table>
 
-<!-- ------------------------------------Honours -selection             ------------------------------------------------------->
+<!-- ------------------------------------Honours -selection   ------------------------------------------------------->
 <p>Applying For
-<input type="checkbox" value="yes" name="apply_hons">Honours</input>
-<input type="checkbox" value="yes" name="apply_gen">General</input>
+<input type="checkbox" value="yes" name="apply_hons"id="apply_hons">Honours</input>
+<input type="checkbox" value="yes" name="apply_gen"id="apply_gen">General</input>
 </p>
 <h4> Honours Selection</h4> 
 <table class="tg" id="custom-fields">
@@ -368,7 +434,7 @@ Enter Stream:
   </tr>
   <tr>
     <td class="tg-30rh">
-      <select name="hons[]" id="select1-0" onchange="">
+      <select name="hons[]" id="select1-0"   onfocus="applysto()" >
         <option value="Hindi"  >Hindi  </option>
         <option value="Bengali">Bengali</option>
         <option value="English">English</option>
@@ -447,7 +513,7 @@ Enter Stream:
   </tr>
   <tr>
     <td class="tg-30rh">
-      <select id ="general_stream-0" name="general-stream[]"  onclick="">
+      <select id ="general_stream-0" name="general-stream[]"  onfocus="applysto()">
 		  <option value="B.A. General(Day Shift)">B.A. General(Day Shift)</option>
 		  <option value="B.A. General(Day Shift)With Geography">B.A. General(Day Shift)With Geography</option>
 		  <option value="B.A. General(Morning Shift)"> B.A. General(Morning Shift)</option>
@@ -599,18 +665,6 @@ Enter Stream:
   </tr>
 </table>
 
-
-
-
-
-
-
-
-
-
-
-
-
 <br/>
 <br/>
 <br/>
@@ -630,6 +684,22 @@ document.getElementById("scholar_detail").type = "textarea";
     else
     document.getElementById("scholar_detail").type = "hidden";
 
+}
+function show_hide1() {
+    var x = document.getElementById("previous_add").value;
+    if(x === "yes")
+    {document.getElementById("pv_y").type = "textarea";
+	document.getElementById("pv_class").type = "textarea";
+	document.getElementById("pv_roll").type = "textarea";
+	document.getElementById("pv_regn").type = "textarea";
+    }
+	else
+    {
+	document.getElementById("pv_y").type = "hidden";
+	document.getElementById("pv_class").type = "hidden";
+	document.getElementById("pv_roll").type = "hidden";
+	document.getElementById("pv_regn").type = "hidden";
+}
 }
 
 </script>
@@ -709,9 +779,9 @@ document.getElementById("scholar_detail").type = "textarea";
 
 
 $('#id').submit(function(){
-var c=confirm("Are you sure to submit? No Information can be changed after submission..!");
+var c=confirm("Are you sure to submit? No Information can be changed after submission. Download and print the PDF file. Printed PDF file along with photocopy of testimonials are required in the college during counselling");
 //alert(c);
- if(c =="true")
+ if(c =="true" )
   $("#submit").attr("disabled", true);
  return c;
 });
@@ -724,13 +794,10 @@ var c=confirm("Are you sure to submit? No Information can be changed after submi
     //   $('#id').submit();
     // });
    //});
-    
-   
-    
-    
+        
 </script>
 <script>
-	var jsonObj2 ={"Arts":["Political Science","Education Journalism & Mass Communication","Philosophy","History","Geography","Computer Application","Sociology","Nutrition","Economics","Sociology","Anthropology","Psychology","Environment Studies","Sanskrit","Psychology","Pali","Mathematics","Persian","Agronomy","Arabic","Philosophy","French","Anthropology","Agronomy"],"Science":["Physics","Chemistry","Mathematics","Biological Science","Statistics","Computer Science","Geology","Nutrition","Economics","Psychology","Geography","Computer Application","Anthropology","Environment Studies","Agronomy"],"Commerce":["Accountancy","BusinessStudies","CommercialLaw&PreliminariesofAuditing","Costing&Taxation","Economics","ComputerApplication","Mathematics","BusinessOrganisation&Management","EconomicGeography","BusinessEconomicsincludingBusinessMathematics","EnvironmentStudies"]};
+	var jsonObj2 ={"Arts":["Political Science","Education","Journalism & Mass Comm","Philosophy","History","Geography","Computer Application","Sociology","Nutrition","Economics","Sociology","Anthropology","Psychology","Environment Studies","Sanskrit","Psychology","Pali","Mathematics","Persian","Agronomy","Arabic","Philosophy","French","Anthropology","Agronomy"],"Science":["Physics","Chemistry","Mathematics","Biological Science","Statistics","Computer Science","Geology","Nutrition","Economics","Psychology","Geography","Computer Application","Anthropology","Environment Studies","Agronomy"],"Commerce":["Accountancy","BusinessStudies","CommercialLaw&PreliminariesofAuditing","Costing&Taxation","Economics","ComputerApplication","Mathematics","BusinessOrganisation&Management","EconomicGeography","BusinessEconomicsincludingBusinessMathematics","EnvironmentStudies"]};
 function updateHS() {
     var newKey2 = $("#stream").val();
     $("#hs_sub_2").empty();
@@ -862,7 +929,7 @@ $(document).ready(function() {
 });
 
 
-var jsonObj = {"Hindi":[["History","Sociology","Economics",""],"Philosophy","Political Science","English"],"Bengali":[["History","Sociology",""],"Sanskrit","Philosophy","Political Science"],"English":[["History","Sociology","Economics",""],"Philosophy","Political Science",["Bengali","Hindi",""]],"History":["Philosophy"," Political Science",["Bengali"," Hindi",""]," English"],"Political Science":[[" History "," Sociology"," Economics",""],"Philosophy",["Bengali "," Hindi",""],"English"],"Philosophy":[[" History"," Sociology",""]," Sanskrit","Political Science",["Bengali","Hindi",""]],"Sanskrit":[["History","Sociology",""],"Philosophy","Bengali","English"],"Geography (Arts)":[["History "," Sociology",""],"Political Science",["Bengali","Hindi",""],"Sanskrit"],"Economics (Arts)":[["Bengali","Hindi",""],"Political Science","Philosophy","English"],"Physics":["Mathematics",["Chemistry"," Computer Science",""],"",""],"Chemistry":["Mathematics","Physics","",""],"Mathematics":[["Physics","Economics",""],["Chemistry(With Physics)","Computer Science(With Physics)",""],"Philosophy(With Eco/Pol.Sc.)","Political Science(With Eco/Phil.)"],"Zoology":["Botany",["Chemistry "," Physiology",""],"",""],"Botany":["Zoology",["Chemistry","Physiology",""],"",""],"Geography (Science)":["Mathematics","Economics","",""],"Economics (Science)":["Mathematics",["Computer Science","Political Science",""],"",""],"Accountancy":[["Business Thoughts","Ethics and Management"],"Business Laws","",""]};
+var jsonObj = {"Hindi":[["History","Sociology","Economics",""],"Philosophy","Political Science","English"],"Bengali":[["History","Sociology",""],"Sanskrit","Philosophy","Political Science"],"English":[["History","Sociology","Economics",""],"Philosophy","Political Science",["Bengali","Hindi",""]],"History":["Philosophy"," Political Science",["Bengali"," Hindi",""]," English"],"Political Science":[[" History "," Sociology"," Economics",""],"Philosophy",["Bengali "," Hindi",""],"English"],"Philosophy":[[" History"," Sociology",""]," Sanskrit","Political Science",["Bengali","Hindi",""]],"Sanskrit":[["History","Sociology",""],"Philosophy","Bengali","English"],"Geography(Arts)":[["History "," Sociology",""],"Political Science",["Bengali","Hindi",""],"Sanskrit"],"Economics(Arts)":[["Bengali","Hindi",""],"Political Science","Philosophy","English"],"Physics":["Mathematics",["Chemistry"," Computer Science",""],"",""],"Chemistry":["Mathematics","Physics","",""],"Mathematics":[["Physics","Economics",""],["Chemistry(With Physics)","Computer Science(With Physics)",""],"Philosophy(With Eco/Pol.Sc.)","Political Science(With Eco/Phil.)"],"Zoology":["Botany",["Chemistry "," Physiology",""],"",""],"Botany":["Zoology",["Chemistry","Physiology",""],"",""],"Geography(Science)":["Mathematics","Economics","",""],"Economics(Science)":["Mathematics",["Computer Science","Political Science",""],"",""],"Accountancy":[["Business Thoughts","Ethics and Management"],"Business Laws","",""]};
 
 function updateSelect(e) {
   var targetId = e.target.id;
@@ -908,7 +975,7 @@ $(document).ready(function() {
       i,
       current,
       selected = {};
-  for(i = 4; i <= 7; i++){
+  for(i = 8; i <= 11; i++){
     current = selects[i].selectedIndex;
     if (selected[current]) {
       alert("Each Subject should be selected once.");
@@ -920,7 +987,7 @@ $(document).ready(function() {
 }
 
 function checkDuplicatesHons(id) {
-	var k=9+5*parseInt(id);
+	var k=13+5*parseInt(id);
 	//alert(k);
   var selects = document.getElementsByTagName("select"),
       i,
@@ -949,7 +1016,12 @@ function checkDuplicatesHons(id) {
       return false;}
 }
 
-
+function applysto(){
+if(!($("#apply_gen" ).prop( "checked" ) || $( "#apply_hons" ).prop( "checked" )))
+{
+alert("Select Applying for Honours or General or Both");
+}
+}
 </script>
 <script>
 	// -----------------Dynamically add row in general selection '''
@@ -1140,7 +1212,7 @@ $(function() {
   });
 </script>
 
- <!--script>
+ <script>
   // When the browser is ready...
   $(function() {
   
@@ -1170,26 +1242,30 @@ $(function() {
 			address_lg:"required",
 			scholar:"required",
 			previous_add:"required",
-			lang1_fm : {required:true,number:true},
-			lang2_fm : {required:true,number:true},
+			lang1_th_fm : {number:true},
+			lang1_pr_fm : {number:true},
+			lang2_th_fm : {required:true,number:true},
+			lang2_pr_fm : {number:true},
 			sub1_th_fm:{required:true,number:true},
-			sub1_pr_fm:{required:true,number:true},
+			sub1_pr_fm:{number:true},
 			sub2_th_fm:{required:true,number:true},
-			sub2_pr_fm:{required:true,number:true},
+			sub2_pr_fm:{number:true},
 			sub3_th_fm:{required:true,number:true},
-			sub3_pr_fm:{required:true,number:true},
+			sub3_pr_fm:{number:true},
 			sub4_th_fm:{required:true,number:true},
-			sub4_pr_fm:{required:true,number:true},
-			lang1_om:  {required:true,number:true},
-            lang2_om:  {required:true,number:true},
+			sub4_pr_fm:{number:true},
+			lang1_th_om:{number:true},
+			lang1_pr_om:{number:true},
+			lang2_th_om: {required:true,number:true},
+            lang2_pr_om: {number:true},
             sub1_th_om:{required:true,number:true},
-            sub1_pr_om:{required:true,number:true},
+            sub1_pr_om:{number:true},
             sub2_th_om:{required:true,number:true},
-            sub2_pr_om:{required:true,number:true},
+            sub2_pr_om:{number:true},
             sub3_th_om:{required:true,number:true},
-            sub3_pr_om:{required:true,number:true},
+            sub3_pr_om:{number:true},
             sub4_th_om:{required:true,number:true},
-            sub4_pr_om:{required:true,number:true}
+            sub4_pr_om:{number:true}
 			
         },
         
@@ -1208,12 +1284,15 @@ $(function() {
 			name_of_last_school: "name of school you last attend",
 			bpl: "Please Select an Option "                ,
 			address: "Please Enter Permanent Postal Address ",
+			pin: "Please Enter PIN code",
 			lg:       "Please Enter your Local Guardian name",           
 			address_lg:"Please Enter address of your local guardian ",          
 			scholar:   "Please Select appropriate Option" ,         
 			previous_add:"Please enter Previous admission if any else enter No",        
-			lang1_fm :  "Enter Full Marks ",          
-			lang2_fm :  "Enter Full Marks",         
+			lang1_th_fm:  "Enter Th Full Marks ",          
+			lang2_th_fm:  "Enter Th Full Marks", 
+            lang1_pr_fm:"Enter Pr Full Marks ",
+            lang2_pr_fm:"Enter Pr Full Marks",		
 			sub1_th_fm: "Enter Th Full Marks",         
 			sub1_pr_fm: "Enter Pr Full Marks",         
 			sub2_th_fm:  "Enter  Th Full Marks",        
@@ -1222,8 +1301,10 @@ $(function() {
 			sub3_pr_fm:   "Enter Pr Full Marks",       
 			sub4_th_fm:   "Enter  Th Full Marks",       
 			sub4_pr_fm:  "Enter Pr Full Marks",        
-			lang1_om:   "Enter  Marks Obtained  ",         
-			lang2_om:      "Enter  Marks Obtained  ",      
+			lang1_th_om:  "Enter Th Om Marks ",          
+			lang2_th_om:  "Enter Th Om Marks", 
+            lang1_pr_om: "Enter Pr Om Marks ",
+            lang2_pr_om: "Enter Pr Om Marks",	    
 			sub1_th_om:    "Enter  Marks Obtained  ",      
 			sub1_pr_om:   "Enter  Marks Obtained  ",       
 			sub2_th_om:    "Enter  Marks Obtained  ",      
@@ -1241,7 +1322,7 @@ $(function() {
     });
 
   });
-</script-->
+</script>
 </body>
 </html>
     

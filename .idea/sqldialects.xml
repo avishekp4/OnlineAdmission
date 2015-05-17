@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/app.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/auth.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/authcopy.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/backuppdfgen.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/connect.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/dept_view.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/dept_view_g.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/education.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/function.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/gen_list.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/gen_list_g.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/gen_list_ph.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/gen_ph_list.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/obc_a_ph_list_g.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/obc_b_list_g.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/st_ph_list_g.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/student_detail.html" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/student_detail.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/style.css" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/tem.xsd" dialect="MySQL" />
+  </component>
+</project>

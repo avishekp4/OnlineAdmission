@@ -7,7 +7,7 @@
 include 'connect.php';
 
 
-function generateRandomString($length = 6) {
+function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
     $randomString = '';
@@ -19,7 +19,6 @@ function generateRandomString($length = 6) {
 
 
 $val1=$_GET["student_name"];
-
 $val2=$_GET["mobile"];
 $val3=$_GET["exam"];
 $val4=$_GET["board"];
@@ -34,28 +33,35 @@ $row = mysqli_num_rows($result);
 
 
 if ($row == 1) 
-	{
-		
-		
-		$row1 = @mysqli_fetch_array($result);
-		
-		
-    session_start();
-
-		
-		
-		
-		$_SESSION['name'] = $row1['student_id'];
-		$_SESSION['start'] = time(); // Taking now logged in time.
+	{   $row1 = @mysqli_fetch_array($result);
+	      if (!$row1)
+			       {
+	                    die("No result1 " . mysqli_error($conn));
+                   }
+	
+		      session_start();
+		      $_SESSION['name'] = $row1['student_id'];
+		      $_SESSION['start'] = time(); // Taking now logged in time.
             // Ending a session in 60 minutes from the starting time.
-            $_SESSION['expire'] = $_SESSION['start'] + (60 * 60);
-       header("Location:previous_user.php");
+              $_SESSION['expire'] = $_SESSION['start'] + (60 * 60);
+		       
+			  
+		if($row1['flag']=='yes')
+		{	
+         
+              header("Location:previous_user.php");
+        }  
+		else
+		   {
+		
+			   header("Location:education.php");
 
+		    }
 }
 
 else
 {	
-$student_id=generateRandomString(7);
+$student_id=generateRandomString(10);
 $new_value="insert into auth (`student_id`, `name_of_student`, `mobile_no`, `examination`, `board`, `roll_no`, `year_of_passing`)values('$student_id','$val1','$val2','$val3','$val4','$val5','$val6')";
 $insert_new_value=mysqli_query($conn,$new_value);
 if (!$insert_new_value) {
