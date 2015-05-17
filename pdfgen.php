@@ -330,7 +330,7 @@ if(in_array($hons[$i],$arts_hons))
  $aggr=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om);
 
 }*/
-$sqlh1="INSERT INTO `kgpcollege`.`".$hons_name."_honours` (`student_id`, `aggregate`, `merit_point`,`student_name`,`board`,`category`,`ph`,`stubject_id`) VALUES ('$student_id','$aggr','$mp','$name_of_student','$board','$category','$ph','$k')";
+$sqlh1="INSERT INTO `kgpcollege`.`".$hons_name."_honours` (`student_id`, `aggregate`, `merit_point`,`student_name`,`board`,`category`,`ph`,`subject_id`) VALUES ('$student_id','$aggr','$mp','$name_of_student','$board','$category','$ph','$k')";
 $sqlh2="insert into student_tran(`student_id`,`subject_id`,`stran_id`,`stran_date`)values('$student_id','$k','$tran_id[$i]','$date_i')";
 $sqlh3="insert into `hons_subject`(`student_id`,`subject_id`,`hons_name`,`sub1`,`sub2`) values('$student_id','$k','$hons[$i]','$minor[$n]','$minor[$m]')";	
 
