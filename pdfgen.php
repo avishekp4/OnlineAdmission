@@ -4,7 +4,7 @@ if(!isset($_SESSION)){
    session_start();
 } 
 // Check, if username session is NOT set then this page will jump to login page
-/*
+
 if (!isset($_SESSION['name'])) {
 header('Location: index.html');
 }
@@ -16,7 +16,7 @@ $now = time(); // Checking the time now when home page starts.
             echo "Your session has expired! <a href='firstpage.html'>Start here</a>";
 			exit();
         }
-*/
+
 		
 	function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -34,22 +34,21 @@ $n=0;
 $m=1;
 $student_id=$_SESSION['name'];
 //$student_id="jhjhj122";
-$f_name=$_GET['f_name'];
-$f_occu=$_GET['f_occu'];
-$f_edu=$_GET['f_edu'];
-$f_income=$_GET['f_income'];
-$m_name=$_GET['m_name'];
-$m_occu=$_GET['m_occu'];
-$m_edu=$_GET['m_edu'];
-$m_income=$_GET['m_income'];
+$f_name=mysqli_real_escape_string($conn,$_GET['f_name']);
+$f_occu=mysqli_real_escape_string($conn,$_GET['f_occu']);
+$f_edu=mysqli_real_escape_string($conn,$_GET['f_edu']);
+$f_income=mysqli_real_escape_string($conn,$_GET['f_income']);
+$m_name=mysqli_real_escape_string($conn,$_GET['m_name']);
+$m_occu=mysqli_real_escape_string($conn,$_GET['m_occu']);
+$m_edu=mysqli_real_escape_string($conn,$_GET['m_edu']);
+$m_income=mysqli_real_escape_string($conn,$_GET['m_income']);
 $category=$_GET['category'];
 $ph=$_GET['ph'];
 $minority=$_GET['minority'];
-$nationality=$_GET['nationality'];
-$religion=$_GET['religion'];
+$nationality=mysqli_real_escape_string($conn,$_GET['nationality']);
+$religion=mysqli_real_escape_string($conn,$_GET['religion']);
 $dob=date("Y-m-d",strtotime($_GET['dob']));//echo $dob;
- 
-$blood_gr=$_GET['blood_gr'];
+$blood_gr=mysqli_real_escape_string($conn,$_GET['blood_gr']);
 $sport_quota=$_GET['sport_quota'];
 $name_of_last_school=$_GET['name_of_last_school'];
 $name_of_last_school=mysqli_real_escape_string($conn,$name_of_last_school);
@@ -59,12 +58,12 @@ $extra_caricular = mysqli_real_escape_string($conn, $extra_caricular);
 
 $game_sport=$_GET['game_sport'];
 $game_sport = mysqli_real_escape_string($conn, $game_sport);
-$pin=$_GET['pin'];
+$pin=mysqli_real_escape_string($conn,$_GET['pin']);
 $lg=$_GET['lg'];
-$addr_lg=$_GET['addr_lg'];
-$rail_bus=$_GET['rail_bus'];
+$addr_lg=mysqli_real_escape_string($conn,$_GET['addr_lg']);
+$rail_bus=mysqli_real_escape_string($conn,$_GET['rail_bus']);
 $scholar=$_GET['scholar'];
-$scholar_detail=$_GET['scholar_detail'];
+$scholar_detail=mysqli_real_escape_string($conn,$_GET['scholar_detail']);
 //$hons=$_GET['hons'];//$hons=strtoupper($hons);
 $sub1=$_GET['sub1'];
 $sub2=$_GET['sub2'];
@@ -110,7 +109,7 @@ $lang2_th_fm=$_GET['lang2_th_fm'];
 $lang2_pr_fm=$_GET['lang2_pr_fm'];
 $lang2_th_om=$_GET['lang2_th_om'];
 $lang2_pr_om=$_GET['lang2_pr_om'];
-$address=$_GET['address'];
+$address=mysqli_real_escape_string($conn,$_GET['address']);
 $gender= $_GET['gender'];
 $lang1_om=$lang1_th_om+$lang1_pr_om;
 $lang2_om=$lang2_th_om+$lang2_pr_om;
@@ -368,8 +367,14 @@ if($apply_gen=='yes')
 
 
 for($i=0;$i<$count_general;$i++)
-{$aggr=aggr($sub1_total_om,$sub2_total_om,$sub3_total_om,$sub4_total_om,$lang1_om,$lang2_om);
- //$aggr_arts=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om);
+{
+
+   if(checkPassMark($sub_list)) {
+       $aggr = aggr($sub1_total_om, $sub2_total_om, $sub3_total_om, $sub4_total_om, $lang1_om, $lang2_om);
+   }
+   else{
+       $aggr=0;
+   }//$aggr_arts=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om);
 $k=generateRandomString();
 $general_stream_name=strtolower($general_stream[$i]);
 //$general_stream_name=strtolower($general_stream[$i]);
@@ -412,14 +417,6 @@ $gdate_i = date_format(date_create_from_format('Y-m-d', $gdate_i), 'd-m-Y');
 }
 
 //echo "point 07 exit gen gen <br>";
-
-
-
-
-
-
-
-//echo "Submitted";
 $imagename="image_place_holder.png";//Path of pdf place holder
 
 
@@ -500,9 +497,9 @@ FORM</strong></td>
 	</tbody>
 </table>
 
-<p>1. Name in Full :'.stripslashes($name_of_student).'</p>
+<p>1. Name in Full : &nbsp;'.stripslashes($name_of_student).'</p>
 
-<p>2. Date of Birth :'.$dob.' 3.Sex :'.$gender.'4. Blood Group :'.$blood_gr.'</p>
+<p>2. Date of Birth : &nbsp;'.$dob.'  &nbsp;3.Sex : &nbsp;'.$gender.' &nbsp; &nbsp;4. Blood Group :'.$blood_gr.'</p>
 
 <p>5.a) Father&#39;s Name : '.stripslashes($f_name).'</p>
 
@@ -514,9 +511,9 @@ FORM</strong></td>
 
 <p>7. a)Address for Communication:&nbsp;'.stripslashes($address).'</p>
 
-<p> &nbsp; &nbsp;PIN:- &nbsp; &nbsp; '.stripslashes($pin).' &nbsp;.b)Telephone/Mobile No.'.stripslashes($mob).'</p>
+<p> &nbsp; &nbsp;PIN:- &nbsp; '.stripslashes($pin).' &nbsp; &nbsp;b)Telephone/Mobile No: &nbsp;'.stripslashes($mob).'</p>
 
-<p>8. a) Nationality:'.stripslashes($nationality).' b) Religion: '.stripslashes($religion).'</p>
+<p>8. a) Nationality: &nbsp;'.stripslashes($nationality).' &nbsp; &nbsp; b) Religion:  &nbsp;'.stripslashes($religion).'</p>
 
 <p>9. Caste :<span style="font-size:9px;">( Certificate issued by the competent authority should be enclosed for SC/ST/OBC)</span>.'.$category.'</p>
 
@@ -617,7 +614,7 @@ FORM</strong></td>
 
 <div style="page-break-after: always"><span style="display: none;">&nbsp;</span></div>
 
-<p>15. Whether belongs to BPL Family:&nbsp;&nbsp;'.$bpl.'<span style="font-size:9px;">(Attested copy of BPL card should be enclosed)</span></p>
+<p>15. Whether belongs to BPL Family:&nbsp;&nbsp;'.$bpl.' &nbsp; &nbsp;<span style="font-size:9px;">(Attested copy of BPL card should be enclosed)</span></p>
 
 <p>16. Extra Curricular Activities : &nbsp;&nbsp;'.stripslashes($extra_caricular).'</p>
 
@@ -631,7 +628,7 @@ FORM</strong></td>
 
 <p>21. If you previously admitted in this College, state :</p>
 
-<p>&nbsp;Year .&nbsp;&nbsp;:'.$pv_y.'&nbsp;Class:&nbsp;&nbsp; '.$pv_class.'&nbsp;Roll: '.$pv_roll.'&nbsp; University Regn. No. with year:'.$pv_regn.'</p>
+<p>&nbsp;Year :&nbsp;&nbsp;'.$pv_y.'&nbsp;Class:&nbsp;&nbsp; '.$pv_class.'&nbsp;Roll: '.$pv_roll.'&nbsp; University Regn. No. with year: &nbsp;'.$pv_regn.'</p>
 
 <p style="text-align: center;"><span style="color:#FFFFFF;"><strong><span style="background-color:#000000;">GUARDIAN&#39;S DECLARATION</span></strong></span></p>
 
@@ -748,9 +745,9 @@ FORM</strong></td>
 	</tbody>
 </table>
 
-<p>1. Name in Full :'.stripslashes($name_of_student).'</p>
+<p>1. Name in Full : &nbsp;'.stripslashes($name_of_student).'</p>
 
-<p>2. Date of Birth :'.$dob.' 3.Sex :'.$gender.'4. Blood Group :'.$blood_gr.'</p>
+<p>2. Date of Birth : &nbsp;'.$dob.'  &nbsp;3.Sex : &nbsp;'.$gender.' &nbsp; &nbsp;4. Blood Group :'.$blood_gr.'</p>
 
 <p>5.a) Father&#39;s Name : '.stripslashes($f_name).'</p>
 
@@ -762,9 +759,9 @@ FORM</strong></td>
 
 <p>7. a)Address for Communication:&nbsp;'.stripslashes($address).'</p>
 
-<p> &nbsp; &nbsp;PIN:- &nbsp; &nbsp; '.stripslashes($pin).' &nbsp;.b)Telephone/Mobile No.'.stripslashes($mob).'</p>
+<p> &nbsp; &nbsp;PIN:- &nbsp; '.stripslashes($pin).' &nbsp; &nbsp;b)Telephone/Mobile No: &nbsp;'.stripslashes($mob).'</p>
 
-<p>8. a) Nationality:'.stripslashes($nationality).' b) Religion: '.stripslashes($religion).'</p>
+<p>8. a) Nationality: &nbsp;'.stripslashes($nationality).' &nbsp; &nbsp; b) Religion:  &nbsp;'.stripslashes($religion).'</p>
 
 <p>9. Caste :<span style="font-size:9px;">( Certificate issued by the competent authority should be enclosed for SC/ST/OBC)</span>.'.$category.'</p>
 
@@ -859,27 +856,28 @@ FORM</strong></td>
 
 
 
-<p>14 . Bank Transaction No/Journal No/Id-&nbsp;&nbsp;'.$gtran_id[$i].'&nbsp;&nbsp;b)Transaction Date-&nbsp;&nbsp;'.$gtran_date[$i].'</p>
+
+<p>14 . Bank Transaction No/Journal No/Id-&nbsp;&nbsp;'.$tran_id[$i].'&nbsp;&nbsp;b)Transaction Date-&nbsp;&nbsp;'.$tran_date[$i].'</p>
 
 <p style="text-align: right;">Full Signature of the Candidate with date</p>
 
 <div style="page-break-after: always"><span style="display: none;">&nbsp;</span></div>
 
-<p>15. Whether belongs to BPL Family:&nbsp;'.$bpl.'<span style="font-size:9px;">(Attested copy of BPL card should be enclosed)</span></p>
+<p>15. Whether belongs to BPL Family:&nbsp;&nbsp;'.$bpl.' &nbsp; &nbsp;<span style="font-size:9px;">(Attested copy of BPL card should be enclosed)</span></p>
 
-<p>16. Extra Curricular Activities :&nbsp;&nbsp; '.stripslashes($extra_caricular).'</p>
+<p>16. Extra Curricular Activities : &nbsp;&nbsp;'.stripslashes($extra_caricular).'</p>
 
-<p>17.Game &amp; Sports with Level :'.stripslashes($sport_quota).'</p>
+<p>17.Game &amp; Sports with Level :&nbsp;&nbsp;'.stripslashes($sport_quota).'</p>
 
 <p>18.Name of Local Guardian :&nbsp;&nbsp;'.stripslashes($lg).'</p>
 
 <p>19.Address of Local Guardian :&nbsp;&nbsp;'.stripslashes($addr_lg).'</p>
 
-<p>20. Whether receive any Scholarship /Financial Assistance (if yes,give details):&nbsp;'.stripslashes($scholar_detail).'</p>
+<p>20. Whether receive any Scholarship /Financial Assistance (if yes,give details):&nbsp;&nbsp;'.stripslashes($scholar_detail).'</p>
 
 <p>21. If you previously admitted in this College, state :</p>
 
-<p>&nbsp;Year .&nbsp;&nbsp;'.$pv_y.'&nbsp;&nbsp;Class:&nbsp; '.$pv_class.'&nbsp;Roll:'.$pv_roll.'&nbsp;&nbsp; University Regn. No. with year:'.$pv_regn.'</p>
+<p>&nbsp;Year :&nbsp;&nbsp;'.$pv_y.'&nbsp;Class:&nbsp;&nbsp; '.$pv_class.'&nbsp;Roll: '.$pv_roll.'&nbsp; University Regn. No. with year: &nbsp;'.$pv_regn.'</p>
 
 <p style="text-align: center;"><span style="color:#FFFFFF;"><strong><span style="background-color:#000000;">GUARDIAN&#39;S DECLARATION</span></strong></span></p>
 
