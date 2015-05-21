@@ -21,14 +21,14 @@ echo "<p>Total no of Available seat 50</p>";
 
 if($board=='wbchse'){
 //$sql="SELECT * from `".$dept_name."_honours`,student_tran where  board='wbchse' and order by merit_point DESC";
-$sql="SELECT * from `".$dept_name."_honours` as p,`student_tran` as s ,main as t,auth as f where p.category='ST' and p.board='wbchse' and s.subject_id=p.subject_id and s.student_id=t.student_id and s.student_id=f.student_id order by merit_point DESC";
+$sql="SELECT serial_no,p.student_name,gender,p.board,f.year_of_passing,p.aggr,p.category,p.ph * from `".$dept_name."_honours` as p,`student_tran` as s ,main as t,auth as f where p.category='ST' and p.board='wbchse' and s.subject_id=p.subject_id and s.student_id=t.student_id and s.student_id=f.student_id order by merit_point DESC";
 
 }
 else{
 	
 //	$sql="SELECT * from `".$dept_name."_honours` where  board <>'wbchse' order by merit_point DESC";
 
-$sql="SELECT * from `".$dept_name."_honours` as p,`student_tran` as s ,main as t,auth as f where p.category='ST' and p.board<>'wbchse' and s.subject_id=p.subject_id and s.student_id=t.student_id and s.student_id=f.student_id order by merit_point DESC";
+$sql="SELECT serial_no,p.student_name,gender,p.board,f.year_of_passing,p.aggr,p.category,p.ph  from `".$dept_name."_honours` as p,`student_tran` as s ,main as t,auth as f where p.category='ST' and p.board<>'wbchse' and s.subject_id=p.subject_id and s.student_id=t.student_id and s.student_id=f.student_id order by merit_point DESC";
 
 	}
 	

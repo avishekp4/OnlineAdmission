@@ -25,7 +25,7 @@ if($board=='wbchse'){
 
 //$sql="SELECT * from `".$dept_name."` where  board='wbchse' order by aggr DESC";
 
-$sql="SELECT * from `$dept_name` as p,`student_tran` as s ,main as t,auth as f where p.board='wbchse' and p.`category`='OBC-A'and s.subject_id=p.subject_id and s.student_id=t.student_id and s.student_id=f.student_id order by aggr DESC";
+$sql="SELECT serial_no,p.name,gender,p.board,f.year_of_passing,p.aggr,p.category,p.ph  from `$dept_name` as p,`student_tran` as s ,main as t,auth as f where p.board='wbchse' and p.`category`='OBC-A'and s.subject_id=p.subject_id and s.student_id=t.student_id and s.student_id=f.student_id order by aggr DESC";
 
 
 //echo"<br>".$sql;
@@ -33,7 +33,7 @@ $sql="SELECT * from `$dept_name` as p,`student_tran` as s ,main as t,auth as f w
 else{
 	
 	//$sql="SELECT * from `".$dept_name."` where  board <>'wbchse' order by aggr DESC";
-$sql="SELECT * from `$dept_name` as p,`student_tran` as s ,main as t,auth as f where p.board<>'wbchse' and p.`category`='OBC-A' and s.subject_id=p.subject_id and s.student_id=t.student_id and s.student_id=f.student_id order by aggr DESC";
+$sql="SELECT serial_no,p.name,gender,p.board,f.year_of_passing,p.aggr,p.category,p.ph  from `$dept_name` as p,`student_tran` as s ,main as t,auth as f where p.board<>'wbchse' and p.`category`='OBC-A' and s.subject_id=p.subject_id and s.student_id=t.student_id and s.student_id=f.student_id order by aggr DESC";
 	}
 	
 

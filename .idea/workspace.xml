@@ -2,6 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b46c7f6a-1672-4d84-879f-389830cbbc76" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\xampp\htdocs\kgpv6\obc_a_lph_ist_g" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_list.php" afterPath="$PROJECT_DIR$/gen_list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_list_g.php" afterPath="$PROJECT_DIR$/gen_list_g.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_list_ph.php" afterPath="$PROJECT_DIR$/gen_list_ph.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_ph_list_g.php" afterPath="$PROJECT_DIR$/gen_ph_list_g.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obc_a_list.php" afterPath="$PROJECT_DIR$/obc_a_list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obc_a_list_g.php" afterPath="$PROJECT_DIR$/obc_a_list_g.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obc_a_ph_list.php" afterPath="$PROJECT_DIR$/obc_a_ph_list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obc_a_ph_list_g.php" afterPath="$PROJECT_DIR$/obc_a_ph_list_g.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obc_b_list.php" afterPath="$PROJECT_DIR$/obc_b_list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obc_b_list_g.php" afterPath="$PROJECT_DIR$/obc_b_list_g.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obc_b_ph_list.php" afterPath="$PROJECT_DIR$/obc_b_ph_list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obc_b_ph_list_g.php" afterPath="$PROJECT_DIR$/obc_b_ph_list_g.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sc_list.php" afterPath="$PROJECT_DIR$/sc_list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sc_list_g.php" afterPath="$PROJECT_DIR$/sc_list_g.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sc_ph_list.php" afterPath="$PROJECT_DIR$/sc_ph_list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sc_ph_list_g.php" afterPath="$PROJECT_DIR$/sc_ph_list_g.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/st_list.php" afterPath="$PROJECT_DIR$/st_list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/st_list_g.php" afterPath="$PROJECT_DIR$/st_list_g.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/st_ph_list.php" afterPath="$PROJECT_DIR$/st_ph_list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/st_ph_list_g.php" afterPath="$PROJECT_DIR$/st_ph_list_g.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kgpv6.iws" />
@@ -39,62 +60,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dlpdf.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dlpdf.php">
+      <file leaf-file-name="st_list.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/st_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.653847" vertical-offset="346" max-vertical-offset="1037">
-              <caret line="55" column="2" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="2" />
+            <state vertical-scroll-proportion="-18.307692" vertical-offset="34" max-vertical-offset="1377">
+              <caret line="30" column="94" selection-start-line="30" selection-start-column="94" selection-end-line="30" selection-end-column="94" />
               <folding>
-                <element signature="e#6#86#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gen_list.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gen_list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-44.46154" vertical-offset="0" max-vertical-offset="1377">
-              <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
-              <folding>
-                <marker date="1431949265180" expanded="true" signature="478:701" placeholder="SELECT * fro..${$dept_name}_honours..." />
-                <marker date="1431949265180" expanded="true" signature="822:1046" placeholder="SELECT * fro..${$dept_name}_honours..." />
-                <marker date="1431949265180" expanded="true" signature="1171:1376" placeholder="..." />
-                <marker date="1431949265180" expanded="true" signature="1176:1376" placeholder="..." />
-                <marker date="1431949265180" expanded="true" signature="1262:1281" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gen_list_g.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gen_list_g.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.461538" vertical-offset="0" max-vertical-offset="1377">
-              <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
-              <folding>
-                <marker date="1431950974917" expanded="true" signature="489:693" placeholder="SELECT * fro..${$dept_name}..." />
-                <marker date="1431950974917" expanded="true" signature="702:919" placeholder="SELECT * fro..b.a. general(day shift)..." />
-                <marker date="1431950974917" expanded="true" signature="1043:1253" placeholder="SELECT * fro..${$dept_name}..." />
-                <marker date="1431950974917" expanded="true" signature="1265:1482" placeholder="SELECT * fro..b.a. general(day shift)..." />
-                <marker date="1431950974917" expanded="true" signature="1554:1759" placeholder="..." />
-                <marker date="1431950974917" expanded="true" signature="1559:1759" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="st_ph_list_g.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/st_ph_list_g.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6518405" vertical-offset="0" max-vertical-offset="1258">
-              <caret line="25" column="120" selection-start-line="25" selection-start-column="120" selection-end-line="25" selection-end-column="120" />
-              <folding>
-                <marker date="1431813494472" expanded="true" signature="408:668" placeholder="SELECT * fro..${$dept_name}_honours..." />
-                <marker date="1431813494472" expanded="true" signature="807:1069" placeholder="SELECT * fro..${$dept_name}_honours..." />
-                <marker date="1431813494472" expanded="true" signature="1150:1382" placeholder="..." />
-                <marker date="1431813494472" expanded="true" signature="1155:1382" placeholder="..." />
-                <marker date="1431813494472" expanded="true" signature="1241:1260" placeholder="..." />
+                <marker date="1432219273231" expanded="true" signature="478:804" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219273231" expanded="true" signature="925:1252" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219273231" expanded="true" signature="1377:1618" placeholder="..." />
+                <marker date="1432219273231" expanded="true" signature="1382:1618" placeholder="..." />
+                <marker date="1432219273231" expanded="true" signature="1468:1487" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -103,83 +79,142 @@
       <file leaf-file-name="st_ph_list.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/st_ph_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="255" max-vertical-offset="1258">
-              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+            <state vertical-scroll-proportion="-6.5384617" vertical-offset="255" max-vertical-offset="1258">
+              <caret line="25" column="98" selection-start-line="25" selection-start-column="98" selection-end-line="25" selection-end-column="98" />
               <folding>
-                <marker date="1431816160004" expanded="true" signature="408:672" placeholder="SELECT * fro..${$dept_name}_honours..." />
-                <marker date="1431816160004" expanded="true" signature="813:1073" placeholder="SELECT * fro..${$dept_name}_honours..." />
-                <marker date="1431816160004" expanded="true" signature="1152:1384" placeholder="..." />
-                <marker date="1431816160004" expanded="true" signature="1157:1384" placeholder="..." />
-                <marker date="1431816160004" expanded="true" signature="1243:1262" placeholder="..." />
+                <marker date="1432219285664" expanded="true" signature="408:752" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219285664" expanded="true" signature="893:1233" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219285664" expanded="true" signature="1312:1544" placeholder="..." />
+                <marker date="1432219285664" expanded="true" signature="1317:1544" placeholder="..." />
+                <marker date="1432219285664" expanded="true" signature="1403:1422" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="st_list_g.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/st_list_g.php">
+      <file leaf-file-name="sc_ph_list.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc_ph_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614" vertical-offset="493" max-vertical-offset="1445">
-              <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+            <state vertical-scroll-proportion="-6.5384617" vertical-offset="153" max-vertical-offset="1258">
+              <caret line="19" column="98" selection-start-line="19" selection-start-column="98" selection-end-line="19" selection-end-column="98" />
               <folding>
-                <marker date="1431814220966" expanded="true" signature="489:714" placeholder="SELECT * fro..${$dept_name}..." />
-                <marker date="1431814220966" expanded="true" signature="839:1066" placeholder="SELECT * fro..${$dept_name}..." />
-                <marker date="1431814220966" expanded="true" signature="1180:1421" placeholder="..." />
-                <marker date="1431814220966" expanded="true" signature="1185:1421" placeholder="..." />
-                <marker date="1431814220966" expanded="true" signature="1271:1290" placeholder="..." />
+                <marker date="1432219307022" expanded="true" signature="408:752" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219307022" expanded="true" signature="893:1233" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219307022" expanded="true" signature="1312:1544" placeholder="..." />
+                <marker date="1432219307022" expanded="true" signature="1317:1544" placeholder="..." />
+                <marker date="1432219307022" expanded="true" signature="1403:1422" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="st_list.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/st_list.php">
+      <file leaf-file-name="sc_list.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.615385" vertical-offset="0" max-vertical-offset="1377">
-              <caret line="30" column="114" selection-start-line="30" selection-start-column="114" selection-end-line="30" selection-end-column="114" />
+            <state vertical-scroll-proportion="-11.692307" vertical-offset="87" max-vertical-offset="1377">
+              <caret line="23" column="94" selection-start-line="23" selection-start-column="94" selection-end-line="23" selection-end-column="94" />
               <folding>
-                <marker date="1431815110992" expanded="true" signature="478:724" placeholder="SELECT * fro..${$dept_name}_honours..." />
-                <marker date="1431815110992" expanded="true" signature="845:1092" placeholder="SELECT * fro..${$dept_name}_honours..." />
-                <marker date="1431815110992" expanded="true" signature="1217:1458" placeholder="..." />
-                <marker date="1431815110992" expanded="true" signature="1222:1458" placeholder="..." />
-                <marker date="1431815110992" expanded="true" signature="1308:1327" placeholder="..." />
+                <marker date="1432219320919" expanded="true" signature="478:802" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219320919" expanded="true" signature="923:1247" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219320919" expanded="true" signature="1372:1613" placeholder="..." />
+                <marker date="1432219320919" expanded="true" signature="1377:1613" placeholder="..." />
+                <marker date="1432219320919" expanded="true" signature="1463:1482" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sc_ph_list_g.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sc_ph_list_g.php">
+      <file leaf-file-name="obc_b_ph_list.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/obc_b_ph_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.692307" vertical-offset="121" max-vertical-offset="1258">
-              <caret line="25" column="193" selection-start-line="25" selection-start-column="193" selection-end-line="25" selection-end-column="193" />
+            <state vertical-scroll-proportion="-3.8461537" vertical-offset="223" max-vertical-offset="1258">
+              <caret line="19" column="98" selection-start-line="19" selection-start-column="98" selection-end-line="19" selection-end-column="98" />
               <folding>
-                <marker date="1431813569964" expanded="true" signature="408:668" placeholder="SELECT * fro..${$dept_name}_honours..." />
-                <marker date="1431813569964" expanded="true" signature="807:1069" placeholder="SELECT * fro..${$dept_name}_honours..." />
-                <marker date="1431813569964" expanded="true" signature="1150:1382" placeholder="..." />
-                <marker date="1431813569964" expanded="true" signature="1155:1382" placeholder="..." />
-                <marker date="1431813569964" expanded="true" signature="1241:1260" placeholder="..." />
+                <marker date="1432219388453" expanded="true" signature="408:755" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219388453" expanded="true" signature="896:1239" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219388453" expanded="true" signature="1318:1550" placeholder="..." />
+                <marker date="1432219388453" expanded="true" signature="1323:1550" placeholder="..." />
+                <marker date="1432219388453" expanded="true" signature="1409:1428" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dept_view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dept_view.php">
+      <file leaf-file-name="obc_b_list.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/obc_b_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1411">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-15.692307" vertical-offset="102" max-vertical-offset="1377">
+              <caret line="30" column="94" selection-start-line="30" selection-start-column="94" selection-end-line="30" selection-end-column="94" />
+              <folding>
+                <marker date="1432219388444" expanded="true" signature="478:805" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219388444" expanded="true" signature="926:1253" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219388444" expanded="true" signature="1378:1619" placeholder="..." />
+                <marker date="1432219388444" expanded="true" signature="1383:1619" placeholder="..." />
+                <marker date="1432219388444" expanded="true" signature="1469:1488" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dept_view_g.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dept_view_g.php">
+      <file leaf-file-name="obc_a_ph_list.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/obc_a_ph_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1411">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-15.923077" vertical-offset="11" max-vertical-offset="1258">
+              <caret line="25" column="98" selection-start-line="25" selection-start-column="98" selection-end-line="25" selection-end-column="98" />
+              <folding>
+                <marker date="1432219388459" expanded="true" signature="408:755" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219388459" expanded="true" signature="896:1239" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219388459" expanded="true" signature="1318:1550" placeholder="..." />
+                <marker date="1432219388459" expanded="true" signature="1323:1550" placeholder="..." />
+                <marker date="1432219388459" expanded="true" signature="1409:1428" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="obc_a_list.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/obc_a_list.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.8461537" vertical-offset="187" max-vertical-offset="1377">
+              <caret line="23" column="94" selection-start-line="23" selection-start-column="94" selection-end-line="23" selection-end-column="94" />
+              <folding>
+                <marker date="1432219400864" expanded="true" signature="478:804" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219400864" expanded="true" signature="925:1252" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219400864" expanded="true" signature="1377:1618" placeholder="..." />
+                <marker date="1432219400864" expanded="true" signature="1382:1618" placeholder="..." />
+                <marker date="1432219400864" expanded="true" signature="1468:1487" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gen_list.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gen_list.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.730769" vertical-offset="138" max-vertical-offset="1377">
+              <caret line="23" column="91" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="93" />
+              <folding>
+                <marker date="1432219415388" expanded="true" signature="478:781" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219415388" expanded="true" signature="902:1206" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219415388" expanded="true" signature="1331:1536" placeholder="..." />
+                <marker date="1432219415388" expanded="true" signature="1336:1536" placeholder="..." />
+                <marker date="1432219415388" expanded="true" signature="1422:1441" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gen_list_ph.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gen_list_ph.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.68711656" vertical-offset="62" max-vertical-offset="1377">
+              <caret line="30" column="97" selection-start-line="30" selection-start-column="97" selection-end-line="30" selection-end-column="97" />
+              <folding>
+                <marker date="1432219603976" expanded="true" signature="482:799" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219603976" expanded="true" signature="923:1240" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219603976" expanded="true" signature="1347:1525" placeholder="SELECT seria..${$dept_name}_honours..." />
+                <marker date="1432219603976" expanded="true" signature="1454:1473" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -192,24 +227,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gen_ph_list_g.php" />
-        <option value="$PROJECT_DIR$/st_ph_list_g.php" />
-        <option value="$PROJECT_DIR$/sc_ph_list_g.php" />
-        <option value="$PROJECT_DIR$/obc_a_ph_list_g.php" />
-        <option value="$PROJECT_DIR$/obc_b_ph_list_g.php" />
-        <option value="$PROJECT_DIR$/obc_b_list_g.php" />
-        <option value="$PROJECT_DIR$/obc_a_list_g.php" />
-        <option value="$PROJECT_DIR$/sc_list_g.php" />
-        <option value="$PROJECT_DIR$/sc_list.php" />
-        <option value="$PROJECT_DIR$/st_list.php" />
-        <option value="$PROJECT_DIR$/obc_a_list.php" />
-        <option value="$PROJECT_DIR$/obc_b_ph_list.php" />
-        <option value="$PROJECT_DIR$/obc_a_ph_list.php" />
-        <option value="$PROJECT_DIR$/sc_ph_list.php" />
         <option value="$PROJECT_DIR$/gen_ph_list.php" />
         <option value="$PROJECT_DIR$/temp.php" />
-        <option value="$PROJECT_DIR$/gen_list.php" />
-        <option value="$PROJECT_DIR$/gen_list_g.php" />
         <option value="$PROJECT_DIR$/previous_user.php" />
         <option value="$PROJECT_DIR$/auth.php" />
         <option value="$PROJECT_DIR$/function.php" />
@@ -218,6 +237,26 @@
         <option value="$PROJECT_DIR$/education.php" />
         <option value="$PROJECT_DIR$/pdfgen.php" />
         <option value="$PROJECT_DIR$/pdfregen.php" />
+        <option value="$PROJECT_DIR$/st_ph_list_g.php" />
+        <option value="$PROJECT_DIR$/gen_list_g.php" />
+        <option value="$PROJECT_DIR$/gen_ph_list_g.php" />
+        <option value="$PROJECT_DIR$/obc_a_list_g.php" />
+        <option value="$PROJECT_DIR$/obc_a_ph_list_g.php" />
+        <option value="$PROJECT_DIR$/obc_b_list_g.php" />
+        <option value="$PROJECT_DIR$/obc_b_ph_list_g.php" />
+        <option value="$PROJECT_DIR$/sc_list_g.php" />
+        <option value="$PROJECT_DIR$/sc_ph_list_g.php" />
+        <option value="$PROJECT_DIR$/st_list_g.php" />
+        <option value="$PROJECT_DIR$/st_list.php" />
+        <option value="$PROJECT_DIR$/st_ph_list.php" />
+        <option value="$PROJECT_DIR$/sc_ph_list.php" />
+        <option value="$PROJECT_DIR$/sc_list.php" />
+        <option value="$PROJECT_DIR$/obc_b_ph_list.php" />
+        <option value="$PROJECT_DIR$/obc_b_list.php" />
+        <option value="$PROJECT_DIR$/obc_a_ph_list.php" />
+        <option value="$PROJECT_DIR$/obc_a_list.php" />
+        <option value="$PROJECT_DIR$/gen_list.php" />
+        <option value="$PROJECT_DIR$/gen_list_ph.php" />
       </list>
     </option>
   </component>
@@ -300,7 +339,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/kgpcollege" />
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -449,7 +488,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432218232951</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Re submit">
+      <created>1432218243043</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1432218243043</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -474,7 +519,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3379694" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -483,7 +528,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2622108" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22879177" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3104113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32127956" sideWeight="0.19023137" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32127956" sideWeight="0.8097686" order="7" side_tool="false" content_ui="tabs" />
@@ -1178,69 +1223,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obc_b_ph_list_g.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="1258">
-          <caret line="25" column="120" selection-start-line="25" selection-start-column="120" selection-end-line="25" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen_ph_list_g.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6518405" vertical-offset="0" max-vertical-offset="1258">
-          <caret line="25" column="101" selection-start-line="25" selection-start-column="101" selection-end-line="25" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen_list_ph.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obc_a_ph_list_g.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6518405" vertical-offset="0" max-vertical-offset="1258">
-          <caret line="25" column="111" selection-start-line="0" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obc_b_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1377">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc_ph_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64608073" vertical-offset="153" max-vertical-offset="1258">
-          <caret line="25" column="153" selection-start-line="25" selection-start-column="153" selection-end-line="25" selection-end-column="153" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obc_b_ph_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3942993" vertical-offset="837" max-vertical-offset="1258">
-          <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obc_a_ph_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1448932" vertical-offset="521" max-vertical-offset="1258">
-          <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obc_b_list_g.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923" vertical-offset="255" max-vertical-offset="1445">
-          <caret line="35" column="126" selection-start-line="35" selection-start-column="126" selection-end-line="35" selection-end-column="126" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gen_ph_list.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8849315" vertical-offset="0" max-vertical-offset="1377">
@@ -1824,62 +1806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sc_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.269231" vertical-offset="725" max-vertical-offset="1377">
-          <caret line="30" column="111" selection-start-line="30" selection-start-column="111" selection-end-line="30" selection-end-column="111" />
-          <folding>
-            <marker date="1431815065304" expanded="true" signature="-1:-1" placeholder="SELECT * fro..${$dept_name}_honours..." />
-            <marker date="1431815065304" expanded="true" signature="-1:-1" placeholder="SELECT * fro..${$dept_name}_honours..." />
-            <marker date="1431815065304" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431815065304" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431815065304" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc_list_g.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="323" max-vertical-offset="1445">
-          <caret line="35" column="123" selection-start-line="35" selection-start-column="123" selection-end-line="35" selection-end-column="123" />
-          <folding>
-            <marker date="1431814220966" expanded="true" signature="-1:-1" placeholder="SELECT * fro..${$dept_name}..." />
-            <marker date="1431814220966" expanded="true" signature="-1:-1" placeholder="SELECT * fro..${$dept_name}..." />
-            <marker date="1431814220966" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431814220966" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431814220966" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obc_a_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.615385" vertical-offset="0" max-vertical-offset="1377">
-          <caret line="30" column="114" selection-start-line="30" selection-start-column="114" selection-end-line="30" selection-end-column="114" />
-          <folding>
-            <marker date="1431815135418" expanded="true" signature="-1:-1" placeholder="SELECT * fro..${$dept_name}_honours..." />
-            <marker date="1431815135418" expanded="true" signature="-1:-1" placeholder="SELECT * fro..${$dept_name}_honours..." />
-            <marker date="1431815135418" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431815135418" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431815135418" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obc_a_list_g.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.038462" vertical-offset="334" max-vertical-offset="1445">
-          <caret line="35" column="126" selection-start-line="35" selection-start-column="126" selection-end-line="35" selection-end-column="126" />
-          <folding>
-            <marker date="1431814182980" expanded="true" signature="-1:-1" placeholder="SELECT * fro..${$dept_name}..." />
-            <marker date="1431814182980" expanded="true" signature="-1:-1" placeholder="SELECT * fro..${$dept_name}..." />
-            <marker date="1431814182980" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431814182980" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431814182980" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dept_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1411">
@@ -1902,105 +1828,290 @@
           <caret line="55" column="2" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="2" />
           <folding>
             <element signature="e#6#86#0#PHP" expanded="true" />
+            <marker date="1432188844999" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432188844999" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432188844999" expanded="true" signature="-1:-1" placeholder="select * fro..pdf..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/st_ph_list.php">
+    <entry file="file://$PROJECT_DIR$/gen_ph_list_g.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="255" max-vertical-offset="1258">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        <state vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="1258">
+          <caret line="25" column="90" selection-start-line="25" selection-start-column="90" selection-end-line="25" selection-end-column="90" />
           <folding>
-            <marker date="1431816160004" expanded="true" signature="408:672" placeholder="SELECT * fro..${$dept_name}_honours..." />
-            <marker date="1431816160004" expanded="true" signature="813:1073" placeholder="SELECT * fro..${$dept_name}_honours..." />
-            <marker date="1431816160004" expanded="true" signature="1152:1384" placeholder="..." />
-            <marker date="1431816160004" expanded="true" signature="1157:1384" placeholder="..." />
-            <marker date="1431816160004" expanded="true" signature="1243:1262" placeholder="..." />
+            <marker date="1432219153512" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219153512" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219153512" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219153512" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219153512" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/st_list_g.php">
+    <entry file="file://$PROJECT_DIR$/obc_a_list_g.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614" vertical-offset="493" max-vertical-offset="1445">
-          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        <state vertical-scroll-proportion="-10.038462" vertical-offset="334" max-vertical-offset="1445">
+          <caret line="35" column="86" selection-start-line="35" selection-start-column="86" selection-end-line="35" selection-end-column="86" />
           <folding>
-            <marker date="1431814220966" expanded="true" signature="489:714" placeholder="SELECT * fro..${$dept_name}..." />
-            <marker date="1431814220966" expanded="true" signature="839:1066" placeholder="SELECT * fro..${$dept_name}..." />
-            <marker date="1431814220966" expanded="true" signature="1180:1421" placeholder="..." />
-            <marker date="1431814220966" expanded="true" signature="1185:1421" placeholder="..." />
-            <marker date="1431814220966" expanded="true" signature="1271:1290" placeholder="..." />
+            <marker date="1432219153602" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}..." />
+            <marker date="1432219153602" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}..." />
+            <marker date="1432219153602" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219153602" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219153602" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/st_list.php">
+    <entry file="file://$PROJECT_DIR$/obc_a_ph_list_g.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.615385" vertical-offset="0" max-vertical-offset="1377">
-          <caret line="30" column="114" selection-start-line="30" selection-start-column="114" selection-end-line="30" selection-end-column="114" />
+        <state vertical-scroll-proportion="-15.038462" vertical-offset="102" max-vertical-offset="1258">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
-            <marker date="1431815110992" expanded="true" signature="478:724" placeholder="SELECT * fro..${$dept_name}_honours..." />
-            <marker date="1431815110992" expanded="true" signature="845:1092" placeholder="SELECT * fro..${$dept_name}_honours..." />
-            <marker date="1431815110992" expanded="true" signature="1217:1458" placeholder="..." />
-            <marker date="1431815110992" expanded="true" signature="1222:1458" placeholder="..." />
-            <marker date="1431815110992" expanded="true" signature="1308:1327" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc_ph_list_g.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.692307" vertical-offset="121" max-vertical-offset="1258">
-          <caret line="25" column="193" selection-start-line="25" selection-start-column="193" selection-end-line="25" selection-end-column="193" />
-          <folding>
-            <marker date="1431813569964" expanded="true" signature="408:668" placeholder="SELECT * fro..${$dept_name}_honours..." />
-            <marker date="1431813569964" expanded="true" signature="807:1069" placeholder="SELECT * fro..${$dept_name}_honours..." />
-            <marker date="1431813569964" expanded="true" signature="1150:1382" placeholder="..." />
-            <marker date="1431813569964" expanded="true" signature="1155:1382" placeholder="..." />
-            <marker date="1431813569964" expanded="true" signature="1241:1260" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-44.46154" vertical-offset="0" max-vertical-offset="1377">
-          <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
-          <folding>
-            <marker date="1431949265180" expanded="true" signature="478:701" placeholder="SELECT * fro..${$dept_name}_honours..." />
-            <marker date="1431949265180" expanded="true" signature="822:1046" placeholder="SELECT * fro..${$dept_name}_honours..." />
-            <marker date="1431949265180" expanded="true" signature="1171:1376" placeholder="..." />
-            <marker date="1431949265180" expanded="true" signature="1176:1376" placeholder="..." />
-            <marker date="1431949265180" expanded="true" signature="1262:1281" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen_list_g.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.461538" vertical-offset="0" max-vertical-offset="1377">
-          <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
-          <folding>
-            <marker date="1431950974917" expanded="true" signature="489:693" placeholder="SELECT * fro..${$dept_name}..." />
-            <marker date="1431950974917" expanded="true" signature="702:919" placeholder="SELECT * fro..b.a. general(day shift)..." />
-            <marker date="1431950974917" expanded="true" signature="1043:1253" placeholder="SELECT * fro..${$dept_name}..." />
-            <marker date="1431950974917" expanded="true" signature="1265:1482" placeholder="SELECT * fro..b.a. general(day shift)..." />
-            <marker date="1431950974917" expanded="true" signature="1554:1759" placeholder="..." />
-            <marker date="1431950974917" expanded="true" signature="1559:1759" placeholder="..." />
+            <marker date="1432219153659" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219153659" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219153659" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219153659" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219153659" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/st_ph_list_g.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6518405" vertical-offset="0" max-vertical-offset="1258">
-          <caret line="25" column="120" selection-start-line="25" selection-start-column="120" selection-end-line="25" selection-end-column="120" />
+        <state vertical-scroll-proportion="-14.384615" vertical-offset="51" max-vertical-offset="1258">
+          <caret line="25" column="90" selection-start-line="25" selection-start-column="90" selection-end-line="25" selection-end-column="90" />
           <folding>
-            <marker date="1431813494472" expanded="true" signature="408:668" placeholder="SELECT * fro..${$dept_name}_honours..." />
-            <marker date="1431813494472" expanded="true" signature="807:1069" placeholder="SELECT * fro..${$dept_name}_honours..." />
-            <marker date="1431813494472" expanded="true" signature="1150:1382" placeholder="..." />
-            <marker date="1431813494472" expanded="true" signature="1155:1382" placeholder="..." />
-            <marker date="1431813494472" expanded="true" signature="1241:1260" placeholder="..." />
+            <marker date="1432219153666" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219153666" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219153666" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219153666" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219153666" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_list_g.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.307692" vertical-offset="69" max-vertical-offset="1445">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <marker date="1432219153776" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}..." />
+            <marker date="1432219153776" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}..." />
+            <marker date="1432219153776" expanded="true" signature="-1:-1" placeholder="SELECT * fro..b.a. general(day shift)..." />
+            <marker date="1432219153776" expanded="true" signature="-1:-1" placeholder="SELECT * fro..b.a. general(day shift)..." />
+            <marker date="1432219153776" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}..." />
+            <marker date="1432219153776" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219153776" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obc_b_list_g.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537" vertical-offset="255" max-vertical-offset="1445">
+          <caret line="27" column="86" selection-start-line="27" selection-start-column="86" selection-end-line="27" selection-end-column="86" />
+          <folding>
+            <marker date="1432219168676" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}..." />
+            <marker date="1432219168676" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}..." />
+            <marker date="1432219168676" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219168676" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219168676" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obc_b_ph_list_g.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="153" max-vertical-offset="1258">
+          <caret line="19" column="90" selection-start-line="19" selection-start-column="90" selection-end-line="19" selection-end-column="90" />
+          <folding>
+            <marker date="1432219187316" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219187316" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219187316" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219187316" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219187316" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/st_list_g.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.653846" vertical-offset="130" max-vertical-offset="1445">
+          <caret line="27" column="86" selection-start-line="27" selection-start-column="86" selection-end-line="27" selection-end-column="86" />
+          <folding>
+            <marker date="1432219217206" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}..." />
+            <marker date="1432219217206" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}..." />
+            <marker date="1432219217206" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219217206" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219217206" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc_list_g.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538" vertical-offset="323" max-vertical-offset="1445">
+          <caret line="35" column="86" selection-start-line="35" selection-start-column="86" selection-end-line="35" selection-end-column="86" />
+          <folding>
+            <marker date="1432219196044" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}..." />
+            <marker date="1432219196044" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}..." />
+            <marker date="1432219196044" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219196044" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219196044" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc_ph_list_g.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.307693" vertical-offset="121" max-vertical-offset="1258">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <marker date="1432219207415" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219207415" expanded="true" signature="-1:-1" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219207415" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219207415" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432219207415" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/st_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.307692" vertical-offset="34" max-vertical-offset="1377">
+          <caret line="30" column="94" selection-start-line="30" selection-start-column="94" selection-end-line="30" selection-end-column="94" />
+          <folding>
+            <marker date="1432219273231" expanded="true" signature="478:804" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219273231" expanded="true" signature="925:1252" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219273231" expanded="true" signature="1377:1618" placeholder="..." />
+            <marker date="1432219273231" expanded="true" signature="1382:1618" placeholder="..." />
+            <marker date="1432219273231" expanded="true" signature="1468:1487" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/st_ph_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="255" max-vertical-offset="1258">
+          <caret line="25" column="98" selection-start-line="25" selection-start-column="98" selection-end-line="25" selection-end-column="98" />
+          <folding>
+            <marker date="1432219285664" expanded="true" signature="408:752" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219285664" expanded="true" signature="893:1233" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219285664" expanded="true" signature="1312:1544" placeholder="..." />
+            <marker date="1432219285664" expanded="true" signature="1317:1544" placeholder="..." />
+            <marker date="1432219285664" expanded="true" signature="1403:1422" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc_ph_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="153" max-vertical-offset="1258">
+          <caret line="19" column="98" selection-start-line="19" selection-start-column="98" selection-end-line="19" selection-end-column="98" />
+          <folding>
+            <marker date="1432219307022" expanded="true" signature="408:752" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219307022" expanded="true" signature="893:1233" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219307022" expanded="true" signature="1312:1544" placeholder="..." />
+            <marker date="1432219307022" expanded="true" signature="1317:1544" placeholder="..." />
+            <marker date="1432219307022" expanded="true" signature="1403:1422" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.692307" vertical-offset="87" max-vertical-offset="1377">
+          <caret line="23" column="94" selection-start-line="23" selection-start-column="94" selection-end-line="23" selection-end-column="94" />
+          <folding>
+            <marker date="1432219320919" expanded="true" signature="478:802" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219320919" expanded="true" signature="923:1247" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219320919" expanded="true" signature="1372:1613" placeholder="..." />
+            <marker date="1432219320919" expanded="true" signature="1377:1613" placeholder="..." />
+            <marker date="1432219320919" expanded="true" signature="1463:1482" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obc_b_ph_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8461537" vertical-offset="223" max-vertical-offset="1258">
+          <caret line="19" column="98" selection-start-line="19" selection-start-column="98" selection-end-line="19" selection-end-column="98" />
+          <folding>
+            <marker date="1432219388453" expanded="true" signature="408:755" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219388453" expanded="true" signature="896:1239" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219388453" expanded="true" signature="1318:1550" placeholder="..." />
+            <marker date="1432219388453" expanded="true" signature="1323:1550" placeholder="..." />
+            <marker date="1432219388453" expanded="true" signature="1409:1428" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obc_b_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.692307" vertical-offset="102" max-vertical-offset="1377">
+          <caret line="30" column="94" selection-start-line="30" selection-start-column="94" selection-end-line="30" selection-end-column="94" />
+          <folding>
+            <marker date="1432219388444" expanded="true" signature="478:805" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219388444" expanded="true" signature="926:1253" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219388444" expanded="true" signature="1378:1619" placeholder="..." />
+            <marker date="1432219388444" expanded="true" signature="1383:1619" placeholder="..." />
+            <marker date="1432219388444" expanded="true" signature="1469:1488" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obc_a_ph_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.923077" vertical-offset="11" max-vertical-offset="1258">
+          <caret line="25" column="98" selection-start-line="25" selection-start-column="98" selection-end-line="25" selection-end-column="98" />
+          <folding>
+            <marker date="1432219388459" expanded="true" signature="408:755" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219388459" expanded="true" signature="896:1239" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219388459" expanded="true" signature="1318:1550" placeholder="..." />
+            <marker date="1432219388459" expanded="true" signature="1323:1550" placeholder="..." />
+            <marker date="1432219388459" expanded="true" signature="1409:1428" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obc_a_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537" vertical-offset="187" max-vertical-offset="1377">
+          <caret line="23" column="94" selection-start-line="23" selection-start-column="94" selection-end-line="23" selection-end-column="94" />
+          <folding>
+            <marker date="1432219400864" expanded="true" signature="478:804" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219400864" expanded="true" signature="925:1252" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219400864" expanded="true" signature="1377:1618" placeholder="..." />
+            <marker date="1432219400864" expanded="true" signature="1382:1618" placeholder="..." />
+            <marker date="1432219400864" expanded="true" signature="1468:1487" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.730769" vertical-offset="138" max-vertical-offset="1377">
+          <caret line="23" column="91" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="93" />
+          <folding>
+            <marker date="1432219415388" expanded="true" signature="478:781" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219415388" expanded="true" signature="902:1206" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219415388" expanded="true" signature="1331:1536" placeholder="..." />
+            <marker date="1432219415388" expanded="true" signature="1336:1536" placeholder="..." />
+            <marker date="1432219415388" expanded="true" signature="1422:1441" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_list_ph.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68711656" vertical-offset="62" max-vertical-offset="1377">
+          <caret line="30" column="97" selection-start-line="30" selection-start-column="97" selection-end-line="30" selection-end-column="97" />
+          <folding>
+            <marker date="1432219603976" expanded="true" signature="482:799" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219603976" expanded="true" signature="923:1240" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219603976" expanded="true" signature="1347:1525" placeholder="SELECT seria..${$dept_name}_honours..." />
+            <marker date="1432219603976" expanded="true" signature="1454:1473" placeholder="..." />
           </folding>
         </state>
       </provider>
