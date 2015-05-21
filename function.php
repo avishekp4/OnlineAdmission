@@ -202,19 +202,21 @@ if ((array_key_exists($hons,$sub_list))||$hons=="botany"||$hons=="zoology"||$hon
         $hmarks = $sub_list["biological science"];
         if ($hmarks >= 50||$aggr>=225) {
             $mp = ($aggr * .1) + $hmarks;
+            return $mp;
         }
         else
         {
             $mp = 0;
         }
+
     }
     else if ($hons == "geography(arts)" || $hons == "geography(science)") {
         $hmarks = $sub_list["geography"];
 
         if ($hmarks >= 50||$aggr>=225) {
-            $mp = ($aggr * .1) + $hmarks;
+            $mp = ($aggr * .1) + $hmarks;return $mp;
         } else {
-            $mp = 0;
+            $mp = 0;return $mp;
         }
     }
 
@@ -223,9 +225,10 @@ if ((array_key_exists($hons,$sub_list))||$hons=="botany"||$hons=="zoology"||$hon
      //echo $hmarks;
         if($hmarks>=50||$aggr>=225) {
             $mp = ($aggr * .1) + $hmarks;
+            return $mp;
         }
         else{
-            $mp=0;
+            $mp=0;return $mp;
         }
      }
 

@@ -49,7 +49,7 @@ echo"<table border='1'>
         <th>Year Of Passing</th>
         <th>Merit Point</th> 
         <th>Remarks</th>
-        <th>Physical Disability</th>
+
         
 </tr>";
 		
@@ -61,11 +61,11 @@ echo "<tr>";
 	echo "<td>".$row['serial_no']."</td>";
 	echo"<td>".$row['student_name']."</td>";
 	echo "<td>".$row['gender'];
-     echo"<td>".$row['board']."</td>";
-     echo "<td>".$row['year_of_passing']."</td>";	
+    echo"<td>".$row['board']."</td>";
+    echo "<td>".$row['year_of_passing']."</td>";
 	echo"<td>".$row['merit_point']."</td>";
-	echo"<td>".$row['category']."</td>";
-	echo"<td>".$row['ph']."</td>";
+	echo"<td>".$row['category'].",".$row['ph']."</td>";
+
 	
 echo "</tr>";
 $rowno=$rowno+1;

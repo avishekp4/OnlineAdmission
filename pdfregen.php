@@ -1,102 +1,123 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: VAIO
+ * Date: 20-05-2015
+ * Time: 11:17
+ */
  //Inialize session
 if(!isset($_SESSION)){
-   session_start();
+    session_start();
 } 
 // Check, if username session is NOT set then this page will jump to login page
 
 if (!isset($_SESSION['name'])) {
-header('Location: index.html');
+    header('Location: index.html');
 }
 $now = time(); // Checking the time now when home page starts.
 
         if ($now > $_SESSION['expire']) {
-			session_unset(); 
+            session_unset();
             session_destroy();
             echo "Your session has expired! <a href='firstpage.html'>Start here</a>";
-			exit();
+            exit();
         }
 
-		
+
 	function generateRandomString($length = 10) {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $charactersLength = strlen($characters);
-    $randomString = '';
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
-    return $randomString;
-}	
-	
+
 include'connect.php';
 include 'function.php';
 $n=0;
 $m=1;
 $student_id=$_SESSION['name'];
-//$student_id="jhjhj122";
-$f_name=mysqli_real_escape_string($conn,$_GET['f_name']);
-$f_occu=mysqli_real_escape_string($conn,$_GET['f_occu']);
-$f_edu=mysqli_real_escape_string($conn,$_GET['f_edu']);
-$f_income=mysqli_real_escape_string($conn,$_GET['f_income']);
-$m_name=mysqli_real_escape_string($conn,$_GET['m_name']);
-$m_occu=mysqli_real_escape_string($conn,$_GET['m_occu']);
-$m_edu=mysqli_real_escape_string($conn,$_GET['m_edu']);
-$m_income=mysqli_real_escape_string($conn,$_GET['m_income']);
-$category=$_GET['category'];
-$ph=$_GET['ph'];
-$minority=$_GET['minority'];
-$nationality=mysqli_real_escape_string($conn,$_GET['nationality']);
-$religion=mysqli_real_escape_string($conn,$_GET['religion']);
-$dob=date("Y-m-d",strtotime($_GET['dob']));//echo $dob;
-$blood_gr=mysqli_real_escape_string($conn,$_GET['blood_gr']);
-$sport_quota=$_GET['sport_quota'];
-$name_of_last_school=$_GET['name_of_last_school'];
-$name_of_last_school=mysqli_real_escape_string($conn,$name_of_last_school);
-$bpl=$_GET['bpl'];
-$extra_caricular=$_GET['extra_caricular'];
-$extra_caricular = mysqli_real_escape_string($conn, $extra_caricular);
 
-$game_sport=$_GET['game_sport'];
-$game_sport = mysqli_real_escape_string($conn, $game_sport);
-$pin=mysqli_real_escape_string($conn,$_GET['pin']);
-$lg=$_GET['lg'];
-$addr_lg=mysqli_real_escape_string($conn,$_GET['addr_lg']);
-$rail_bus=mysqli_real_escape_string($conn,$_GET['rail_bus']);
-$scholar=$_GET['scholar'];
-$scholar_detail=mysqli_real_escape_string($conn,$_GET['scholar_detail']);
-//$hons=$_GET['hons'];//$hons=strtoupper($hons);
-$sub1=$_GET['sub1'];
-$sub2=$_GET['sub2'];
-//$sub3=$_GET['sub2'];
-$previous_add=$_GET['previous_add'];
-$lang1_name=$_GET['lang1_name'];
-$lang1_th_fm=$_GET['lang1_th_fm'];
-$lang1_pr_fm=$_GET['lang1_pr_fm'];
-$lang1_th_om=$_GET['lang1_th_om'];
-$lang1_pr_om=$_GET['lang1_pr_om'];
-$sub1_name=$_GET['sub1_name'];//echo $sub1_name;
-$sub1_th_fm=$_GET['sub1_th_fm'];
-$sub1_th_om=$_GET['sub1_th_om'];
-$sub1_pr_fm=$_GET['sub1_pr_fm'];
-$sub1_pr_om=$_GET['sub1_pr_om'];
-$sub2_name=$_GET['sub2_name'];//echo $sub2_name;//$sub2_name=strtoupper($sub2_name);
-$sub2_th_fm=$_GET['sub2_th_fm'];
-$sub2_th_om=$_GET['sub2_th_om'];
-$sub2_pr_fm=$_GET['sub2_pr_fm'];
-$sub2_pr_om=$_GET['sub2_pr_om'];
+
+$sql="select * from main where student_id <=>'$student_id'";
+$result = mysqli_query($conn,$sql);
+if (!$result) {
+    die("No result 1" . mysqli_error($conn));
+}
+$row1 = @mysqli_fetch_array($result);
+
+
+
+
+
+
+
+
+
+
+//$student_id="jhjhj122";
+$f_name=$row1['f_name'];
+$f_occu=$row1['f_occu'];
+$f_edu=$row1['f_edu'];
+$f_income=$row1['f_income'];
+$m_name=$row1['m_name'];
+$m_occu=$row1['m_occu'];
+$m_edu=$row1['m_edu'];
+$m_income=$row1['m_income'];
+$category=$row1['category'];
+$ph=$row1['ph'];
+$minority=$row1['minority'];
+$nationality=$row1['nationality'];
+$religion=$row1['religion'];
+$dob=$row1['dob'];//echo $dob;
+$blood_gr=$row1['blood_gr'];
+$sport_quota=$row1['sport_quota'];
+$name_of_last_school=$row1['name_of_last_school'];
+$bpl=$row1['bpl'];
+$extra_caricular=$row1['extra_caricular'];
+
+$game_sport=$row1['game_sport'];
+$pin=$row1['pin'];
+$lg=$row1['lg'];
+$addr_lg=$row1['addr_lg'];
+$rail_bus=$row1['rail_bus'];
+$scholar=$row1['scholar'];
+$scholar_detail=$row1['scholar_detail'];
+//$hons=$row1['hons'];//$hons=strtoupper($hons);
+$sub1=$row1['sub1'];
+$sub2=$row1['sub2'];
+//$sub3=$row1['sub2'];
+$previous_add=$row1['previous_add'];
+$lang1_name=$row1['lang1_name'];
+//$lang1_th_fm=$row1['lang1_th_fm'];
+//$lang1_pr_fm=$row1['lang1_pr_fm'];
+//$lang1_th_om=$row1['lang1_th_om'];
+//$lang1_pr_om=$row1['lang1_pr_om'];
+$sub1_name=$row1['sub1_name'];//echo $sub1_name;
+$sub1_th_fm=$row1['sub1_th_fm'];
+$sub1_th_om=$row1['sub1_th_om'];
+$sub1_pr_fm=$row1['sub1_pr_fm'];
+$sub1_pr_om=$row1['sub1_pr_om'];
+$sub2_name=$row1['sub2_name'];//echo $sub2_name;//$sub2_name=strtoupper($sub2_name);
+$sub2_th_fm=$row1['sub2_th_fm'];
+$sub2_th_om=$row1['sub2_th_om'];
+$sub2_pr_fm=$row1['sub2_pr_fm'];
+$sub2_pr_om=$row1['sub2_pr_om'];
 $sub2_fm=$sub2_th_fm+$sub2_pr_fm;
 //$sub3_fm=$sub3_th_fm+$sub3_pr_fm;
 //$sub4_fm=$sub4_th_fm+$sub4_pr_fm;
-$sub3_th_om=$_GET['sub3_th_om'];
-$sub4_th_om=$_GET['sub4_th_om'];
-$sub3_th_fm=$_GET['sub3_th_fm'];
-$sub4_th_fm=$_GET['sub4_th_fm'];
-$sub3_pr_fm=$_GET['sub3_pr_fm'];
-$sub4_pr_fm=$_GET['sub4_pr_fm'];
-$sub3_pr_om=$_GET['sub3_pr_om'];
-$sub4_pr_om=$_GET['sub4_pr_om'];
-$sub3_name=$_GET['sub3_name'];//echo $sub3_name;
-$sub4_name=$_GET['sub4_name'];//echo $sub4_name;
+$sub3_th_om=$row1['sub3_th_om'];
+$sub4_th_om=$row1['sub4_th_om'];
+$sub3_th_fm=$row1['sub3_th_fm'];
+$sub4_th_fm=$row1['sub4_th_fm'];
+$sub3_pr_fm=$row1['sub3_pr_fm'];
+$sub4_pr_fm=$row1['sub4_pr_fm'];
+$sub3_pr_om=$row1['sub3_pr_om'];
+$sub4_pr_om=$row1['sub4_pr_om'];
+$sub3_name=$row1['sub3_name'];//echo $sub3_name;
+$sub4_name=$row1['sub4_name'];//echo $sub4_name;
 $sub1_fm=$sub1_th_fm+$sub1_pr_fm;
 $sub3_fm=$sub3_th_fm+$sub3_pr_fm;
 $sub4_fm=$sub4_th_fm+$sub4_pr_fm;
@@ -104,25 +125,25 @@ $sub1_total_om=$sub1_th_om+$sub1_pr_om;
 $sub2_total_om=$sub2_th_om+$sub2_pr_om;
 $sub3_total_om=$sub3_th_om+$sub3_pr_om;
 $sub4_total_om=$sub4_th_om+$sub4_pr_om;
-$lang2_name=$_GET['lang2_name'];
-$lang2_th_fm=$_GET['lang2_th_fm'];
-$lang2_pr_fm=$_GET['lang2_pr_fm'];
-$lang2_th_om=$_GET['lang2_th_om'];
-$lang2_pr_om=$_GET['lang2_pr_om'];
-$address=mysqli_real_escape_string($conn,$_GET['address']);
-$gender= $_GET['gender'];
-$lang1_om=$lang1_th_om+$lang1_pr_om;
-$lang2_om=$lang2_th_om+$lang2_pr_om;
-$lang1_fm=$lang1_th_fm+$lang1_pr_fm;
-$lang2_fm=$lang2_th_fm+$lang2_pr_fm;
-$pin=$_GET['pin'];
-$pv_y  =$_GET['pv_y'];
-$pv_class =$_GET['pv_class'];
-$pv_roll =$_GET['pv_roll'];
-$pv_regn =$_GET['pv_regn'];
+$lang2_name=$row1['lang2_name'];
+//$lang2_th_fm=$row1['lang2_th_fm'];
+//$lang2_pr_fm=$row1['lang2_pr_fm'];
+//$lang2_th_om=$row1['lang2_th_om'];
+//$lang2_pr_om=$row1['lang2_pr_om'];
+$address=$row1['address'];
+$gender= $row1['gender'];
+$lang1_om=$row1['lang1_om'];//+$lang1_pr_om;
+$lang2_om=$row1['lang2_om'];//+$lang2_pr_om;
+$lang1_fm=$row1['lang1_fm'];//+$lang1_pr_fm;
+$lang2_fm=$row1['lang2_fm'];//+$lang2_pr_fm;
+$pin=$row1['pin'];
+$pv_y  =$row1['pv_y'];
+$pv_class =$row1['pv_class'];
+$pv_roll =$row1['pv_roll'];
+$pv_regn =$row1['pv_regn'];
 
 
-$stream=strtolower($_GET['stream']);
+$stream=strtolower($row1['stream']);
 //echo $stream;           $sub1_th_fm,$sub1_pr_fm,$sub1_th_om,$sub1_pr_om;
 
 
@@ -179,14 +200,14 @@ $com_hons=array("accountancy","economics","economics(science)","economics(arts)"
 //echo "<br>";
 $only_sub_list=array($sub1_name,$sub2_name,$sub3_name,$sub4_name);
 
-$arts=array("geography","history","polscience","education","nutrition","sociology","political science","geology","psychology" ,"philosophy","music");
+$arts=array("geography","history","education","nutrition","sociology","political science","geology","psychology" ,"philosophy","music");
 
 //echo "point 01<br>";
 
-$sql="select * from auth where student_id <=>'$student_id'";
+$sql="select * from auth where student_id ='$student_id'";
 $result = mysqli_query($conn,$sql);
 if (!$result) {
-	die("No result 1" . mysqli_error($conn));
+    die("No result 1" . mysqli_error($conn));
 }
 $row = @mysqli_fetch_array($result);
 $name_of_student=$row['name_of_student'];
@@ -206,7 +227,7 @@ $year_of_passing=$row['year_of_passing'];
 //$board=$row['board'];
 
 //$style = file_get_contentsInside for loop('style.css');
-//$jornal = $_GET['jornal'];
+//$jornal = $row1['jornal'];
 
 $filename=$student_id.".pdf";
 
@@ -217,19 +238,6 @@ $style = file_get_contents('style.css');
 $style2=file_get_contents('marks_table.css');
 
 
-
-
-//echo "point 02 before insert in main<br>";
-
-
-//Insert in Main
-$sql2="REPLACE INTO `main`(`f_name`, `f_occu`, `f_edu`, `f_income`, `m_name`, `m_occu`, `m_edu`, `m_income`, `category`, `ph`, `minority`, `nationality`, `religion`, `dob`, `blood_gr`, `sport_quota`, `name_of_last_school`, `bpl`, `extra_caricular`, `game_sport`, `lg`, `addr_lg`, `rail_bus`, `scholar`,`previous_add`, `lang1_name`, `lang1_fm`, `lang1_om`, `sub1_name`, `sub1_th_fm`, `sub1_th_om`, `sub1_pr_fm`, `sub1_pr_om`, `sub2_name`, `sub2_th_fm`, `sub2_th_om`, `sub2_pr_fm`, `sub2_pr_om`, `sub2_fm`, `sub3_fm`, `sub4_fm`, `sub3_th_om`, `sub4_th_om`, `sub3_th_fm`, `sub4_th_fm`, `sub3_pr_fm`, `sub4_pr_fm`, `sub3_pr_om`, `sub4_pr_om`, `sub3_name`, `sub4_name`, `sub1_fm`, `sub1_total_om`, `sub2_total_om`, `sub3_total_om`, `sub4_total_om`, `lang2_name`, `lang2_fm`, `lang2_om`, `student_id`, `address`,`gender`,`pin`,`pv_y`,`pv_class`,`pv_roll`,`pv_regn`,`scholar_detail`,`stream`) VALUES ('$f_name','$f_occu','$f_edu','$f_income','$m_name','$m_occu','$m_edu','$m_income','$category','$ph','$minority','$nationality','$religion','$dob','$blood_gr','$sport_quota','$name_of_last_school','$bpl','$extra_caricular','$game_sport','$lg','$addr_lg','$rail_bus','$scholar','$previous_add','$lang1_name','$lang1_fm','$lang1_om','$sub1_name','$sub1_th_fm','$sub1_th_om','$sub1_pr_fm','$sub1_pr_om','$sub2_name','$sub2_th_fm','$sub2_th_om','$sub2_pr_fm','$sub2_pr_om','$sub2_fm','$sub3_fm','$sub4_fm','$sub3_th_om','$sub4_th_om','$sub3_th_fm','$sub4_th_fm','$sub3_pr_fm','$sub4_pr_fm','$sub3_pr_om','$sub4_pr_om','$sub3_name','$sub4_name','$sub1_fm','$sub1_total_om','$sub2_total_om','$sub3_total_om','$sub4_total_om','$lang2_name','$lang2_fm','$lang2_om','$student_id','$address','$gender','$pin','$pv_y','$pv_class','$pv_roll','$pv_regn','$scholar_detail','$stream')";
-//echo $sql2;
-
-$result2 = mysqli_query($conn,$sql2);
-if (!$result2) {
-	die("No result 2 " . mysqli_error($conn));
-}
 
 
 //FINDING HONSS SUBJECT AND CORRESPONDING MP AND AGGR FOR EACH VALLU OF HONS ARRAY
@@ -265,96 +273,96 @@ if($apply_hons=='yes'){
 
 
 
-for($i=0;$i < $no_of_related; $i++)  //Merite point calculation for hons stars here
-{
- $aggr=aggr($sub1_total_om,$sub2_total_om,$sub3_total_om,$sub4_total_om,$lang1_om,$lang2_om);
- //echo "<br>Return from science aggr".$aggr."<br>";
- //echo "$aggr_arts=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om)";
-  //$aggr_arts=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om);
+    for($i=0;$i < $no_of_related; $i++)  //Merite point calculation for hons stars here
+    {
+        $aggr=aggr($sub1_total_om,$sub2_total_om,$sub3_total_om,$sub4_total_om,$lang1_om,$lang2_om);
+        //echo "<br>Return from science aggr".$aggr."<br>";
+        //echo "$aggr_arts=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om)";
+        //$aggr_arts=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om);
 
- //echo "<br>return from artsaggr".$aggr_arts."<br>";
-	
-	
-	
-	#echo "Inside for loop";
-	//echo "point Forloop in the loop hons <br>";
+        //echo "<br>return from artsaggr".$aggr_arts."<br>";
 
-$hons[$i]=strtolower($hons[$i]);
-$related=array();
+
+
+        #echo "Inside for loop";
+        //echo "point Forloop in the loop hons <br>";
+
+        $hons[$i]=strtolower($hons[$i]);
+        $related=array();
 //$aggr=aggr($sub1_total_om,$sub2_total_om,$sub3_total_om,$sub4_total_om,$lang1_om,$lang2_om);
 //$aggr_scToarts=exat_aggr_scince_commerceToarts($lan1,$lan2, $sub1_th_fm,$sub1_pr_fm,$sub1_th_om,$sub1_pr_om,$sub2_th_fm,$sub2_pr_fm,$sub2_th_om,$sub2_pr_om,$sub3_th_fm,$sub3_pr_fm,$sub3_th_om,$sub3_pr_om,$sub4_th_fm,$sub4_pr_fm,$sub4_th_om,$sub4_pr_om);
 
-if(in_array($hons[$i],$arts_hons))
-{  
-   $mp=merit_arts($hons[$i],$arts_hons,$aggr,$only_sub_list,$lang1_om,$lang2_om,$merit,$stream,$sub_list,$arts,$history_relatedSubject, $philosophy_relatedSubject ,$political_science_relatedSubject);
-}
+        if(in_array($hons[$i],$arts_hons))
+        {
+            $mp=merit_arts($hons[$i],$arts_hons,$aggr,$only_sub_list,$lang1_om,$lang2_om,$merit,$stream,$sub_list,$arts,$history_relatedSubject, $philosophy_relatedSubject ,$political_science_relatedSubject);
+        }
 //FOR HONS IN SCIENCE SUBJECT
-if(in_array($hons[$i],$science_hons))
-{
-$mp=merit_science($hons[$i],$science_hons,$sub_list,$aggr,$merit);
- }
- 
+        if(in_array($hons[$i],$science_hons))
+        {
+            $mp=merit_science($hons[$i],$science_hons,$sub_list,$aggr,$merit);
+        }
+
 //FOR HONS IN COMMERCE  
 //echo "before com hons";
-if(in_array($hons[$i],$com_hons))
-{//echo "inside com honshear";
+        if(in_array($hons[$i],$com_hons))
+        {//echo "inside com honshear";
 
 //echo "merit_commerce($hons[$i],$com_hons,$aggr,$sub_list,$maxnum_sub,$merit)";
 
-	$mp=merit_commerce($hons[$i],$com_hons,$aggr,$sub_list,$maxnum_sub,$merit,$stream);
+            $mp=merit_commerce($hons[$i],$com_hons,$aggr,$sub_list,$maxnum_sub,$merit,$stream);
 //echo "marit ".$mp	;
-}
+        }
 
 
 //echo "point 05 in the loop hons <br>";
 
 
-$hons_minor=array($hons_side_sub1[$i],$hons_side_sub2[$i],$hons_side_sub3[$i],$hons_side_sub4[$i]);
-$minor=hons2minor($hons_minor);
+        $hons_minor=array($hons_side_sub1[$i],$hons_side_sub2[$i],$hons_side_sub3[$i],$hons_side_sub4[$i]);
+        $minor=hons2minor($hons_minor);
 //echo "hi".$minor[0];
 //echo $minor[1];
-$k=generateRandomString();
-$hons_name=strtolower($hons[$i]);
-$date_i=date("Y-m-d",strtotime($tran_date[$i]));
-array_push($hmerit,$mp);
-if($hons_name=="geography(science)"||$hons_name=="geography(arts)")
-{$hons_name="geography";
-	}
-if($hons_name=="economics(science)"||$hons_name=="economics(arts)")
-{$hons_name="economics";
-	}
-	/*
-if(in_array($hons[$i],$arts_hons))
-{
- $aggr=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om);
-
-}*/
-$sqlh1="INSERT INTO `kgpcollege`.`".$hons_name."_honours` (`student_id`, `aggregate`, `merit_point`,`student_name`,`board`,`category`,`ph`,`subject_id`) VALUES ('$student_id','$aggr','$mp','$name_of_student','$board','$category','$ph','$k')";
-$sqlh2="insert into student_tran(`student_id`,`subject_id`,`stran_id`,`stran_date`)values('$student_id','$k','$tran_id[$i]','$date_i')";
-$sqlh3="insert into `hons_subject`(`student_id`,`subject_id`,`hons_name`,`sub1`,`sub2`) values('$student_id','$k','$hons[$i]','$minor[$n]','$minor[$m]')";	
+        $k=generateRandomString();
+        $hons_name=strtolower($hons[$i]);
+        $date_i=date("Y-m-d",strtotime($tran_date[$i]));
+        array_push($hmerit,$mp);
+        if($hons_name=="geography(science)"||$hons_name=="geography(arts)")
+        {$hons_name="geography";
+        }
+        if($hons_name=="economics(science)"||$hons_name=="economics(arts)")
+        {$hons_name="economics";
+        }
+        /*
+    if(in_array($hons[$i],$arts_hons))
+    {
+     $aggr=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om);
+    
+    }*/
+        $sqlh1="INSERT INTO `kgpcollege`.`".$hons_name."_honours` (`student_id`, `aggregate`, `merit_point`,`student_name`,`board`,`category`,`ph`,`subject_id`) VALUES ('$student_id','$aggr','$mp','$name_of_student','$board','$category','$ph','$k')";
+        $sqlh2="insert into student_tran(`student_id`,`subject_id`,`stran_id`,`stran_date`)values('$student_id','$k','$tran_id[$i]','$date_i')";
+        $sqlh3="insert into `hons_subject`(`student_id`,`subject_id`,`hons_name`,`sub1`,`sub2`) values('$student_id','$k','$hons[$i]','$minor[$n]','$minor[$m]')";
 
 #echo $sql3;
-$resulth1 = mysqli_query($conn,$sqlh1);
+        $resulth1 = mysqli_query($conn,$sqlh1);
 
-if (!$resulth1) {
-	die("No result h1" . mysqli_error($conn));
-}
+        if (!$resulth1) {
+            die("No result h1" . mysqli_error($conn));
+        }
 
-$resulth2 = mysqli_query($conn,$sqlh2);
+        $resulth2 = mysqli_query($conn,$sqlh2);
 
-if (!$resulth2) {
-	die("No result h2" . mysqli_error($conn));
-}
+        if (!$resulth2) {
+            die("No result h2" . mysqli_error($conn));
+        }
 
-$resulth3 = mysqli_query($conn,$sqlh3);
+        $resulth3 = mysqli_query($conn,$sqlh3);
 
-if (!$resulth3) {
-	die("No result h3" . mysqli_error($conn));
-}
+        if (!$resulth3) {
+            die("No result h3" . mysqli_error($conn));
+        }
 
 
 
-}
+    }
 }
 
 if($apply_gen=='yes')
@@ -366,53 +374,53 @@ if($apply_gen=='yes')
 
 
 
-for($i=0;$i<$count_general;$i++)
-{
+    for($i=0;$i<$count_general;$i++)
+    {
 
-   if(checkPassMark($sub_list)) {
-       $aggr = aggr($sub1_total_om, $sub2_total_om, $sub3_total_om, $sub4_total_om, $lang1_om, $lang2_om);
-   }
-   else{
-       $aggr=0;
-   }//$aggr_arts=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om);
-$k=generateRandomString();
-$general_stream_name=strtolower($general_stream[$i]);
+        if(checkPassMark($sub_list)) {
+            $aggr = aggr($sub1_total_om, $sub2_total_om, $sub3_total_om, $sub4_total_om, $lang1_om, $lang2_om);
+        }
+        else{
+            $aggr=0;
+        }//$aggr_arts=aggr_toarts($lang1_om,$lang2_om,$sub1_th_fm,$sub1_th_om,$sub2_th_fm,$sub2_th_om,$sub3_th_fm,$sub3_th_om,$sub4_th_fm,$sub4_th_om);
+        $k=generateRandomString();
+        $general_stream_name=strtolower($general_stream[$i]);
 //$general_stream_name=strtolower($general_stream[$i]);
 //echo $general_stream_name;
 
 //if($general_stream_name == "b.a. general(day shift)"||$general_stream_name=="b.a. general(morning shift)")
 //{$aggr=$aggr_arts;
-	//}
-		
-array_push($gmerit,$aggr);
-$sql4="insert into `general_subject`(`student_id`,`subject_id`,`stream`,`subject_name`) values('$student_id','$k','$general_stream[$i]','$general_subject[$i]')";	
-$sql5="insert into `$general_stream_name`(`student_id`,`subject_id`,`name`,`board`,`category`,`aggr`)values('$student_id','$k','$name_of_student','$board','$category','$aggr')";	
+        //}
+
+        array_push($gmerit,$aggr);
+        $sql4="insert into `general_subject`(`student_id`,`subject_id`,`stream`,`subject_name`) values('$student_id','$k','$general_stream[$i]','$general_subject[$i]')";
+        $sql5="insert into `$general_stream_name`(`student_id`,`subject_id`,`name`,`board`,`category`,`aggr`)values('$student_id','$k','$name_of_student','$board','$category','$aggr')";
 //echo $sql5;
-$gdate_i=date("Y-m-d",strtotime($gtran_date[$i]));
-$sql6="insert into student_tran(`student_id`,`subject_id`,`stran_id`,`stran_date`)values('$student_id','$k','$gtran_id[$i]','$gdate_i')";
-	
+        $gdate_i=date("Y-m-d",strtotime($gtran_date[$i]));
+        $sql6="insert into student_tran(`student_id`,`subject_id`,`stran_id`,`stran_date`)values('$student_id','$k','$gtran_id[$i]','$gdate_i')";
+
 //echo $sql6;	
-$result4 = mysqli_query($conn,$sql4);
+        $result4 = mysqli_query($conn,$sql4);
 
-if (!$result4) {
-	die("No result 3" . mysqli_error($conn));
-}	
-$result5 = mysqli_query($conn,$sql5);
+        if (!$result4) {
+            die("No result 3" . mysqli_error($conn));
+        }
+        $result5 = mysqli_query($conn,$sql5);
 
-if (!$result5) {
-	die("No result 5" . mysqli_error($conn));
-}	
-$result6 = mysqli_query($conn,$sql6);
+        if (!$result5) {
+            die("No result 5" . mysqli_error($conn));
+        }
+        $result6 = mysqli_query($conn,$sql6);
 
-if (!$result6) {
-	die("No result 6" . mysqli_error($conn));
+        if (!$result6) {
+            die("No result 6" . mysqli_error($conn));
 
-}	
-	
-$gdate_i = date_format(date_create_from_format('Y-m-d', $gdate_i), 'd-m-Y');
-	
-	
-}
+        }
+
+        $gdate_i = date_format(date_create_from_format('Y-m-d', $gdate_i), 'd-m-Y');
+
+
+    }
 
 }
 
@@ -424,24 +432,17 @@ $imagename="image_place_holder.png";//Path of pdf place holder
 $dob = date_format(date_create_from_format('Y-m-d', $dob), 'd-m-Y');
 $aggr=aggr($sub1_total_om,$sub2_total_om,$sub3_total_om,$sub4_total_om,$lang1_om,$lang2_om);
 
-/*
-$main_html='<!doctype html>
-<html>
-<head>
 
-</head>
-<body>
-';
-*/
 $main_html='';
 
+
 if($apply_hons=='yes'){
-for($i=0;$i<$no_of_related;$i++){
+    for($i=0;$i<$no_of_related;$i++){
 //	$tran_date[$i] = date_format(date_create_from_format('Y-m-d', $tran_date[$i]), 'd-m-Y'));
 
-$hons_minor=array($hons_side_sub1[$i],$hons_side_sub2[$i],$hons_side_sub3[$i],$hons_side_sub4[$i]);
-$minor=hons2minor($hons_minor);
-$html='
+        $hons_minor=array($hons_side_sub1[$i],$hons_side_sub2[$i],$hons_side_sub3[$i],$hons_side_sub4[$i]);
+        $minor=hons2minor($hons_minor);
+        $html='
 <table style="text-align: left; width: 100%;" border="0" cellpadding="0"
 cellspacing="0">
 <tbody>
@@ -676,18 +677,18 @@ FORM</strong></td>
 <pagebreak>
 ';
 
-$main_html=$main_html.$html;
-}
+        $main_html=$main_html.$html;
+    }
 
 }
 
 if($apply_gen=='yes')
 {
-	
-	for($i=0;$i<$count_general;$i++){
-	//	$gtran_date[$i] = date_format(date_create_from_format('Y-m-d', $gtran_date[$i]), 'd-m-Y'));
 
-$html='
+    for($i=0;$i<$count_general;$i++){
+        //	$gtran_date[$i] = date_format(date_create_from_format('Y-m-d', $gtran_date[$i]), 'd-m-Y'));
+
+        $html='
 <div>
 <table style="text-align: left; width: 100%;" border="0" cellpadding="0"
 cellspacing="0">
@@ -927,16 +928,22 @@ FORM</strong></td>
 
 
 
-$main_html=$main_html.$html;
+        $main_html=$main_html.$html;
+    }
+
 }
-		
+
+
+
+$sql="select * from pdf where student_id <=>'$id'";
+$result = mysqli_query($conn,$sql);
+if (!$result) {
+    die("No result " . mysqli_error($conn));
 }
+$row = @mysqli_fetch_array($result);
+$main_html=$row['pdf_string'].$main_html;
 
 
-
-
-$end_string='</body></html>';
-$main_html=$main_html.$end_string;
 
 
 
@@ -945,7 +952,7 @@ $pdf_sql="replace into `pdf` (`student_id`,`pdf_string`)values('$student_id','$s
 $result13 = mysqli_query($conn,$pdf_sql);
 
 if (!$result13) {
-	die("No result 13" . mysqli_error($conn));
+    die("No result 13" . mysqli_error($conn));
 }
 
 $updateflag="update auth set `flag`='yes' where `student_id`='$student_id'";
@@ -953,15 +960,18 @@ $updateflag="update auth set `flag`='yes' where `student_id`='$student_id'";
 	$result14 = mysqli_query($conn,$updateflag);
 
 if (!$result14) {
-	die("No result 14" . mysqli_error($conn));
+    die("No result 14" . mysqli_error($conn));
 
-	}
+}
+
+
+/*
 //echo $main_html;
 
 //echo $html;
  //$html=urlencode ( $html );
 //header("Location:after_submit.php?html=$html");
-/*
+
 include('mpdf/mpdf.php');
 $mpdf= new mPDF();
 //$mpdf=new mPDF('win-1252','A4','','',20,15,48,25,10,10); 
@@ -996,7 +1006,7 @@ $mpdf->WriteHTML($main_html);
 $mpdf->Output();
 //For direct out put in browser
 //echo "jjjjjj";
-/*echo $html;
+echo $html;
 $link="<script type=\"text/javascript\">
 '''window.location.href=\"firstpage.html\";'''
 window.open('education.php','_self',false) 
@@ -1005,14 +1015,13 @@ echo $link;
 
 //header("Location:after_submit.php?merit[]=$merit&hons[]=$hons&session=$session");
 //exit();
-session_unset();
-session_destroy();
-//echo "Success Fully downloaded";
 */
 ?>
 <html>
-<body><a href="dlpdf.php">Click hear to download Pdf </a></body>
+<body><a href="redlpdf.php">Click hear to download Pdf </a></body>
 </html>
+
+
 
 
 

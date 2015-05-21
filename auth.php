@@ -25,7 +25,7 @@ $val4=$_GET["board"];
 $val5=$_GET["roll"];
 $val6=$_GET["yop"];
 
-$login="SELECT * FROM `auth` WHERE  `name_of_student`='$val1' and`mobile_no`='$val2'and `examination`='$val3'and `board`='$val4'and`roll_no`='$val5'and `year_of_passing`='$val6'";
+$login="SELECT * FROM `auth` WHERE  `name_of_student`='$val1' and `examination`='$val3'and `board`='$val4'and`roll_no`='$val5'and `year_of_passing`='$val6'";
 
 $result=mysqli_query($conn,$login);
 
