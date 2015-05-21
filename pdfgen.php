@@ -695,7 +695,7 @@ cellspacing="0">
 <tr>
 <td style="vertical-align: top; width: 211px;">
 <h2><span style="font-size: 10px;">Form
-No.&nbsp;'.($last_serial+1+$i).'</span></h2>
+No.&nbsp;'.($last_serial+1+$i+$no_of_related).'</span></h2>
 </td>
 <td style="vertical-align: top; width: 686px; text-align: center;">
 <h2>Kharagpur College</h2>
@@ -935,8 +935,8 @@ $main_html=$main_html.$html;
 
 
 
-$end_string='</body></html>';
-$main_html=$main_html.$end_string;
+//$end_string='</body></html>';
+//$main_html=$main_html.$end_string;
 
 
 

@@ -323,6 +323,7 @@ echo $student_name;echo "10";
                     <option value="Gujrati">Gujrati</option>
                     <option value="Punjabi">Punjabi</option>
                     <option value="English">English</option>
+                    <option value="">None</option>
                 </select> </th>
             <th colspan="2"><select name="lang2_name">
                     <option value="Bengali">Bengali</option>
@@ -330,6 +331,7 @@ echo $student_name;echo "10";
                     <option value="Nepali">Nepali</option>
                     <option value="Alt_Eng">Alt. English</option>
                     <option value="English" Selected>English</option>
+                    <option value="">None</option>
                 </select> </th>
             <!--<th colspan="2"><input type="text" name="lang1_name" size="7"class="text-uppercase" placeholder="Language"></th>
             <th colspan="2"><input type="text" name="lang2_name" size="7"class="text-uppercase"value="ENGLISH" readonly></th>

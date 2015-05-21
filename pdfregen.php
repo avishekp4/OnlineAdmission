@@ -696,7 +696,7 @@ cellspacing="0">
 <tr>
 <td style="vertical-align: top; width: 211px;">
 <h2><span style="font-size: 10px;">Form
-No.&nbsp;'.($last_serial+1+$i).'</span></h2>
+No.&nbsp;'.($last_serial+$no_of_related+$i+1).'</span></h2>
 </td>
 <td style="vertical-align: top; width: 686px; text-align: center;">
 <h2>Kharagpur College</h2>
@@ -776,7 +776,7 @@ FORM</strong></td>
 
 <p>&nbsp; &nbsp; &nbsp; a) Name of Exam: .&nbsp; &nbsp; '.stripslashes($examination).' &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;b)Name Of the Board/Council/Univ :&nbsp; &nbsp; '.stripslashes($board).'</p>
 
-<p>&nbsp; &nbsp; &nbsp; c) Roll &nbsp;No.:&nbsp; &nbsp; '.stripslashes($roll_no).'Year Of Passing :&nbsp; &nbsp; '.stripslashes($year_of_passing).'</p>
+<p>&nbsp; &nbsp; &nbsp; c) Roll &nbsp;No.:&nbsp; &nbsp; '.stripslashes($roll_no).'&nbsp;Year Of Passing :&nbsp; &nbsp; '.stripslashes($year_of_passing).'</p>
 
 <p>&nbsp; &nbsp; &nbsp; d) Marks Obtained:&nbsp;</p>
 
@@ -935,20 +935,22 @@ FORM</strong></td>
 
 
 
-$sql="select * from pdf where student_id <=>'$id'";
+$sql="select * from pdf where student_id <=>'$student_id'";
 $result = mysqli_query($conn,$sql);
 if (!$result) {
     die("No result " . mysqli_error($conn));
 }
 $row = @mysqli_fetch_array($result);
-$main_html=$row['pdf_string'].$main_html;
+$main_html=$row['pdf_string'].mysqli_real_escape_string($conn,$main_html);
 
 
 
-
-
-$save=mysqli_real_escape_string($conn,$main_html);
+$save=$main_html;
+//cho "-------------------------------------";
+//echo $save;
+//$pdf_sql="update  `pdf` set `pdf_string`='$save' where student_id='$student_id'";
 $pdf_sql="replace into `pdf` (`student_id`,`pdf_string`)values('$student_id','$save')";
+
 $result13 = mysqli_query($conn,$pdf_sql);
 
 if (!$result13) {
@@ -963,62 +965,10 @@ if (!$result14) {
     die("No result 14" . mysqli_error($conn));
 
 }
-
-
-/*
-//echo $main_html;
-
-//echo $html;
- //$html=urlencode ( $html );
-//header("Location:after_submit.php?html=$html");
-
-include('mpdf/mpdf.php');
-$mpdf= new mPDF();
-//$mpdf=new mPDF('win-1252','A4','','',20,15,48,25,10,10); 
-$mpdf = new mPDF('', 'Legal', 0, '', 12.7, 12.7, 14, 12.7, 8, 8);
-//$mpdf->useOnlyCoreFonts = true;    // false is default
-//$mpdf->SetProtection(array('print'));
-$mpdf->SetTitle("Application");
-$mpdf->use_kwt = true;
-$mpdf->shrink_tables_to_fit;
-//$mpdf->SetAuthor("..........");
-//$mpdf->SetWatermarkText("Submitted");
-//$mpdf->showWatermarkText = false;
-//$mpdf->watermark_font = 'DejaVuSansCondensed';
-//$mpdf->watermarkTextAlpha = 0.1;
-
-
-
-
-$mpdf->SetDisplayMode('fullpage');
-//$mpdf->SetHeader('Referenceno-{DATE jmYmmsshh}{PAGENO}');
-//$mpdf->SetFooter('|{PAGENO}|');
-
-//$mpdf->WriteHTML($style,1);
-//$mpdf->WriteHTML($style2,1);
-$mpdf->WriteHTML($main_html);
-//$mpdf->WriteHTML('hi');
-
-
-//$mpdf->Output($filename,'F');//for saving in current directory fource fully  for letter use 
-//$mpdf->Output($filename,'D');//downlode in browser
-//echo $html;
-$mpdf->Output();
-//For direct out put in browser
-//echo "jjjjjj";
-echo $html;
-$link="<script type=\"text/javascript\">
-'''window.location.href=\"firstpage.html\";'''
-window.open('education.php','_self',false) 
-</script>";
-echo $link;
-
-//header("Location:after_submit.php?merit[]=$merit&hons[]=$hons&session=$session");
-//exit();
-*/
+mysqli_close($conn);
 ?>
 <html>
-<body><a href="redlpdf.php">Click hear to download Pdf </a></body>
+<body><a href="redlpdf.php">Click here to download Pdf </a></body>
 </html>
 
 
