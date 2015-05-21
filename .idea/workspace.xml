@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b46c7f6a-1672-4d84-879f-389830cbbc76" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/education.php" afterPath="$PROJECT_DIR$/education.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pdfgen.php" afterPath="$PROJECT_DIR$/pdfgen.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pdfregen.php" afterPath="$PROJECT_DIR$/pdfregen.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kgpv6.iws" />
@@ -446,7 +443,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432189826932</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Re submit">
+      <created>1432218232951</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1432218232951</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
