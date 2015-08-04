@@ -244,7 +244,7 @@ echo $student_name;echo "10";
 
             </tr>
             <tr>
-                <td>Games And Sports with Level</td>
+                <td>Games & Sports with Level</td>
                 <td><textarea name="game_sport" id="game_sport"class="text-uppercase"></textarea></td>
 
                 <td>Address</td>
